@@ -1,0 +1,114 @@
+
+
+(1) Components in React:
+
+-- In React, components are the 'building blocks' of your application's user interface. They encapsulate reusable pieces of UI that can be composed together to create more complex interfaces. "React components can be either functional components or class components".
+
+    (a)"Functional components": they are simple JavaScript functions that accept props as arguments and return JSX to describe the component's UI. They are the recommended approach for creating components in React.
+
+    (b) Class components on the other hand ae ES6 classes that extend the 'React.Component' class. They have additional features such as lifecycle methods and access to the components state. While class components are still supported in React, functional components with hooks are the modern and preffered way of writting components.
+
+-------------------------------------------------------------
+
+(2) Webhooks: "useEffect"
+
+The useEffect hook in React "allows you to perform side effects" in functional components. Side effects may include fetching data, subscribing to events, or manually manipulating the DOM. You can think of useEffect as a way to tell React that your component needs to do something after rendering.
+
+The basic syntax of the useEffect hook is as follows:
+
+
+useEffect(() => {
+  // Side effect logic goes here
+}, [dependency1, dependency2]);
+
+
+The "first argument of useEffect is a callback function" that contains the side effect logic. This function will be executed after the component has rendered.
+
+The "second argument of useEffect is an optional array of dependencies". Dependencies are values that the effect depends on. By providing dependencies, you can control when the effect should run.
+
+If the dependency array is empty ([]), the effect will run only once, after the initial render. This is equivalent to the behavior of the componentDidMount lifecycle method in class components.
+
+If you provide one or more values in the dependency array, the effect will run whenever any of the dependencies change. This is similar to the behavior of the componentDidUpdate lifecycle method in class components.
+
+Here's an example to illustrate the usage of useEffect:
+
+
+import React, { useEffect, useState } from 'react';
+
+const ExampleComponent = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // This code will run after every render
+    console.log('Component rendered');
+
+    // Cleanup function
+    return () => {
+      console.log('Component will unmount');
+    };
+  }, [count]); // Only run the effect if `count` changes
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+
+
+In this example, the useEffect hook is set up to log a message after each render. The effect runs when the component is initially rendered and whenever the count state changes. If the count state remains the same, the effect won't run.
+
+The useEffect hook also supports a cleanup function. The cleanup function is executed when the component is about to unmount or when the dependencies change. It's useful for canceling subscriptions or cleaning up resources.
+
+
+-------------------------------------------------------------
+
+(3) "useState" webhook:
+
+The useState hook allows functional components to have state by providing a way to declare state variables and their setter functions. It replaces the need for using class components and the this.state syntax.
+
+The basic syntax of the useState hook is as follows:
+
+
+const [stateValue, setState] = useState(initialValue);
+
+The useState hook takes an initial value as an argument and returns an array with two elements. The first element, stateValue, is the current value of the state variable, and the second element, setState, is the function to update the state.
+
+Here's an example to illustrate the usage of useState:
+
+
+import React, { useState } from 'react';
+
+const ExampleComponent = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+
+
+In this example, the useState hook is used to declare a state variable called count with an initial value of 0. The setCount function is the setter function for updating the count state.
+
+Inside the component, we use the count state value to display the current count. When the button is clicked, the increment function is called, which updates the count state by calling setCount with the new value.
+
+React will re-render the component when the state changes, and the updated value will be displayed.
+
+It's important to note that when calling the setter function (setCount in this example), React will merge the new state value with the existing state and trigger a re-render. You don't need to manually manage the merging of state values.
+
+
+
+
+

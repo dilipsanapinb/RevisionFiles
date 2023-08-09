@@ -1,0 +1,198 @@
+STAR method
+Situation
+task
+action
+Result
+
+(1) Introduce yourself
+
+Good [afternoon/ morning], my name is Dilip Sanap, I am from Nashik Maharashtra I have done my graduation in BA History. I am thrilled to be here today for the full stack web development interview. With a background in farming and a passion for coding, I embarked(0n a boat) on a journey to enhance my skills in the field of software development.Also I have a interest in writing poems, reading and farming. I have written some poems on the pratilipi platform.
+
+After graduating from the University of Pune, I dedicated my time to supporting my family's farming business. However, my desire to explore the world of technology and programming led me to enroll in the Masai School in July 2022. Over the past year, I have been immersed in a comprehensive curriculum that has equipped me with a solid foundation in various web technologies.
+
+During my time at Masai School, I have gained hands-on experience in HTML, CSS, JavaScript, Node.js, Express.js, and MongoDB and also in past last month I was lerning the generative AI course in which we lerned how to write good prompts and how we can learn new technologies using the generative AI.Using the GenAI I lerned the Python, flask and React.js. Through practical projects and rigorous training, I have honed my abilities to develop efficient and scalable applications using the Node.js ecosystem.
+
+I am excited about the prospect of applying my knowledge and skills to contribute to your team. I am a fast learner, detail-oriented, and thrive in collaborative environments. I am confident that my enthusiasm for Node.js development, combined with my commitment to continuous learning, make me a valuable candidate for this role.
+
+Thank you for considering my application, and today I look forward to discussing my qualifications further with you .
+
+-----------------------------------------------------------
+
+(2) Job description
+
+(A) NeoDove
+    NeoDove is telecalling CRM(customer relationship management) and sales engagement platform that helps business drive better results from their sales, marketing and customer engagement efforts. In May 2022 NeoDove became part of Vyapar which is Indias top GST billing and accounting software platform for small and medium business.
+    -Vyapar just raised the 30Mn on jan 2022 led by West Bridge Capital.
+
+    ** Position- 
+        NeoDove is looking for full stack developer for the position of SDE-I,who can accept the challeges, love to build great products and who can work on both frontend and backend.
+        -someone who can work with Product Manager for the best outputs.
+    
+    ** Technical Skill required:
+        -HTML, CSS, Javascript, Node.js, Express.js, React, MongoDB
+        -experience in deployment and testing
+        -self motivated person and who can work with minimal guidance
+        -who can work independatly and collaborative env.
+        -have a analytical thought process
+        -eager to learn emerging technologies
+        -being innovative
+
+
+(B) Traxcn:
+    Bangalore based company product company providing a reaserch and deal sourcing platform for Venture Capital, Private Equity, Corp Dev and proffessionals working around startup ecosystem. I helps the start to find the funding and for ventuare capitalist provide a platform where startups can come for funcding.
+    Founders- Neha singh and Abhishek Goyal
+
+    ** Position
+    -Traxcn is looking for an exprience and motivated FSD.
+    -experience in HTML,CSS,Js,Node.js,Express.js,React,MongoDB,REST API
+    -Good commmand on DSA 
+    -ability to produce bug free and production grade code.
+    -who can work independatly and collaborative env.
+    -have a analytical thought process
+    -eager to learn emerging technologies
+    -being innovative
+
+----------------------------------
+
+(3) What are your strengths and your weaknesses?
+
+Strengths: One of my key strengths is my ability to adapt and learn quickly. I enjoy taking on new challenges and I am not afraid to step out of my comfort zone. This has allowed me to easily grasp new programming languages and technologies throughout my learning journey. I am also a detail-oriented person who pays close attention to the quality and accuracy of my work. I take pride in delivering well-structured and efficient code.
+
+Weaknesses:In software industry we need to learn continuously the emerging technologies. To focus on new stacks I am strugling with the time management. However, I am actively working on improving my time management skills to ensure that I balance learning with meeting project deadlines effectively.
+To deal with this situation I am following the precendence approach and maintaining the google calender for it. I order the things according to its prioity and mantain the calendar.
+
+-------------------------------------------------------------
+
+(4) What are your career Objectives?/Where do you see yourself 5 years from now?
+
+My career objectives revolve around continuous growth, learning, and making a positive impact in the field of web development. In the next five years, I see myself progressing as a skilled full-stack web developer, working on more complex projects, and expanding my expertise in emerging technologies like AIML and the blockchain.
+
+I aim to become a valuable asset to a reputable organization, contributing to the development of innovative and user-friendly web applications. I strive to be a part of a collaborative team where I can exchange knowledge, learn from experienced professionals, and contribute my own unique perspectives. Also I envision myself in leadership and mentorship role.
+
+
+-------------------------------------------------------------------
+
+(5) Why should we hire you? / Why do you think you are eligible for this job?
+
+You should consider hiring me because I bring a unique combination of skills, passion, and dedication to the table. Here are a few reasons why I believe I am eligible for this job:
+
+"Strong technical foundation": I have undergone comprehensive training in full-stack web development, gaining hands-on experience with HTML, CSS, JavaScript, Node.js, Express.js, and MongoDB,SQL and React.js. This solid technical foundation enables me to effectively contribute to building efficient and scalable applications.
+
+"Adaptability and continuous learning": I have demonstrated a strong ability to adapt to new technologies and quickly learn new programming languages. I am committed to staying updated with the latest industry trends and advancements, ensuring that I can contribute effectively to the organization's goals.
+
+During course of GenAI I lerned the new tech stacks like Python and Flask during one week period and build the project on it. This shows the ability of mine to addapt the new tech stacks in efficient manner.
+
+"Enthusiasm and passion": I am genuinely passionate about web development and coding. This enthusiasm drives me to constantly improve my skills and deliver high-quality work. I approach each project with a positive mindset and a strong commitment to excellence.
+
+"Collaboration and teamwork": I thrive in collaborative environments and enjoy working as part of a team. I believe that effective communication, cooperation, and sharing of ideas are essential for achieving successful outcomes. I am confident in my ability to contribute to a positive and productive team dynamic.
+
+"Strong work ethic": I am dedicated towards my work. My strong work ethic ensures that I am committed to meeting deadlines and delivering high-quality results.
+
+my technical skills, adaptability, passion, teamwork, and strong work ethic make me a strong candidate for this job. I am confident that I can contribute positively to the success of your team and help drive the organization's goals forward.
+
+--------------------------------------------------------------------
+
+(6) What is your greatest personal/professional achievement so far?
+
+One of my greatest professional achievements so far has been successfully completing the comprehensive full-stack web development program at Masai School. This program not only provided me with a solid foundation in various web technologies but also equipped me with the practical skills and hands-on experience necessary to develop real-world applications.
+
+During my time at Masai School, I had the opportunity to work on several challenging projects, both individually and as part of a team. One particular project that stands out to me is the development of a web application of Chit-Chat-App. I was responsible for designing and implementing the front-end interface using HTML, CSS, and JavaScript, and React.js as well as Backend.
+
+Overall, this achievement not only validated my technical capabilities but also reinforced my passion for web development and my ability to contribute positively to real-world projects.
+
+----------------------------------------------------------------
+
+(7) Tell me about a team project you were involved in. What was your role, and what was the outcome?
+
+----------------------------------------------------------------
+
+(8) What are your salary expectations?
+
+I am open to discussing a fair and competitive salary that aligns with industry standards and reflects my skills, experience, and the value I can bring to the organization.
+
+-----------------------------------------------------------
+
+(9) Do you have any questions for us?
+Yes, I do have a few questions:
+
+(1) Can you provide more information about the company culture and the team dynamics.
+
+(2) I'd like to get an idea of the day-to-day responsibilities and the types of projects I would be working on.
+
+(3) Are there opportunities for professional development and growth within the company? Im eager to continue learning and expanding my skills, so I'm curious about any training programs, mentorship opportunities, or career advancement prospects that may be available.
+
+(4) What is the next step in the hiring process? I'd like to know what to expect moving forward and the timeline for potential next steps.
+
+These are just a few questions I have at the moment. I'm eager to learn more about the company and the role, so any additional information you can provide would be greatly appreciated.
+
+
+----------------------------------------------------------
+
+(10) Why is there a gap in your employment / Gap years after your education?
+
+The decision to take gap years after my education was a deliberate choice made to pursue personal and professional development opportunities. During that time, I took the opportunity to support my family's farming business, prepare for government exams, and gain valuable real-world experience in a different field. I dedicated a significant portion of my time to studying and preparing for these exams, demonstrating my commitment to personal growth and determination to pursue different avenues of success.
+
+------------------------------------------------------------------
+
+(11) Can you explain why you changed your career paths?
+
+The decision to change career paths stemmed from my evolving interests and passion for technology and coding. While I initially pursued a career in farming and supported my family's business, I felt a strong inclination towards the world of software development.
+
+I recognized the "immense potential and opportunities that the field of technology offered", and I wanted to explore and challenge myself in this domain. This realization, combined with my curiosity and enthusiasm for coding, led me to make a "conscious decision to change my career path" and pursue a career in web development.
+
+"I saw it as an opportunity to combine my analytical and problem-solving skills with my creativity", as well as to work on projects that have a tangible impact in the digital world. Additionally, the "dynamic nature of the technology industry and the continuous learning opportunities"it provides greatly appealed to me.
+
+**
+To ensure a smooth transition, I enrolled in a comprehensive full-stack web development program at Masai School, where I gained the necessary technical skills and knowledge to embark on this new career path. This decision to change careers was driven by my desire to align my professional trajectory with my passion and interests, and I am excited about the opportunities and growth that lie ahead in the field of web development. **
+
+
+In short "I changed my career path because I had a strong passion for technology and coding. I saw it as an opportunity to challenge myself, explore new interests, and work on projects that have a tangible impact in the digital world. The dynamic nature of the technology industry and the continuous learning opportunities it offers were also compelling factors. I enrolled in a full-stack web development program to gain the necessary skills and knowledge for this new career path."
+
+**## Behavioural HR Questions**
+
+(1) Tell me about your collaborative projects and what are your key learnings from them.
+
+During my time at Masai School and other learning experiences, I had the opportunity to work on several collaborative projects with my peers. These projects involved developing web applications and solving real-world problems. Here are a few key collaborative projects and the learnings I gained from them:
+
+"Apana Bazar: E-commerce Web Application": I collaborated with a team to develop an e-commerce website from scratch. This project taught me the importance of "effective communication and teamwor"k. We divided tasks, coordinated efforts, and integrated our individual components seamlessly. Through this project, I learned "how to collaborate on a large-scale project, manage code conflicts, and ensure a cohesive end product".
+
+"BeautyGem: Appointment Booking Application": In another project, we created a Appointment Booking application with features like user authentication, slot creation, and slot booking. T"his project enhanced my understanding of back-end development and the complexities of building scalable and secure applications". I learned to work with databases, handle user authentication, and databse management.
+
+
+From these collaborative projects, I learned the value of effective communication, coordination, and division of responsibilities within a team. I gained insights into agile development methodologies and the significance of regular updates and feedback sessions. These experiences also reinforced the importance of writing clean and maintainable code, adhering to coding standards, and implementing best practices for collaborative development.
+
+Overall, these collaborative projects have not only expanded my technical skills but also improved my ability to work effectively in a team, meet project goals, and deliver high-quality solutions.
+
+"Through collaborative projects at Masai School, I gained valuable experience working in teams. Key learnings include effective communication, coordination, and division of responsibilities. I developed skills in building scalable web applications, handling databases, implementing RESTful APIs, and adhering to coding standards. These experiences improved my ability to work in a team, meet project goals, and deliver high-quality solutions."
+
+--------------------------------------------------------------
+
+(2) How do you deal with pressure situations?
+
+When faced with pressure situations, I rely on several strategies to effectively manage and navigate through them:
+
+"Remaining calm and composed": I believe it's crucial to stay calm and composed when under pressure. By maintaining a clear and focused mindset, I can think more objectively and make rational decisions.
+
+"Prioritizing and organizing": I start by prioritizing tasks based on their urgency and importance. Breaking down complex problems into smaller, manageable tasks helps me maintain a sense of control and progress.
+
+"Time management": I create a realistic timeline, setting specific deadlines for each task. This allows me to allocate time efficiently and avoid feeling overwhelmed. I also communicate any challenges or concerns regarding deadlines to ensure transparency with the team.
+
+"Seeking support and collaboration": In high-pressure situations, I am not afraid to seek help or guidance from teammates or mentors.I belive Collaboration often leads to innovative solutions and provides an opportunity to learn from others' experiences.
+
+"Maintaining open communication": I believe in maintaining open and transparent communication with team members and stakeholders. This allows for sharing progress, discussing challenges, and seeking feedback or assistance when needed. Effective communication helps in mitigating misunderstandings and aligning expectations.
+
+"Practicing self-care": I recognize the importance of self-care during stressful times. Taking short breaks, practicing mindfulness techniques, and engaging in activities that help me recharge and refocus are vital for maintaining a healthy work-life balance.
+
+By applying these strategies, I can effectively manage pressure situations, maintain productivity, and deliver results while ensuring a positive and supportive work environment.
+
+-------------------------------------
+
+(3) Tell me a challenge you've faced at work/life and how you dealt with it?
+
+--------------------------------------
+
+(4) Tell me about a time when you displayed leadership skills
+
+------------------------------------------
+
+(5) Tell me about a mistake you made in your life/career.
