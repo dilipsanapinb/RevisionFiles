@@ -2465,48 +2465,6 @@ DELETE /tasks/{id}: Delete a task.
 Like a function call, but it happens across different machines on a network.
 Allows applications to request services or data from other applications as if they were local.
 
-2. Protobuf (Protocol Buffers):
-
-A language-agnostic data serialization format developed by Google.
-Used by gRPC to define the structure of the messages exchanged between services.
-Compact, efficient, and easier to extend than XML or JSON.
-3. Service Definition:
-
-You define the methods your service provides and the data structures it uses in a .proto file (Protobuf definition).
-Example .proto file:
-
-protobuf
-Copy code
-syntax = "proto3";
-
-service ProductService {
-  rpc GetProductInfo (ProductRequest) returns (ProductResponse);
-}
-
-message ProductRequest {
-  string product_id = 1;
-}
-
-message ProductResponse {
-  string name = 1;
-  float price = 2;
-}
-4. Server and Client Code Generation:
-
-Using the .proto file, gRPC generates client and server code in various programming languages.
-5. gRPC Server:
-
-Implements the methods defined in the .proto file and handles incoming RPC requests.
-Listens on a specific port for incoming requests.
-6. gRPC Client:
-
-Calls methods on the gRPC client using the generated code, making it easier to interact with the server.
-7. Communication Styles:
-
-Unary RPC: Client sends a single request and gets a single response.
-Server Streaming: Client sends a request, and the server streams back multiple responses.
-Client Streaming: Client streams multiple requests, and the server sends a single response.
-Bidirectional Streaming: Both client and server can send a stream of messages.
 8. Example:
 
 Let's say you have an e-commerce system.
@@ -2541,36 +2499,47 @@ In simple terms, gRPC is a way for different programs to talk to each other effi
 ---------------------------------------------------------------------------------------
 
 ## What is HTTP ? 
-   
-   => HTTP stands for the ("Hypertext Transfer Protocol");
-   => HTTP is a protocol for fetching resources such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance, text, layout description, images, videos, scripts, and more.
-   => It is the foundation of data communication on the World Wide Web and is used to transfer data and files over the internet.
-   => HTTP is a stateless protocol, which means that each request and response is independent of any previous request or response. A client sends an HTTP request to a server, which responds with an HTTP response. The client and server can communicate multiple times, but each time, the client must include all necessary information in the request.
-   => HTTP requests and responses are typically made up of a set of headers and an optional message body. The headers contain information about the request or response, such as the method (GET, POST, etc.), the content type, and the length of the message body. The message body contains the actual data being transmitted, such as an HTML document or an image file.
-   => HTTP is a text-based protocol and can be accessed and manipulated using a variety of tools, such as web browsers, command-line utilities like cURL, and programming libraries like Python's requests.
-   => One of the key advantages of HTTP is its simplicity and flexibility
+
+-- HTTP stands for the ("Hypertext Transfer Protocol");
+-- HTTP is a protocol for fetching resources such as HTML documents. 
+
+-- It is the foundation of data communication on the World Wide Web and is used to transfer data and files over the internet.
+-- HTTP is a "stateless protocol", which means that "each request and response is independent of any previous request or response". 
+-- A client sends an HTTP request to a server, which responds with an HTTP response. The client and server can communicate multiple times, but each time, the client must include all necessary information in the request.
+-- HTTP requests and responses are made up of a set of "headers" and an "optional message body".
+-- The headers contain information about the request or response, such as the method (GET, POST, etc.), the content type, and the length of the message body. The message body contains the actual data being transmitted, such as an HTML document or an image file.
+
+-- HTTP is a "text-based protocol" and can be accessed and manipulated using a variety of tools, such as web browsers, command-line utilities like cURL, and programming libraries like Python's requests.
+-- One of the key advantages of HTTP is its simplicity and flexibility
 
 ----------------------------------------------------------------------------------------
 
 ## What is a web socket ? 
 
-    =>The WebSocket API (WebSockets):
+-- The WebSocket API (WebSockets):
 
-      -- The WebSocket API is an advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server.
-      => With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.
-    => Both the client and server can send messages to each other at any time without the need for a new request.
-    => The WebSocket protocol is a TCP-based network protocol that specifies how data is transferred between networks. Almost all clients utilize this network protocol since it is so dependable and efficient. 
-    => TCP is a protocol that establishes communication between two endpoints, often known as sockets. 
-    => Two-way connections, such as WebSocket allows for data to flow in both ways at the same time., causing data to be retrieved more rapidly. 
-    => WebSocket, in particular, allows a web application to communicate directly with a WebSocket server. To put it another way, you can bring up a web page and have it shown in “real-time.”
-    => WebSockets are particularly useful for applications that require real-time data updates or frequent data exchange, such as chat applications, online gaming, and financial trading platforms. With WebSockets, updates can be pushed to clients immediately, without the need for polling or long-polling techniques, reducing latency and improving performance.
-    => WebSockets can be used alongside other web technologies, such as REST APIs, to provide a full-featured, real-time web application. They are supported by most modern web browsers and can also be used with mobile and desktop applications.
+      -- The WebSocket API is an  "two-way interactive communication session between the user's browser and a server".
+  -- With this API, you can send messages to a server and receive event-driven responses "without having to poll the server for a reply".
+-- Both the client and server can send messages to each other at any time without the need for a new request.
+-- The WebSocket protocol is a "TCP-based network protocol" that specifies how data is transferred between networks.
+-- "Dependable and efficient". 
+-- TCP is a protocol that "establishes communication between two endpoints, often known as sockets". 
+-- "Two-way connections":  WebSocket allows for data to flow in both ways at the "same time", causing data to be retrieved more rapidly. 
+-- WebSocket, in particular, allows a web application to communicate directly with a WebSocket server.
+-- "UseCase":
+applications that require real-time data updates or frequent data exchange, such as
+-- chat applications,
+-- online gaming, and 
+-- financial trading platforms.
+--With WebSockets, updates can be pushed to clients immediately, without the need for polling or long-polling techniques, reducing latency and improving performance.
+-- WebSockets can be used alongside other web technologies, such as REST APIs, to provide a full-featured, real-time web application. They are supported by most modern web browsers and can also be used with mobile and desktop applications.
 
 -----------------------------------------------------------------------------------------
 
 ## Polling in node.js :
 
-=> In the context of Node.js, polling refers to a "technique used to periodically check for changes or updates in a particular resource or data source". It "involves repeatedly sending requests or queries to the resource at predefined intervals to determine if any new information is available".
+=> In the Node.js, polling refers to a "technique used to periodically check for changes or updates in a particular resource or data source".
+--It "involves repeatedly sending requests or queries to the resource at predefined intervals to determine if any new information is available".
 
   Polling can be implemented in various scenarios, such as:
 
@@ -2580,8 +2549,8 @@ In simple terms, gRPC is a way for different programs to talk to each other effi
 
   (3) API Integration: When integrating with external APIs, polling can be used to fetch updates or changes from the API endpoints. For example, if you're building a weather application, you might periodically poll the weather API to fetch the latest forecast data.
 
-  => Long Polling: 
-    Long polling is a variant of polling where the client sends a request to the server, and the server keeps the connection open until new data or an event is available. This technique reduces the frequency of requests and provides near-real-time updates.
+  => "Long Polling": 
+    Long polling is a variant of polling where the client sends a request to the server, and the server keeps the connection open until new data or an event is available. This technique "reduces the frequency of requests" and provides near-real-time updates.
 
   It's worth noting that polling can be resource-intensive, as it involves constantly sending requests, even if there are no updates. To mitigate this, alternative techniques such as webhooks or event-driven architectures are often preferred, where the server or data source notifies clients of updates instead of the clients polling for them.
 
@@ -2590,43 +2559,51 @@ In simple terms, gRPC is a way for different programs to talk to each other effi
 
 ## What is Caching? **
 
-  => In computing, a "cache is a high-speed data storage layer which stores a subset of data", typically transient in nature, so that future requests for that data are served up faster than is possible by accessing the data's primary storage location. "Caching allows you to efficiently reuse previously retrieved or computed data".
-  => The data in a cache is generally "stored in fast access hardware such as RAM" (Random-access memory) and may also be used in correlation with a software component. A cache's primary purpose is to "increase data retrieval performance by reducing the need to access the underlying slower storage layer".
-  => Trading off capacity for speed, a cache typically stores a subset of data transiently, in contrast to databases whose data is usually complete and durable.
-  => RAM and In-Memory Engines: 
-      -> Due to the high request rates or IOPS (Input/Output operations per second) supported by RAM and In-Memory engines, caching results in improved data retrieval performance and reduces cost at scale. To support the same scale with traditional databases and disk-based hardware, additional resources would be required. These additional resources drive up cost and still fail to achieve the low latency performance provided by an In-Memory cache.
+1. Cache Basics:
+A cache is like a fast storage space that holds a part of data temporarily.
+It stores data that is often needed to make future requests faster.
+Caching is about using previously fetched or calculated data efficiently.
 
-    => Applications:
+2. Cache Location:
+-- Data in a cache is stored in fast-access hardware like "RAM" (computer memory).
+-- The main goal of a cache is to make data retrieval faster by avoiding slower storage.
 
-      -> Caches can be applied and leveraged throughout various layers of technology including Operating Systems, Networking layers including Content Delivery Networks (CDN) and DNS, web applications, and Databases. You can use caching to significantly reduce latency and improve IOPS for many read-heavy application workloads, such as Q&A portals, gaming, media sharing, and social networking.
-      => Cached information can include the results of database queries, computationally intensive calculations, API requests/responses and web artifacts such as HTML, JavaScript, and image files.
+3. Trade-Off and Use:
+Caches store a subset of data temporarily, unlike complete and durable databases.
+Caches trade storage capacity for speed, making data access faster.
+RAM and In-Memory Engines:
 
-    => Design Patterns: 
-      -> In a distributed computing environment, a dedicated caching layer enables systems and applications to run independently from the cache with their own lifecycles without the risk of affecting the cache. The cache serves as a central layer that can be accessed from disparate systems with its own lifecycle and architectural topology.
+RAM and in-memory systems offer quick data retrieval.
+Caching with them improves performance and lowers costs compared to traditional databases.
 
-    => Caching Best Practices:
-      -> When implementing a cache layer, it's important to understand the validity of the data being cached. A successful cache results in a high hit rate which means the data was present when fetched. A cache miss occurs when the data fetched was not present in the cache. Controls such as TTLs (Time to live) can be applied to expire the data accordingly. Another consideration may be whether or not the cache environment needs to be Highly Available, which can be satisfied by In-Memory engines such as Redis
-    
-    *Benefits of Caching, 
+4. Applications:
+Caches can be used in different layers like operating systems, networks, web apps, and databases.
+They reduce delays and improve performance for tasks like Q&A, gaming, media sharing, and social networking.
 
-    (1) Improve Application Performance:
-          -> Because memory is orders of magnitude faster than disk (magnetic or SSD), reading data from in-memory cache is extremely fast (sub-millisecond). This significantly faster data access improves the overall performance of the application.
-    (2) Reduce Database Cost:
-          -> A single cache instance can provide hundreds of thousands of IOPS (Input/output operations per second), potentially replacing a number of database instances, thus driving the total cost down. This is especially significant if the primary database charges per throughput. In those cases the price savings could be dozens of percentage points.
-    (3)Reduce the Load on the Backend:
-          -> By redirecting significant parts of the read load from the backend database to the in-memory layer, caching can reduce the load on your database, and protect it from slower performance under load, or even from crashing at times of spikes.
-    (4)Predictable Performance:
-          -> A common challenge in modern applications is dealing with times of spikes in application usage. Examples include social apps during the Super Bowl or election day, eCommerce websites during Black Friday, etc. Increased load on the database results in higher latencies to get data, making the overall application performance unpredictable. By utilizing a high throughput in-memory cache this issue can be mitigated.
-    (5)Eliminate Database Hotspots:
-          -> In many applications, it is likely that a small subset of data, such as a celebrity profile or popular product, will be accessed more frequently than the rest. This can result in hot spots in your database and may require overprovisioning of database resources based on the throughput requirements for the most frequently used data. Storing common keys in an in-memory cache mitigates the need to overprovision while providing fast and predictable performance for the most commonly accessed data.
-    (6)Increase Read Throughput (IOPS)
-          -> In addition to lower latency, in-memory systems also offer much higher request rates (IOPS) relative to a comparable disk-based database. A single instance used as a distributed side-cache can serve hundreds of thousands of requests per second.
+5. Design Patterns:
+
+A dedicated caching layer lets systems work independently without affecting the cache.
+It's a central layer accessible by various systems with separate lifecycles.
+
+6. Caching Best Practices:
+Understand data validity for successful caching; cache hit is data present, cache miss is not.
+Use controls like TTLs (expiration time) to manage cache data.
+Consider high availability using systems like Redis for a reliable cache environment.
+
+7. Benefits of Caching:
+-- "Better Performance": Caching in-memory makes data access super fast, boosting app speed.
+-- "Cost Savings": A cache can replace multiple databases, cutting costs significantly.
+-- "Lighter Backend Load": Caching eases database load, preventing crashes during high demand.
+-- "Predictable Performance": Cache helps handle spikes in app use, maintaining stable performance.
+-- "No Hotspots": Caching avoids overloading specific data, keeping predictable performance.
+-- "Increased Throughput": In-memory systems handle lots of requests quickly, enhancing read speed.
+
 
 ----------------------------------------------------------------------------------
 
 ## What are ways to cache on the backend?
 
-    => Caching on the backend refers to storing frequently accessed data in cache on server-side to reduce the amount of time and resources required to regenerate the same data again. 
+    => Caching on the backend refers to "storing frequently accessed data" in cache on server-side to reduce the amount of time and resources required to regenerate the same data again. 
 
     => Methods/ways to store the cache:
 
@@ -2666,19 +2643,20 @@ In simple terms, gRPC is a way for different programs to talk to each other effi
 
 ##  What is Redis? Why do we use it? 
 
-    => Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine.  Redis has built-in replication, Lua scripting, LRU eviction, transactions, and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.
+    => Redis is an open source , "in-memory data structure store" used as a 'database', 'cache', 'message broker', and 'streaming engine'.  
+    -- Redis has built-in replication, LUA scripting, LRU eviction, transactions, and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.
 
     => Redis also reffered as 'data structure server' because it allows users to store and manupulate data structure, such as  strings, hashes, lists, sets, and sorted sets, using simple commands.
 
-    => Redis is popular for its high performance, scalability and low latency.
+    => Redis is popular for its "high performance, scalability and low latency."
 
     => Its basically a data-structure that stores the data in the primary memmory of a computer system. So the reading and writing are made faster than than database that stores data on disks. Thats why redis used as cache in many applications, to provide results rapidly.
 
     =>  suitable for applications that require fast data access, such as real-time analytics, session management, and message queuing.
 
-    => Redis also supports persistence, which means that data can be saved to disk for long-term storage.
+    => "Redis also supports persistence", which means that data can be saved to disk for long-term storage.
 
-    => Redis-store the data in key-value pair and has ability to store the data using a variety of data structures like:
+    => "Redis-store the data in key-value pair" and has ability to store the data using a variety of data structures like:
       -- strings
       -- lists
       -- sets
@@ -2700,57 +2678,75 @@ In simple terms, gRPC is a way for different programs to talk to each other effi
 
 ## How can we implement caching on frontend? **
     
-    => Its better to use the caching in browser because its is very expencive to make an API request and its very unpredictive than retrieving the data from local cache.
-    => There are several ways to implement the chaching in frontend like:
-    1) Browser caching:
-      => Browesers can cache static assets, such as images, stylesheets, and javascript files, to reduce the number of requests to the server and speed up page load times.
-      -> By puting proper logic and headers we can manage how log the browser cache the assets before checking for updates.
-    2) Service worker caching: 
-      -> Service workers are the JS files that run in background and can intercept network requests made by browser.
-      -> By using the cache API, service workers can store responses from the server in cache and serve them directly from the cache on subsequent requests, reducing the amount of network traffic and improving performence.
-    3) In-memmory caching: 
-      -> Frontend frameworks like "react have a built in support for in-memmory caching" using a "technique called memorization".
-      -> This involves caching the result of a function or component based on its input parameters, so that it can be reused without re-executing the function or rendering the component.
-    4) Local storage caching:
-      -> By using the local storage we can cache data that needs to persist across the page loads, such as user prefeerences or authentication tokens.
-    5) CDN Caching: 
-    ->Content Delivery Networks(CDN) can cache static assets and dynamic content at edge locations around the world, allowing users to acces the content from a server closer to their location aand reducing the latency.
-    -> By using the CDN we can offload the caching and delivery of content to third-party provider and improve performence for users.
+Benefits of Browser Caching:
+-- Caching in the browser is preferable due to cost and unpredictability of API requests.
+-- Retrieving data from local cache is faster and more predictable than network requests.
+
+"Frontend Caching Techniques":
+
+1. Browser Caching:
+-- Browsers cache static assets (images, styles, JS files) to reduce server requests.
+-- Control cache duration using logic and headers to determine cache expiration.
+
+2. Service Worker Caching:
+-- Service workers intercept network requests and can store responses in cache.
+-- Cache API is used to save and serve responses from cache, reducing network traffic.
+
+3. In-Memory Caching (React):
+-- React and other frameworks support in-memory caching using memorization.
+-- Memorization caches function/component results based on input, improving reusability.
+
+4. Local Storage Caching:
+-- Local storage caches data for persistence across page loads (e.g., preferences).
+
+5. CDN Caching:
+-- CDNs cache assets and content globally, minimizing latency for users.
+Content is served from nearby edge servers, improving performance.
+CDN offloads caching and content delivery to third-party providers.
 
 ----------------------------------------------------------------------------------
 
 ## What is a CDN ? 
 
-    => A Content Delivery Network is a "geographically disributed group of servers" that 'caches' content "close to end users". A CDN allows for the "quick transfer of assets needed for loading internet content", including HTML pages, JS files, stylesheets, images, and videos. CDN is becoming popular now and today the majority of web traffic is served throug CDN's, including the major sites like Netflix, Amazon and Facebook.
-    => Properly configured CDN may help to protect website from some common malicious attacks, such as Distributed Denial of Service(DDOS) attacks.
-    =>Benefits of using the CDN:
-     (1) Reduce the latency:
-        -> By distributing content closer to website visitors by using a nearby CDN server (among other optimizations), visitors experience faster page loading times.
-        -> Faster the webisite people spends more time of site
-     (2) Reduce the bandwidth cost:
-        -> Bandwidth consupmtion costs for website is primary expenses for websites. Through caching and other optimizations, CDN is able to reduce the amount of data an origin server must provide, thus it will reduce the cost to site owners.
-     (3) High availability and redundancy: 
-        -> Large amounts of traffic or hardware failures can interrupt normal website function. Thanks to their distributed nature, a CDN can handle more traffic and withstand hardware failure better than many origin servers.
-     (4) Improve Security: 
-        -> A CDN may improve security by providing DDoS mitigation, improvements to security certificates, and other optimizations.
+-- A Content Delivery Network (CDN) is a "geographically distributed group of servers" that caches content "close to end users".
+-- CDNs allow for the "quick transfer of assets needed for loading internet content", including HTML pages, JS files, stylesheets, images, and videos.
+-- Majority of web traffic, including from major sites like Netflix, Amazon, and Facebook, is served through CDNs.
+-- Properly configured CDNs can "help protect websites from common malicious attack"s like Distributed Denial of Service (DDOS) attacks.
 
-    =>At its core, a CDN is a network of servers linked together with the goal of delivering content as quickly, cheaply, reliably, and securely as possible. In order to improve speed and connectivity, a CDN will place servers at the exchange points between different networks.
+"Benefits of using CDNs":
 
-    =>These Internet exchange points (IXPs) are the primary locations where different Internet providers connect in order to provide each other access to traffic originating on their different networks. By having a connection to these high speed and highly interconnected locations, a CDN provider is able to reduce costs and transit times in high speed data delivery.
+1. Reduce Latency:
+-- Content distribution to nearby CDN servers leads to faster page loading times.
+-- Improved website speed enhances user experience and engagement.
 
-    =>Beyond placement of servers in IXPs, a CDN makes a number of optimizations on standard client/server data transfers. CDNs place Data Centers at strategic locations across the globe, enhance security, and are designed to survive various types of failures and Internet congestion.
+2. Reduce Bandwidth Costs:
+-- CDNs employ caching and optimizations to decrease data provided by origin servers.
+-- Reduced data transfer lowers expenses for website owners.
+
+3. High Availability and Redundancy:
+-- CDNs handle high traffic volumes and hardware failures better than origin servers.
+-- Distributed nature ensures uninterrupted website function.
+
+4. Improve Security:
+-- CDNs offer DDoS mitigation and security certificate enhancements.
+-- Various security optimizations contribute to improved website safety.
+At its core, a CDN is a network of servers aiming to deliver content quickly, inexpensively, reliably, and securely.
+
+== CDNs place servers at Internet exchange points (IXPs) where different Internet providers connect, enhancing speed and connectivity.
+IXPs facilitate access to traffic originating from various networks, reducing costs and transit times for CDN providers.
+CDNs optimize standard client/server data transfers, placing Data Centers globally for strategic coverage, enhanced security, and survival against failures and congestion.
 
 -------------------------------------------------------------------------------------
 
 ## What is DNS? **
-    
-    => DNS stands for ("Domain Name System");
-    => DNS is the phonebooks of internet.
-    => we access the information online through internet Protocol(IP) address. 
-    => DNS translates domain names to IP addresses so browsers can load Internet resources.
-    => Each device connected to Internet has unique IP address which other machines use to find the device.
-    => DNS servers eliminate the need for human to memmorise IP addresses.
-    => DNS converts the hostname (eg.www,google.com) into computer friendly IP address. BY that IP addess computer can find the right device.
+
+-- DNS stands for ("Domain Name System");
+-- DNS is the phonebooks of internet.
+-- we access the information online through internet Protocol(IP) address. 
+-- DNS translates domain names to IP addresses so browsers can load Internet resources.
+-- Each device connected to Internet has unique IP address which other machines use to find the device.
+-- DNS servers eliminate the need for human to memmorise IP addresses.
+-- DNS converts the hostname (eg.www,google.com) into computer friendly IP address. BY that IP addess computer can find the right device.
 
 ----------------------------------------------------------------------------------------
 
@@ -2838,7 +2834,8 @@ Note: It's important to mention that URLs can have additional components such as
 
         (3) Data Crash: Since no data is stored on the server, there is nill impact of a system crash on the performance of the web resource. The user can simply recover the access by reauthenticating. "Stateless uses a different server on each request. So there's a scope of horizontal expansion".
 
-        (4)Technology: The stateless servers can identify users based on a unique ID called Tokens. Tokens accommodate essential information of the user grants access after receiving the secret token. The validity of the token depends either on session duration or it gets destroyed once the user logs out of resource. This technology is known as cryptography which is going to be a major driver of future security mechanisms.
+        (4)Technology: The stateless servers can identify users based on a unique ID called Tokens. Tokens accommodate essential information of the user grants access after receiving the secret token. 
+        -- The validity of the token depends either on session duration or it gets destroyed once the user logs out of resource. This technology is known as cryptography which is going to be a major driver of future security mechanisms.
 
 ----------------------------------------------------------------------------------
 
@@ -2874,8 +2871,8 @@ Note: It's important to mention that URLs can have additional components such as
 ## What is HTTP vs HTTPS? 
 
   -- HTTPS stands for "HyperText Transfer Protocol Secure", and it is a secure version of HTTP.
-  -- HTTP transmits data in plain text, while HTTPS encrypts data to protect privacy and integrity.
-  -- HTTPS uses SSL / TLS certificates to establish a secure connection between a client and a server.
+  -- "HTTP" transmits data in "plain text", while "HTTPS" "encrypts" data to protect privacy and integrity.
+  -- "HTTPS" uses "SSL / TLS certificates" to establish a secure connection between a client and a server.
   -- HTTPS provides data privacy, integrity, and authentication, preventing data breaches and unauthorized access.
   -- Websites using HTTPS display a padlock icon, building trust with users.
   -- HTTPS is increasingly required for websites handling sensitive data or conducting online transactions.
@@ -2951,7 +2948,6 @@ Note: It's important to mention that URLs can have additional components such as
 --------------------------------------------------------------------------------------
 
 ## What is availability ?
-   
     => Availability refers to the ability of a system or service to be operational and accessible when it is needed. In other words, availability is the measure of the percentage of time that a system or service is available and usable by users.
     =>Example: if an online store has an availability of 99%, it means that the store is accessible and operational for 99% of the time and inaccessible for the remaining 1%.
     =>Availability is often measured in terms of uptime, which is the amount of time that a system or service is operational and available to users. Uptime is typically expressed as a percentage of total time, such as 99.9% uptime, which means that the system or service is operational and accessible for 99.9% of the time.
@@ -2977,8 +2973,14 @@ Note: It's important to mention that URLs can have additional components such as
 
 ##  What is rate-limiting ?
 
-    => Rate limiting is a strategy for limiting network traffic. It puts a cap on how often someone can repeat an action within a certain timeframe – for instance, trying to log in to an account. Rate limiting can help stop certain kinds of malicious bot activity. It can also reduce strain on web servers. However, rate limiting is not a complete solution for managing bot activity.
-    => Rate limiting runs within an application, rather than running on the web server itself. Typically, rate limiting is based on tracking the IP addresses that requests are coming from, and tracking how much time elapses between each request. The IP address is the main way an application identifies who or what is making the request.
+    => Rate limiting is a strategy for "limiting network traffic." 
+    -- It "puts a cap on how often someone can repeat an action within a certain timeframe".
+    -- Rate limiting can help stop certain kinds of malicious bot activity. 
+    -- It can also reduce strain on web servers. 
+
+    => Rate limiting "runs within an application", rather than running on the web server itself. 
+    -- It's based on tracking the IP addresses that requests are coming from, and tracking how much time elapses between each request. 
+
     => A rate limiting solution measures the amount of time between each request from each IP address, and also measures the number of requests within a specified timeframe. If there are too many requests from a single IP within the given timeframe, the rate limiting solution will not fulfill the IP address's requests for a certain amount of time.
 
         
@@ -3071,7 +3073,7 @@ module.exports={rate}
 
             // make request
                 
-                 app.get('/api/getdata',rate(10,60*1000,60*1000), (req,res) => {
+                app.get('/api/getdata',rate(10,60*1000,60*1000), (req,res) => {
                   res.status(200).send({"Message":"Get a Data "})
               })
 
@@ -3098,31 +3100,53 @@ module.exports={rate}
 ## What is a load balancer? **
 
   => A load balancer is a device or software component that distributes incoming network traffic across multiple servers or nodes in a server cluster. The primary purpose of a load balancer is to evenly distribute the load or traffic among the servers, improving the overall performance, availability, and scalability of the system.
-  => When client send request the load balancer received the request and distributes it to one of the availble server based on various algoriths such as round-robin, least connections or IP hash. This ensures that no single server is overloaded and all servers are utilized efficiently.
+  => When client send request the load balancer received the request and distributes it to one of the availble server based on various algoriths such as "round-robin"," least connections or IP hash". This ensures that no single server is overloaded and all servers are utilized efficiently.
   => Load balancers can be implemented as hardware devices or software applications that run on dedicated servers or in the cloud. They can also provide additional functionalities such as SSL termination, session persistence, and health checks to ensure that only healthy servers receive traffic.
 
 ------------------------------------------------------------------------------------
 
 ## Describe how you design an API? **
     
-    => What is pupose of API?
+API Purpose:
 
-        The purpose of an API (Application Programming Interface) in the backend of a system is to define a set of rules and protocols that allow different software applications to communicate with each other. It acts as an intermediary that enables interaction between different software components, systems, or services.
+-- An API (Application Programming Interface) in the backend defines rules for software applications to communicate.
+-- Acts as an intermediary for interaction between different software components, systems, or services.
 
-        Here are some key purposes of an API in the backend:
+Key API Purposes:
 
-            (1) Data exchange: APIs facilitate the exchange of data between different applications or systems. They define a structured way for requesting and delivering data, allowing applications to access and manipulate data stored in a backend system.
+1. Data Exchange:
 
-            (2) Integration: APIs enable the integration of various software components, services, or systems. By exposing specific functionalities through an API, developers can build applications that utilize the capabilities of other software components without having to understand the underlying implementation details.
+-- Facilitates data exchange between apps or systems.
+-- Structured method to request and deliver data from backend.
 
-            (3) Interoperability: APIs promote interoperability by providing a standard interface that allows different software applications to communicate and work together. APIs abstract the complexities of different systems, enabling them to interact seamlessly regardless of the programming language, platform, or architecture they use.
-            Modularity and scalability: APIs enable the development of modular and scalable systems. By exposing specific functionalities through APIs, backend systems can be built as a collection of smaller, reusable components. This modular approach allows for easier maintenance, updates, and the ability to scale individual components independently.
+2. Integration:
 
-            (4) Enabling third-party access: APIs are commonly used to enable third-party developers or external systems to access certain functionalities or data of a backend system. This allows for the creation of ecosystem ecosystems, where developers can build applications, integrations, or extensions on top of existing platforms or services.
+-- Allows combining different software components.
+-- Utilizes capabilities without needing complex details.
 
-            (5) Security and control: APIs provide a controlled and secure way to expose functionalities or data from a backend system. APIs can enforce authentication, authorization, and rate limiting mechanisms, ensuring that only authorized entities can access the exposed resources.
+3. Interoperability:
 
-            Overall, the purpose of an API in the backend is to enable seamless communication, integration, and data exchange between different software components, systems, or services, promoting interoperability, modularity, and extensibility.
+-- Standard interface for different apps to work together.
+-- Hides complexities, regardless of language or platform.
+
+4. Modularity and Scalability:
+
+-- Develops modular and scalable systems.
+-- Exposes specific functions for easier updates and scaling.
+
+4. Third-party Access:
+
+-- Permits third-party developers to use backend functions.
+-- Creates an ecosystem for building on existing platforms.
+
+5. Security and Control:
+
+-- Ensures secure access to backend functions or data.
+-- Implements authentication, authorization, and rate limiting.
+
+6. Overall API Purpose:
+Enables smooth communication, integration, and data exchange.
+Supports interoperability, modularity, and extensibility among software components, systems, or services.
 
 -------------------------------------------------------------
     => What are requirements?
@@ -3137,15 +3161,15 @@ module.exports={rate}
 
 ------------------------------------------------------------------------------------
 
-## What is a horizontal and vertical scaling? **
-=> Scaling alters the size of a system. In the scaling process, we either compress or expand the system to meet the expected needs
-    => Scaling can be categorized into 2 types: 
+## What is a horizontal and vertical scaling? *-- Scaling alters the size of a system. In the scaling process, we either compress or expand the system to meet the expected needs
+-- Scaling can be categorized into 2 types: 
 
-    (1) Vertical Scaling:
+      (1) Vertical Scaling:
 
           -> When new resources are added to the existing system to meet the expectation, it is known as vertical scaling. 
           -> Consider a rack of servers and resources that comprises the existing system. Now when the existing system fails to meet the expected needs, and the expected needs can be met by just adding resources, this is considered vertical scaling. Vertical scaling is based on the idea of adding more power(CPU, RAM) to existing systems, basically adding more resources.
           -> Vertical scaling is not only easy but also cheaper than Horizontal Scaling. It also requires less time to be fixed.
+
           (1) When new resources are added in the existing system to meet the expectation, it is known as vertical scaling
           (2) It expands the size of the existing system vertically.
           (3) It is harder to upgrade and may involve downtime.
@@ -3153,59 +3177,66 @@ module.exports={rate}
           (5) It is cheaper as we need to just add new resources
           (6) It takes less time to be done
           (7) Single point of failure
-          (8) Examples  of databases that can be easily scaled- MySQL, Amazon RDS
+          (8) Examples  of databases that can be easily scaled- "MySQL", "Amazon RDS"
 
     (2) Horizontal Scaling: 
 
           When new server racks are added to the existing system to meet the higher expectation, it is known as horizontal scaling.
+
           (1) When new server racks are added to the existing system to meet the higher expectation, it is known as horizontal scaling.
           (2) It expands the size of the existing system horizontally.
           (3) It is easier to upgrade.
           (4) It is difficult to implement
           (5) It is costlier, as new server racks comprise a lot of resources
           (6) It takes more time to be done
-          (7) High resilience and fault tolerance
-          (8) Examples of databases that can be easily scaled- Cassandra, MongoDB, Google Cloud Spanner
+          (7) "High resilience and fault tolerance"
+          (8) Examples of databases that can be easily scaled- "Cassandra", "MongoDB", "Google Cloud Spanner"
 
 ------------------------------------------------------------------------------------
 
 ## How do you build a system which is reliable? **
 
-    Building a reliable system involves designing and implementing various components that work together to ensure that the system performs as expected and meets the desired level of reliability. Here are some key steps that can be taken to build a reliable system:
+Building a Reliable System: Key Steps
 
-      => Define the requirements:
-          -> Start by defining the reliability requirements of the system.
-          -> This includes factors such as availability, fault tolerance, scalability, and performance. The requirements should be clearly defined and measurable.
+1. Define Requirements:
+Define reliability requirements clearly.
+Include factors like availability, fault tolerance, scalability, and performance.
 
-    => Identify potential failure points:
-          -> Identify potential points of failure in the system, such as hardware failures, software bugs, network disruptions, and human errors.
-          -> Analyze the impact of these failures on the system and determine the criticality of each component.
+2. Identify Failure Points:
+Recognize potential failure areas (hardware, software, network, human errors).
+Evaluate their impact and component criticality.
 
-    => Implement redundancy:
-          -> Implement redundancy in critical components to ensure that the system can continue to function even if one or more components fail.
-          -> This can be done by using multiple servers, data centers, network connections, or storage devices.
+3. Implement Redundancy:
+Introduce redundancy in critical parts.
+Enable system function despite component failures.
 
-    => Use monitoring and alerting:
-          -> Implement monitoring and alerting systems to detect and respond to failures in the system.
-          -> This includes monitoring performance metrics, error rates, and system logs, and setting up alerts to notify the team in case of issues.
+4. Use Monitoring and Alerting:
+Set up monitoring and alerts for failure detection.
+Observe metrics, error rates, logs, and send alerts.
 
-    => Implement backups and disaster recovery:
-          -> Implement backups and disaster recovery plans to ensure that data and systems can be restored in case of a major failure or disaster.
-          -> This includes backing up data regularly, testing backups, and implementing recovery procedures.
+5. Implement Backups and Recovery:
+Create backup and recovery strategies.
+Ensure data and systems can be restored after a disaster.
 
-    => Use automation:
-          -> Use automation to reduce the risk of human errors and increase the reliability of the system.
-          -> This includes automated testing, deployment, scaling, and recovery procedures.
+6. Utilize Automation:
+Automate tasks to minimize human errors.
+Incorporate automated testing, scaling, deployment, and recovery.
 
-    => Perform regular maintenance:
-          -> Perform regular maintenance to ensure that the system is up-to-date, secure, and performing optimally.
-          -> This includes updating software, applying patches, and testing system changes before deployment.
+7. Perform Regular Maintenance:
+Keep system updated, secure, and optimized.
+Apply patches, conduct tests before changes.
 
-    => Test and validate the system: 
-          -> Test and validate the system to ensure that it meets the reliability requirements and performs as expected.
-          -> This includes unit testing, integration testing, and load testing.
+8. Test and Validate:
+Thoroughly test to meet reliability goals.
+Conduct unit, integration, and load testing.
 
-      =>By following these steps, a system can be built that is reliable, resilient, and able to meet the desired level of availability and performance.
+9. Result:
+Following these steps results in a system that's reliable, resilient, and meets availability and performance goals.
+
+
+
+
+
 
 --------------------------------------------------------
 
