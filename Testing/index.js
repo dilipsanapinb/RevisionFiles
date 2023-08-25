@@ -1,16 +1,21 @@
-class Person{
-    constructor(name,city) {
-        this.name = name
-        this.city=city
-    }
-    greet() {
-        return(`Hello, ${this.name} from ${this.city}`);
-    }
-}
+const person = {
+  name: "John",
+  age: 30,
+  address: {
+    street: "123 Main St",
+    city: "New York",
+    country: "USA",
+  },
+};
 
-const p1 = new Person('Dilip',"Nashik");
-console.log(p1);
-const greet = p1.greet();
-console.log(greet);
+// Destructuring nested objects
+const {
+  name,
+  age,
+  address: { city, country },
+} = person;
 
-module.exports = Person;
+console.log(name); // Output: John
+console.log(age); // Output: 30
+console.log(city); // Output: New York
+console.log(country);
