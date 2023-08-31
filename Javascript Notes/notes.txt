@@ -100,6 +100,7 @@ In JavaScript, a primitive (primitive value, primitive data type) is data that i
   => Undefined: varible is declared but not defined / assigned any value.
   => Null: Varible has beeen explicitly set to no value.
   => In JS both have a falsy value.
+
   => Null== undefined //true
   => Null=== undefined //false
   => NaN==NaN //false
@@ -616,7 +617,7 @@ for (var i = 0; i < arr.length; i++){
 
       console.log(typeof result); // Output: bigint
 
-      Note the use of the 'n' suffix when assigning a value directly to a BigInt variable. This ensures that the number is treated as a bigint literal rather than a regular number.
+      Note: the use of the 'n' suffix when assigning a value directly to a BigInt variable. This ensures that the number is treated as a bigint literal rather than a regular number.
 
       BigInts can be used with all standard arithmetic operators (+, -, *, /, %, **) and comparison operators (<, <=, >, >=, ==, !=) just like regular numbers.
 
@@ -790,6 +791,7 @@ To enable strict mode in JavaScript, you can place a special directive at the be
 
 "use strict";
 
+*****
 When strict mode is enabled, the following changes take effect:
 
 (1) Variables must be declared with var, let, or const before being used. Without strict mode, omitting the variable declaration creates an implicit global variable, which can lead to unexpected behavior and bugs.
@@ -1277,9 +1279,10 @@ There are three steps in event loop,
         }
 
         let box = new Rectangle(12, 13);
-        The constructor is a special function for initializing objects created with class. They work similar to function constructors.
 
-        They also support simple instance methods/functions with short declaration syntax.
+        "The constructor is a special function for initializing objects created with class. They work similar to function constructors".
+
+        "They also support simple instance methods/functions with short declaration syntax."
 
         class Rectangle {
           constructor(height, width) {
@@ -1527,8 +1530,7 @@ myAc.withdraw(1000); //insufficient balance
             }
           }
 
-----------------------------
-
+--------------------------
 ## Abstraction :
 
 Abstraction in JavaScript is a fundamental concept in object-oriented programming that allows you to "hide the implementation details of an object and only expose the relevant features or functionalities". It helps in simplifying complex systems by providing a clear and easy-to-understand interface to interact with objects, without worrying about the internal complexities.
@@ -1967,6 +1969,9 @@ Behavior: When an event is triggered, the throttled function will execute immedi
 Example of Throttle:
 
 // Throttle function
+
+
+
 function throttle(func, delay) {
   let isThrottled = false;
   return function (...args) {

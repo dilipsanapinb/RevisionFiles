@@ -20,38 +20,6 @@ Thank you for considering my application, and today I look forward to discussing
 
 (2) Job description
 
-(A) NeoDove
-    NeoDove is telecalling CRM(customer relationship management) and sales engagement platform that helps business drive better results from their sales, marketing and customer engagement efforts. In May 2022 NeoDove became part of Vyapar which is Indias top GST billing and accounting software platform for small and medium business.
-    -Vyapar just raised the 30Mn on jan 2022 led by West Bridge Capital.
-
-    ** Position- 
-        NeoDove is looking for full stack developer for the position of SDE-I,who can accept the challeges, love to build great products and who can work on both frontend and backend.
-        -someone who can work with Product Manager for the best outputs.
-    
-    ** Technical Skill required:
-        -HTML, CSS, Javascript, Node.js, Express.js, React, MongoDB
-        -experience in deployment and testing
-        -self motivated person and who can work with minimal guidance
-        -who can work independatly and collaborative env.
-        -have a analytical thought process
-        -eager to learn emerging technologies
-        -being innovative
-
-
-(B) Traxcn:
-    Bangalore based company product company providing a reaserch and deal sourcing platform for Venture Capital, Private Equity, Corp Dev and proffessionals working around startup ecosystem. I helps the start to find the funding and for ventuare capitalist provide a platform where startups can come for funcding.
-    Founders- Neha singh and Abhishek Goyal
-
-    ** Position
-    -Traxcn is looking for an exprience and motivated FSD.
-    -experience in HTML,CSS,Js,Node.js,Express.js,React,MongoDB,REST API
-    -Good commmand on DSA 
-    -ability to produce bug free and production grade code.
-    -who can work independatly and collaborative env.
-    -have a analytical thought process
-    -eager to learn emerging technologies
-    -being innovative
-
 ----------------------------------
 
 (3) What are your strengths and your weaknesses?
