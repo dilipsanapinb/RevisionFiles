@@ -64,7 +64,7 @@ my technical skills, adaptability, passion, teamwork, and strong work ethic make
 
 One of my greatest professional achievements so far has been successfully completing the comprehensive full-stack web development program at Masai School. This program not only provided me with a solid foundation in various web technologies but also equipped me with the practical skills and hands-on experience necessary to develop real-world applications.
 
-During my time at Masai School, I had the opportunity to work on several challenging projects, both individually and as part of a team. One particular project that stands out to me is the development of a web application of Chit-Chat-App. I was responsible for designing and implementing the front-end interface using HTML, CSS, and JavaScript, and React.js as well as Backend.
+During my time at Masai School, I had the opportunity to work on several challenging projects, both individually and as part of a team. One particular project that stands out to me is the development of a web application of Chit-Chat-App. I was responsible for designing and implementing the front-end interface using HTML, CSS, and JavaScript, and React.js as well as Backend in node.js.
 
 Overall, this achievement not only validated my technical capabilities but also reinforced my passion for web development and my ability to contribute positively to real-world projects.
 
@@ -122,9 +122,9 @@ In short "I changed my career path because I had a strong passion for technology
 
 During my time at Masai School and other learning experiences, I had the opportunity to work on several collaborative projects with my peers. These projects involved developing web applications and solving real-world problems. Here are a few key collaborative projects and the learnings I gained from them:
 
-"Apana Bazar: E-commerce Web Application": I collaborated with a team to develop an e-commerce website from scratch. This project taught me the importance of "effective communication and teamwor"k. We divided tasks, coordinated efforts, and integrated our individual components seamlessly. Through this project, I learned "how to collaborate on a large-scale project, manage code conflicts, and ensure a cohesive end product".
+"Apana Bazar: E-commerce Web Application": I collaborated with a team to develop an e-commerce website from scratch. This project taught me the importance of "effective communication and teamwork". We divided tasks, coordinated efforts, and integrated our individual components seamlessly. Through this project, I learned "how to collaborate on a large-scale project, manage code conflicts, and ensure a cohesive end product".
 
-"BeautyGem: Appointment Booking Application": In another project, we created a Appointment Booking application with features like user authentication, slot creation, and slot booking. T"his project enhanced my understanding of back-end development and the complexities of building scalable and secure applications". I learned to work with databases, handle user authentication, and databse management.
+"BeautyGem: Appointment Booking Application": In another project, we created a Appointment Booking application with features like user authentication, slot creation, and slot booking. "This project enhanced my understanding of back-end development and the complexities of building scalable and secure applications". I learned to work with databases, handle user authentication, and databse management.
 
 
 From these collaborative projects, I learned the value of effective communication, coordination, and division of responsibilities within a team. I gained insights into agile development methodologies and the significance of regular updates and feedback sessions. These experiences also reinforced the importance of writing clean and maintainable code, adhering to coding standards, and implementing best practices for collaborative development.
