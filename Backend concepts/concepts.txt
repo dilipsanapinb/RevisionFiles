@@ -123,14 +123,14 @@ It's important to note that throughput is not the only consideration in evaluati
 Overall, rate limiting is an important technique for controlling traffic and preventing overload in applications and networks. It helps ensure that resources are used efficiently and can improve the overall performance and reliability of the system
 
 
-  // rate limit middlewares that limit the request per minut is 10 and after a minute it will resume to take a request and if within a minute we exhausted all 10 limits then it will again unaccessable till next minute
+  // rate limit middlewares that limit the request per minut is 100 and after a minute it will resume to take a request and if within a minute we exhausted all 100 limits then it will again unaccessable till next minute
 
       const express = require("express");
       const { rate } = require("./middlewares/rate");
 
       const app = express();
 
-      app.get('/api/getdata',rate(10,60*1000,60*1000), (req,res) => {
+      app.get('/api/getdata',rate(100,60*1000,60*1000), (req,res) => {
           res.status(200).send({"Message":"Get a Data "})
       })
 
