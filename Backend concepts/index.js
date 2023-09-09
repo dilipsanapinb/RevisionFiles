@@ -1,9 +1,15 @@
-const myEventTarget = new EventTarget();
+class Myclass{
+    constructor(name,city) {
+        this.name = name
+        this.city=city
+    }
+    greet() {
+        return `Hello ${this.name} from ${this.city}!`
+    }
+}
 
-const myEvent = new Event('myEvent');
+const p1 = new Myclass('Dilip', 'Nasik');
+console.log(p1);
+console.log(p1.greet());
 
-myEventTarget.addEventListener('myEvent', function (event) {
-  console.log('Custom event triggred');
-})
-
-myEventTarget.dispatchEvent(myEvent);
+module.exports=Myclass

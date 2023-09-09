@@ -604,6 +604,7 @@ If the process crashes, users won't be able to access your application.
 -- Libuv is a multi-platform library that provides asynchronous I/O operations, event loop, thread pool, and other low-level functionalities for building network and system applications. It was originally developed for the Node.js runtime and now serves as a core part of it.
 -In addition to I/O operations, libuv also provides support for timers, signals, child processes, thread pool, and other features. It is licensed under the MIT license and is widely used in many projects, including Node.js, MongoDB, and Chromium.
 
+
 -------------------------------------------------------------
 
 ### What are the different phases involved in event loop?
@@ -756,10 +757,10 @@ It different from es modules :->
 
 # What are web sockets?
 
--> WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication, unlike HTTP ......
--> It provies  real-time, two-way communication channels between a client (such as a web browser) and a server over a single TCP connection.
+-> WebSocket is 'bidirectional', a "full-duplex protocol" that is used in the same scenario of client-server communication, unlike HTTP ......
+-> It provies  "real-time", "two-way communication "channels between a client (such as a web browser) and a server "over a single TCP connection".
 -> Data can be sent and received from both ends at any time, without having to establish a new connection each time.
--> They provide a persistent connection that allows for low-latency, high-performance communication between the client and the server, without the overhead of HTTP requests and responses.
+-> They provide a persistent connection that "allows for low-latency", "high-performance communication" between the client and the server, without the overhead of HTTP requests and responses.
 -> With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.
 -> To use WebSockets in a web application, the client and server both need to support the WebSocket protocol. The client typically uses a JavaScript library to create a WebSocket object and establish a connection to the server, while the server uses a WebSocket server library to handle incoming connections and communicate with clients.
 
@@ -779,11 +780,11 @@ It different from es modules :->
 
 => Benefits of using the microservices,
 
-    (1) Scalability: Each microservice can be scaled independently, allowing organizations to handle spikes in traffic more easily.
-    (2) Flexibility: Microservices can be developed and deployed independently, allowing for greater agility and faster time to market.
-    (3) Resilience: A failure in one microservice does not necessarily affect the entire system, reducing the impact of downtime.
-    (4)Technology independence: Each microservice can be developed using different technologies and programming languages, allowing teams to use the best tools for each job.
-    (5) Ease of maintenance: Each microservice is responsible for a specific business capability, making it easier to test, deploy, and maintain the system.
+    (1) 'Scalability': Each microservice can be scaled independently, allowing organizations to handle spikes in traffic more easily.
+    (2) 'Flexibility': Microservices can be developed and deployed independently, allowing for greater agility and faster time to market.
+    (3) 'Resilience': A failure in one microservice does not necessarily affect the entire system, reducing the impact of downtime.
+    (4)'Technology independence': Each microservice can be developed using different technologies and programming languages, allowing teams to use the best tools for each job.
+    (5) 'Ease of maintenance': Each microservice is responsible for a specific business capability, making it easier to test, deploy, and maintain the system.
 
 ** However, implementing microservices can also introduce new challenges, such as increased complexity in managing the communication between services and the need for strong testing and monitoring practices. As with any development approach, there are trade-offs that need to be carefully considered and managed.
 
@@ -791,7 +792,7 @@ It different from es modules :->
 
 ## How does express work?
 
-  => Express is a popular web application framework for Node.js that simplifies the process of building robust and scalable web applications. It provides a set of features and tools that make it easier to handle routing, middleware, request/response handling, and more.
+  => Express is a popular 'web application framework' for Node.js that "simplifies the process of building robust and scalable web applications". It provides a set of features and tools that make it easier to handle routing, middleware, request/response handling, and more.
 
   => At its core, Express is built on top of the Node.js http module, which provides basic functionality for creating an HTTP server. Express enhances and extends the capabilities of the http module by providing a higher-level API and adding features like routing, middleware support, template engines, and error handling.
 
@@ -986,22 +987,22 @@ It different from es modules :->
 
 ## How do you do validations?
 
-Validations are an essential aspect of any web application to ensure that the user input data is correct and meets the expected format and rules. In web development, validations can be performed on both the client-side and server-side.
+Validations are an essential aspect of any web application to ensure that "the user input data is correct and meets the expected format and rules". In web development, validations can be performed on both the client-side and server-side.
 
 (1) To begin, a sample of data is determined. ...
 (2) Next, the dataset needs to be validated to confirm it contains all the required data.
 (3) Finally, the source data's value, structure, format etc. is matched with the schema of the destination.
 In the Node.js ecosystem, there are several libraries and tools available to handle validations in web applications, such as:
-    (1) Validator: A library that provides a set of pre-built validation methods for strings, numbers, dates, and more.
-    (2) Joi: A powerful schema validation library that allows you to define complex rules and constraints for your data.
-    (3) Express-validator: A middleware that provides a set of validation and sanitization methods for incoming data, and integrates with Express.
+    (1) 'Validator': A library that provides a set of pre-built validation methods for 'strings, numbers, dates, and more'.
+    (2) 'Joi': A powerful schema validation library that allows you to define complex rules and constraints for your data.
+    (3) 'Express-validator': A middleware that provides a set of validation and sanitization methods for incoming data, and integrates with Express.
 
 --------------------------------------------------
 
 ### How do you do static routing?**
 
--> Static routing is a form of routing that occurs when a router uses a manually-configured routing entry, rather than information from dynamic routing traffic.
--> Static routing is a technique used in networking and web development to configure a routing table that maps specific URLs or paths to static resources, such as HTML files, images, or scripts, that are stored on the server.
+-> Static routing is a form of "routing that occurs when a router uses a manually-configured routing entry, rather than information from dynamic routing traffic".
+-> Static routing is a technique used in networking and web development to configure a routing table that "maps specific URLs or paths to static resources, such as HTML files, images, or scripts, that are stored on the server".
 
  => In Node.js, static routing can be implemented using the express.static() middleware function.
   eg.
@@ -1016,9 +1017,9 @@ In the Node.js ecosystem, there are several libraries and tools available to han
 ### What are some templating engines?***
 
 Template engines are" software tools that help developers create dynamic web pages by allowing them to define templates and insert dynamic data into those templates".
-These engines use a combination of HTML, CSS, and programming logic to generate web pages that can be rendered in a user's web browser.
+These engines use a "combination of HTML, CSS, and programming logic to generate web pages" that can be rendered in a user's web browser.
 Template engines are "mostly used for server-side applications that are run on only one server and are not built as APIs."
-Template engines help developers separate the presentation layer (the user interface) from the business logic layer (the programming code that powers the application), making it easier to build scalable and maintainable web applications
+Template engines "help developers separate the presentation layer (the user interface) from the business logic layer" (the programming code that powers the application), making it easier to build scalable and maintainable web applications
 
 EJS is one of the template engines used with Node JS to generate HTML markups with plain Javascript. EJS stands for ("Embedded JavaScript Templates"). It can be used both on the client and the server-side.
 
@@ -1319,7 +1320,7 @@ Both clients and servers can include multiple headers in their respective reques
 
 ## Q. What is functional testing?
 
-  -- Functional testing is a type of software testing that focuses on testing the functionality of a software application or system to ensure that it meets the requirements and specifications, performs the expected tasks accurately, and behaves correctly in real-world scenarios.
+  -- Functional testing is a type of software testing that focuses on "testing the functionality of a software application" or 'system' to ensure that it meets the requirements and specifications, performs the expected tasks accurately, and behaves correctly in real-world scenarios.
   -- It is essential for ensuring the reliability and quality of software applications and validating that they meet the expectations of end users.
 
 -----------------------------------------------
@@ -1340,18 +1341,18 @@ Both clients and servers can include multiple headers in their respective reques
 
   (1)  SSL ("Secure Socket Layer"):
 
-  -- SSL is a cryptographic protocol used to establish a secure and encrypted connection between a client and a server over the internet.
-  -- SSL provides encryption, authentication, and integrity to secure online communication.
+  -- SSL is "a cryptographic protocol used to establish a secure and encrypted connection between a client and a server" over the internet.
+  -- SSL provides 'encryption', 'authentication', and 'integrity' to secure online communication.
   -- SSL encrypts data transmitted between the client and the server, ensuring privacy and confidentiality.
   -- SSL uses digital certificates for authentication, verifying the identity of the server and preventing man-in-the-middle attacks.
-  -- SSL ensures data integrity through message digests and digital signatures.
+  -- "SSL ensures data integrity through message digests and digital signatures."
   -- SSL has been widely used for securing web browsing, email, file transfer, and other data transmission.
   -- SSL has largely been replaced by the more secure TLS (Transport Layer Security) protocol.
   -- The term "SSL" is often used colloquially to refer to both SSL and TLS, as they are closely related and share similar features.
 
   (2) TLS ("Transport Layer Security") :
 
-  -- TLS is a cryptographic protocol for secure and encrypted communication.
+  -- TLS is a "cryptographic protocol for secure and encrypted communication".
   -- It provides encryption, authentication, and integrity to protect data transmitted over the internet.
   -- TLS encrypts data to ensure privacy and confidentiality.
   -- It uses digital certificates for server authentication to prevent man-in-the-middle attacks.
@@ -1393,9 +1394,9 @@ Both clients and servers can include multiple headers in their respective reques
 
   -- OWASP stands for the "Open Web Application Security Project".
 
-  -- It is a non-profit organization that focuses on improving the security of web applications and softwares by providing resources, tools, and best practices to identify, prioritize, and mitigate common web application vulnerabilities.
+  -- It is a non-profit organization that "focuses on improving the security of web applications and softwares" by providing resources, tools, and best practices to identify, prioritize, and mitigate common web application vulnerabilities.
   -- OWASP is a globally recognized authority on web application security and is widely used by security professionals, developers, and organizations to improve the security of their web applications.
-  -- One of the key initiatives of OWASP is the "OWASP Top Ten Project", which identifies the top ten most critical web application security risks.
+  -- One of the key initiatives of OWASP is the "OWASP Top Ten Project", which identifies the "top ten most critical web application security risks".
   -- This list is updated periodically and serves as a reference for developers and organizations to prioritize and address common web application vulnerabilities, such as cross-site scripting (XSS), SQL injection, and insecure authentication.
 
 -------------------------------------------
@@ -1404,23 +1405,23 @@ Both clients and servers can include multiple headers in their respective reques
 
   (1) SQL databases:
 
-    -- SQL Database are relational databases that store data in tables with predefined schema.
-    -- They use structured query language (SQL) to manage and manipulate data.
+    -- SQL Database are 'relational databases' that "store data in tables with predefined schema".
+    -- They 'use SQL' structured query language (SQL) to manage and manipulate data.
     -- SQL databases are known for their ability to handle "complex queries", "transactions", and "relationships between tables".
-    -- They are often used for applications that require a "high degree of data consistency", such as financial systems or inventory management systems.
-    -- SQL databases typically have vertical scalability, which means they can handle increasing amounts of data by adding more hardware resources (e.g., RAM, CPU, disk space). 
-    -- SQL databases are typically ACID (Availability, Consistency, Isolation and Durability)-compliant, which means they provide a high level of data consistency and reliability
+    -- They are often used for applications that require a "high degree of data consistency", such as "financial systems or inventory management systems".
+    -- SQL databases typically have 'vertical scalability', which means they 'can handle increasing amounts of data by adding more hardware resources' (e.g., RAM, CPU, disk space). 
+    -- SQL databases are typically ACID (Availability, Consistency, Isolation and Durability)-compliant, which means they 'provide a high level of data consistency and reliability'
 
   (2) NoSQL databases:
 
-    -- NoSQL databasesare non-relational databases that do "not use a fixed schema to store data".
-    -- They are designed to be highly scalable and flexible, making them useful for applications that require large amounts of unstructured or semi-structured data, such as social media platforms or e-commerce sites.
+    -- NoSQL databasesare 'non-relational databases' that do "not use a fixed schema to store data".
+    -- They are 'designed to be highly scalable and flexible', making them useful for applications that require large amounts of unstructured or semi-structured data, such as "social media platforms or e-commerce sites."
     -- NoSQL databases typically have their own query language, which is optimized for the specific data model they use.
-    -- NoSQL databases can handle different types of data models, such as key-value, document-based, or graph-based, and are often used for distributed systems or cloud-based applications.
-    -- NoSQL databses are typically have horizontal scalability, which means they can handle increasing amounts of data by adding more servers to a cluster.
-    -- NoSQL databases are often designed to sacrifice some level of consistency and reliability for the sake of scalability and performance.
+    -- NoSQL databases can handle different types of data models, such as 'key-value, document-based, or graph-based', and are often used for distributed systems or cloud-based applications.
+    -- NoSQL databses are typically have 'horizontal scalability', which means they "can handle increasing amounts of data by adding more servers to a cluster".
+    -- NoSQL databases are often designed to s"acrifice some level of consistency and reliability for the sake of scalability and performance".
 
-  The choice between SQL and NoSQL databases depends on the specific requirements of the application. SQL databases are best suited for applications that require data consistency and a fixed schema, while NoSQL databases are ideal for applications that require scalability, flexibility, and the ability to handle unstructured data. In some cases, a combination of both SQL and NoSQL databases may be used to take advantage of their respective strengths.
+  "The choice between SQL and NoSQL databases depends on the specific requirements of the application". SQL databases are best suited for applications that require data consistency and a fixed schema, while NoSQL databases are ideal for applications that require scalability, flexibility, and the ability to handle unstructured data. In some cases, a combination of both SQL and NoSQL databases may be used to take advantage of their respective strengths.
 
 --------------------------------------------------------
 
@@ -1574,7 +1575,7 @@ Node.js itself doesn't enforce a specific choice regarding consistency, availabi
 -- "The biggest benefit of Indexing is that it helps you to reduce the total number of I/O operations needed to retrieve that data".
 -- The biggest drawback to performing the indexing database management system, "you need a primary key" on the table with a unique value.
 
--- Indexes support the efficient execution of queries in MongoDB. Without indexes, MongoDB must perform a collection scan, i.e. scan every document in a collection, to select those documents that match the query statement. If an appropriate index exists for a query, MongoDB can use the index to limit the number of documents it must inspect.
+-- "Indexes support the efficient execution of queries in MongoDB". Without indexes, MongoDB must perform a collection scan, i.e. scan every document in a collection, to select those documents that match the query statement. If an appropriate index exists for a query, "MongoDB can use the index to limit the number of documents it must inspect."
 
 -- "MongoDB has default indexing".
 -- In a MongoDB we can create index like db.collection.createIndex(key and index specification);
@@ -1670,29 +1671,29 @@ Overall, database replication is an important technique for building scalable an
 
 ### What is Normalization / Denormalization ?
 
--- Normalization and denormalization are techniques used in database design to optimize the structure of tables and improve the efficiency and performance of queries.
+-- Normalization and denormalization are techniques "used in database design to optimize the structure of tables and improve the efficiency and performance of queries".
 
 Normalization:
 
-  -- It's the process of organizing the data in a database into tables that have well-defined relationships, reducing data redundancy and improving data integrity.
-  -- The goal of normalization is to minimize the amount of duplicate data in a database by breaking up larger tables into smaller ones with more specific purposes.
-  -- The normalization process typically involves creating multiple tables and establishing relationships between them using foreign keys.
+  -- It's the process of "organizing the data in a database into tables" that have "well-defined relationships", "reducing data redundancy" and "improving data integrity".
+  -- The goal of normalization is to "minimize the amount of duplicate data in a database by breaking up larger tables into smaller ones with more specific purposes".
+  -- The normalization process typically "involves creating multiple tables and establishing relationships between them using foreign keys".
 
 Denormalization:
 
-  -- It's the process of intentionally adding redundancy to a database table in order to improve performance.
-  -- This can involve combining tables or duplicating data, making it easier to query data without joining multiple tables.
-  -- By denormalizing a database, queries can be executed faster, but at the cost of increased storage requirements and reduced data consistency.
+  -- It's the process of "intentionally adding redundancy" to a database table in order "to improve performance".
+  -- This can involve "combining tables or duplicating data", making it easier to query data without joining multiple tables.
+  -- By denormalizing a database, "queries can be executed faster", but at the cost of increased storage requirements and reduced data consistency.
 
 -- Both normalization and denormalization have their uses in database design, and choosing which technique to use depends on the specific requirements of the application.
--- Normalization is generally preferred for databases that require a high level of data integrity,
--- while denormalization is often used in data warehousing or reporting applications where fast query performance is more important than data consistency.
+-- 'Normalization' is generally 'preferred' for databases that require a 'high level of data integrity',
+-- while 'denormalization' is often 'used' in data 'warehousing or reporting applications' where fast query performance is more important than data consistency.
 
 -------------------------------------------------------------------------------------------------------
 
 ## What is Eventual Consistency?
 
-  => Eventual consistency is a consistency model that enables the data store to be highly available. It is also known as optimistic replication & is key to distributed systems. 
+  => Eventual consistency is a "consistency model that enables the data store to be highly available". It is also known as optimistic replication & is key to distributed systems. 
 
   => Real World Use Case :
 
@@ -1784,7 +1785,7 @@ Denormalization:
    }).catch((err) => {
    console.error(err);
    });
-   ->In this example, we're using Mongoose's save() method to insert a new user into the database. The save() method returns a promise that resolves with the saved document, which allows us to use the .then() method to handle the result.
+   ->In this example, 'we are using Mongoose's save() method to insert a new user into the database. The save() method returns a promise that resolves with the saved document, which allows us to use the .then() method to handle the result.
 
    *Example-3- Update operation with .then():
        const User = require('./models/user');
@@ -2052,11 +2053,11 @@ Denormalization:
 
 ## What is hashing? 
 
-=> Hashing is a technique used in computer science to transform data of any size or format into a fixed size value or key, which represents the original data in a compact and standardized format.
-=> A "hash function is a mathematical algorith" that takes in data as input and produces a fixed-length output, which is refered to as a hash code, hash value, or simply hash.
+=> Hashing is a technique used in computer science to transform data of any size or format into a "fixed size value or key", which represents the original data in a compact and standardized format.
+=> A "hash function is a mathematical algorithm" that takes in data as input and produces a fixed-length output, which is refered to as a hash code, hash value, or simply hash.
 => Its widely used fields like cryptography, data retrieval, data compression, and digital signatures.
 => It is commonly used to verify the integrity of data and to store passwords security by hashing them before storing them in a database,
-=> The hash function is designed in such a way that even a small change in the input data will result in a completely different hash value. This property is referred to as the "avalanche effect" and is important for ensuring the security and integrity of the data.
+=> The hash function is designed in such a way that "even a small change in the input data will result in a completely different hash value". This property is referred to as the "avalanche effect" and is important for ensuring the security and integrity of the data.
 
 => Examples:
 
@@ -2183,13 +2184,13 @@ Denormalization:
 
 ## what is salt in encryption? **
 
-   => In the context of encryption, a "salt is a random or pseudo-random string that is added to the plaintext before it is hashed or encrypted".
-   -> The purpose of the salt is to make the resulting hash or ciphertext more secure by introducing additional randomness to the process.
-   -> Salt is commonly used in password hashing to make it more difficult for attackers to guess or crack passwords.
-   -> When a user creates a password, a salt is generated and appended to the password before it is hashed.
-   -> This ensures that even if two users have the same password, their hashed passwords will be different because they have different salts.
-   -> Without salt, attackers can use "pre-computed hash tables, known as rainbow tables", to quickly match the hashed password with a corresponding plain text password.
-   -> By adding salt, the pre-computed hash tables are no longer effective because each salt produces a unique hash value, which makes it much harder for attackers to crack the passwords.
+  => In the context of encryption, a "salt is a random or pseudo-random string that is added to the plaintext before it is hashed or encrypted".
+  -> The purpose of the salt is to make the resulting hash or ciphertext more secure by introducing additional randomness to the process.
+  -> Salt is commonly used in password hashing to make it more difficult for attackers to guess or crack passwords.
+  -> When a user creates a password, a salt is generated and appended to the password before it is hashed.
+  -> This ensures that even if two users have the same password, their hashed passwords will be different because they have different salts.
+  -> Without salt, attackers can use "pre-computed hash tables, known as rainbow tables", to quickly match the hashed password with a corresponding plain text password.
+  -> By adding salt, the pre-computed hash tables are no longer effective because each salt produces a unique hash value, which makes it much harder for attackers to crack the passwords.
 
 --------------------------------------------------------------------------------
 
@@ -2226,7 +2227,7 @@ Denormalization:
 
 ## How is JWT different and list the pros and cons of using JWT tokens? **
 
-    =>JWT : It is a definitely a clever way to securely get the identity of the client. In simple language there is a secret Key used to encrypt the JSON formatted Data which primarily includes the user-id. Now an encryption of data with the Key generates the token that is sent to the client and used in every request. Every time, the client sends in the request with the token the server tries to decrypt it with the Key, if it can, it gets the user-id from the JSON Data which corresponds to the user.
+    =>JWT : It is a definitely a "clever way to securely get the identity of the client". In simple language there is a secret Key used to encrypt the JSON formatted Data which primarily includes the user-id. Now an encryption of data with the Key generates the token that is sent to the client and used in every request. Every time, the client sends in the request with the token the server tries to decrypt it with the Key, if it can, it gets the user-id from the JSON Data which corresponds to the user.
     =>The actual working of the JWT is not so straight forward : it actually involves Public/Secret Key, where the Payload is signed by the secret.
 
     * Here are some ways that JWT is different from other types of tokens:
@@ -2402,14 +2403,14 @@ Denormalization:
     => It specifies a process for resource owners to authorize third-party access to their server resources without providing credentials. 
     =>  Designed specifically to work with Hypertext Transfer Protocol (HTTP), OAuth essentially allows access tokens to be issued to third-party clients by an authorization server, with the approval of the resource owner. The third party then uses the access token to access the protected resources hosted by the resource server.
     => OAuth is considered to be more secure than sharing login credentials, as the user's password is never shared with the third-party application.
-    => However, OAuth does come with its own set of security risks, such as phishing attacks and malicious applications that may trick users into granting access to their resources. To mitigate these risks, web applications should implement strong security measures, such as verifying the identity of the third-party application and providing clear and transparent user consent processes.
+    => However, OAuth does come with its own set of "security risks, such as phishing attacks and malicious applications that may trick users into granting access to their resources." To mitigate these risks, web applications should implement strong security measures, such as verifying the identity of the third-party application and providing clear and transparent user consent processes.
 
 ------------------------------------------------------------------------------------
 
 ##  What is REST api? 
 
   => REST stands for the ("Representational State Transfer") API is a "web-based architectural style for creating API's".
-  => REST APIs allow communication between different systems on the internet.
+  => REST APIs "allow communication between different systems on the internet".
 
   => REST API's allows data to be exchanged between systems using HTTP and other standard web protocols.
 
@@ -2625,7 +2626,7 @@ Consider high availability using systems like Redis for a reliable cache environ
 ##  What is LRU cache? **
 
     => A Least Recently Used (LRU) Cache organizes items in order of use, allowing you to quickly identify which item hasn't been used for the longest amount of time.
-    => LRU cache is often implemented by pairing a doubly linked list with a hash map.
+    => LRU cache is often "implemented by pairing a doubly linked list" with a hash map.
     =>  In LRU caching, the cache is designed to store a fixed number of items, and whenever a new item is added to the cache, if the cache is already full, the least recently used item in the cache is removed to make space for the new item.
     => The LRU cache keeps track of the usage of items in the cache and sorts them based on the order of their last access time. When the cache is full, the least recently used item is evicted from the cache to make space for the new item. This helps to ensure that the cache contains the most frequently accessed items and reduces the number of cache misses, which can improve the performance of the system.
 
@@ -2730,9 +2731,9 @@ CDN offloads caching and content delivery to third-party providers.
 4. Improve Security:
 -- CDNs offer DDoS mitigation and security certificate enhancements.
 -- Various security optimizations contribute to improved website safety.
-At its core, a CDN is a network of servers aiming to deliver content quickly, inexpensively, reliably, and securely.
+At its core, a "CDN is a network of servers aiming to deliver content quickly, inexpensively, reliably, and securely".
 
-== CDNs place servers at Internet exchange points (IXPs) where different Internet providers connect, enhancing speed and connectivity.
+== "CDNs place servers at Internet exchange points (IXPs)" where different Internet providers connect, enhancing speed and connectivity.
 IXPs facilitate access to traffic originating from various networks, reducing costs and transit times for CDN providers.
 CDNs optimize standard client/server data transfers, placing Data Centers globally for strategic coverage, enhanced security, and survival against failures and congestion.
 
@@ -2755,7 +2756,7 @@ CDNs optimize standard client/server data transfers, placing Data Centers global
     => Internet is backbone of Web, its technical infrastructure the makes the Web possible.
     => Internet is large network of computers which communicate all together.
     => internet works by usibg the packate routing network the follows Internet Protocol(IP) and Transport Control Protocol(TCP).
-    => Data sent over the internet is called , message. Before messages get sent they're broken up into tiny parts called packets
+    => "Data sent over the internet is called , message. Before messages get sent they're broken up into tiny parts called packets"
     => IP: Rules that govern how info is sent from one computer to another computer over an internet. Its numerical address consist four digits (eg.192.168.2.10).
     => TCP works with IP to ensure transfer of data is dependable and reliable.
     => The device is connected to web through a modem or router, which allows it to connect to each other networks around the globe.
@@ -2923,7 +2924,7 @@ Note: It's important to mention that URLs can have additional components such as
 
 ## What is throughput? 
       
-      Defination:-Throughput refers to the amount of data or work that can be processed by a system or component within a given period of time. It is a measure of the efficiency and capacity of a system to handle a certain workload or traffic.
+      Defination:-Throughput refers to "the amount of data or work that can be processed by a system or component" within a given period of time. "It is a measure of the efficiency and capacity of a system" to handle a certain workload or traffic.
       -It can understood by number of transactions or operations that can be processed by a system or application in a given period of time. For example, a database system may have a high throughput if it can handle a large number of transactions per second.
       In the context of Node.js backend development, throughput refers to the rate or volume of work that a Node.js server can handle within a given timeframe. It is a measure of the server's ability to process incoming requests and respond to them efficiently.
 
@@ -2978,7 +2979,7 @@ Note: It's important to mention that URLs can have additional components such as
     -- Rate limiting can help stop certain kinds of malicious bot activity. 
     -- It can also reduce strain on web servers. 
 
-    => Rate limiting "runs within an application", rather than running on the web server itself. 
+    => Rate limiting "runs within an application", "rather than running on the web server itself". 
     -- It's based on tracking the IP addresses that requests are coming from, and tracking how much time elapses between each request. 
 
     => A rate limiting solution measures the amount of time between each request from each IP address, and also measures the number of requests within a specified timeframe. If there are too many requests from a single IP within the given timeframe, the rate limiting solution will not fulfill the IP address's requests for a certain amount of time.
@@ -3099,7 +3100,7 @@ module.exports={rate}
 
 ## What is a load balancer? **
 
-  => A load balancer is a device or software component that distributes incoming network traffic across multiple servers or nodes in a server cluster. The primary purpose of a load balancer is to evenly distribute the load or traffic among the servers, improving the overall performance, availability, and scalability of the system.
+  => A load balancer is a "device or software component that distributes incoming network traffic across multiple servers or nodes in a server cluster". The primary purpose of a load balancer is to evenly distribute the load or traffic among the servers, improving the overall performance, availability, and scalability of the system.
   => When client send request the load balancer received the request and distributes it to one of the availble server based on various algoriths such as "round-robin"," least connections or IP hash". This ensures that no single server is overloaded and all servers are utilized efficiently.
   => Load balancers can be implemented as hardware devices or software applications that run on dedicated servers or in the cloud. They can also provide additional functionalities such as SSL termination, session persistence, and health checks to ensure that only healthy servers receive traffic.
 
@@ -3166,8 +3167,7 @@ Supports interoperability, modularity, and extensibility among software componen
 -- Scaling can be categorized into 2 types: 
 
       (1) Vertical Scaling:
-
-          -> When new resources are added to the existing system to meet the expectation, it is known as vertical scaling. 
+          -> When" new resources are added to the existing system to meet the expectation", it is known as vertical scaling. 
           -> Consider a rack of servers and resources that comprises the existing system. Now when the existing system fails to meet the expected needs, and the expected needs can be met by just adding resources, this is considered vertical scaling. Vertical scaling is based on the idea of adding more power(CPU, RAM) to existing systems, basically adding more resources.
           -> Vertical scaling is not only easy but also cheaper than Horizontal Scaling. It also requires less time to be fixed.
 
@@ -3181,8 +3181,6 @@ Supports interoperability, modularity, and extensibility among software componen
           (8) Examples  of databases that can be easily scaled- "MySQL", "Amazon RDS"
 
     (2) Horizontal Scaling: 
-
-          When new server racks are added to the existing system to meet the higher expectation, it is known as horizontal scaling.
 
           (1) When new server racks are added to the existing system to meet the higher expectation, it is known as horizontal scaling.
           (2) It expands the size of the existing system horizontally.
@@ -3233,11 +3231,6 @@ Conduct unit, integration, and load testing.
 
 9. Result:
 Following these steps results in a system that's reliable, resilient, and meets availability and performance goals.
-
-
-
-
-
 
 --------------------------------------------------------
 
@@ -3583,9 +3576,9 @@ Message Queues: Asynchronous Communication in Distributed Systems
 
   => Amazon EC2 provides the following features:
 
-      -- Virtual computing environments, known as instances
+      -- "Virtual computing environments, known as instances"
 
-      -- Preconfigured templates for your instances, known as Amazon Machine Images (AMIs), that package the bits you need for your server (including the operating system and additional software)
+      -- "Preconfigured templates for your instances, known as Amazon Machine Images (AMIs)", that package the bits you need for your server (including the operating system and additional software)
 
       -- Various configurations of CPU, memory, storage, and networking capacity for your instances, known as instance types
 
