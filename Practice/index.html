@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.io rate limit</title>
+</head>
+<body>
+    <div id="navbar">
+        <h1>Chat App</h1>
+    </div>
+
+    <div id="container">
+        <ul id="messages">
+
+        </ul>
+
+        <form action="" id="form">
+            <input type="text" id="input" autocomplete="off"/><button>Send</button>
+        </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket=io();
+
+        let messages=document.getElementById('messages')
+        socket.on('msg',(msg)=>{
+            console.log(msg);
+        })
+    </script>
+</body>
+</html>

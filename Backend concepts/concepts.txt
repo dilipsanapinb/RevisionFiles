@@ -4309,7 +4309,6 @@ const rateLimitHandlerMiddleware = (socket,next) => {
       clientInfo.lastMessageTime = currTime;
     }
   }
-
   next();
 }
 

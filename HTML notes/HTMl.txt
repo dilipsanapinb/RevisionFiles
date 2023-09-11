@@ -1,3 +1,39 @@
+# Diffrence beween the DOM and BOM
+-- DOM and BOM are the two distince concept in web development
+-- they play essential role in how web pages are created and interact with web browser
+
+(1) Document Oject Model(DOM):
+-- its programing interface for web document.
+-- it "represent the structure of a web page as a hierarchical tree objects", "where each object correspons to a part of the page content".
+-- This allows developers to "interact with and manipulate the content and structure of a web page dynamically" using the programing languages like JavaScript.
+
+**Key points:
+-- "Tree Structure": DOM represents the HTML document as tree structure, where each HTML element, attribute, and node is represented as a node in a tree.
+
+-- "Manupulation": using the JavaScript we can modify the DOM elements and treir attributes. It enable the dymamic content update, event handling, and user inteface interactions.
+-- "Cross Platform Compatibility": - DOM is fundamental for the client side web developement.
+-- "Document Interaction": DOM provides methods for loading, parsing, and interacting with documents. It allows developers to create, delete, and modify elements, attributes and content within web page.
+
+Example: 
+        var element=document.getElementByID("MyElement");
+        element.textContent="New content"
+
+
+(2) Browser Object Model(BOM):
+-- it represent the web browser itself as object.
+-- It provides an interface for interacting with various browser related features and properties like browser window, history, location and more.
+-- DOM focuces on the "structure and content" of web page, the "BOM deals with browser- specific functionality."
+
+**Key Points:
+(1) "Window Object": Top level object in BOM is 'window'. It provides the access to properties like `window.location`,`window.history` and methods loke `window.open()` for opening new browser windows or tabs.
+eg. window.open('https://www.example.com');
+
+(2) "Navigation": it allows developers to manipulate the browsers navigation, loke redirecting the different URL's, navigate forword and backword and managing the browsers history.
+(3) "Alerts and Dialogs": BOM provides methods for desplaying the alerts, confirmation, and prompts to interact with users.
+(4) "Timers": BOM includes features for setting timers and intervals, allowing developers to schedule code execution.
+(5) "Cookies": BOM enables the mng the cookies- like small piece of data stored by web browsers.
+
+
 ## How do you add CSS and HTML webpage?
     
       <!DOCTYPE html>
@@ -23,33 +59,49 @@
   -- HTML elements tell the browser how to display the content
   -- HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.
 
-  <!DOCTYPE html> // it declares that this document is a HTML5 document. And helps browsers to display web pages correctly.
+  <!DOCTYPE html> // it declares that this document is a HTML5(launched in 2008) document. And helps browsers to display web pages correctly.
   
   //It must only appear once, at the top of the page (before any HTML tags).
 
-  // its not a case sensitive
+  // <!DOCTYPE> declares its not a case sensitive
 
 <html>  // root element of html page. It defines the whole HTML document.
 
-    <head>  // element contains meta info abt the HTML page.
+    <head>  // element contains "meta information" about the HTML page.
 
         <title>Practice</title>  // title of browser page which shown on browsers bar.
 
     </head>
-    <body> // container for all visible content-h,p,img,a,t,li,etc
+    <body> // "container for all visible content"-h,p,img,a,t,li,etc
     <h1>hii</h1>    
     </body>
 </html>
 
 -------------------------------------
 
+## Purpose of the HTML
+-- its backbone of the World Wide Web
+-- structure amd format the content on web pages
+-- Purposes-
+          (1)"Structuring the content:" using the elements like html,head,title,body,header,nav,main,footer
+          (2) "Text formating:" h1,h2,p,em,strong,ul,ol,blockquates
+          (3)"Hypelinks"
+          (4)Images and multimedia:img,audio,video
+          (5) "Forms and input": form, input,textarea,select
+          (6) "Metadata": meta,link, script
+          (7) "accessable"
+          (8)Search engine optimisation: Properly structured HTML can improve a website's visibility in search engine results.
+          (9) Cross browser compatibility
+
+
+
 ## What are features of HTML5? 
 
     HTML5, the latest version of the Hypertext Markup Language, introduced several new features and improvements over its predecessor, HTML4. Some key features of HTML5 include:
 
-    (1) Semantic Elements: HTML5 introduced new semantic elements that provide better structuring and meaning to the content, making it easier for search engines and assistive technologies to understand the page. Examples of semantic elements include <header>, <nav>, <article>, <section>, <footer>, etc.
+    (1) "Semantic Elements": HTML5 introduced new semantic elements that provide better structuring and meaning to the content, making it easier for search engines and assistive technologies to understand the page. Examples of semantic elements include <header>, <nav>, <article>, <section>, <footer>, etc.
 
-    (2) Multimedia Support: HTML5 added native support for multimedia elements without the need for third-party plugins like Flash. It introduced the <video> and <audio> elements, allowing developers to embed videos and audio directly into web pages.
+    (2) "Multimedia Support": HTML5 added native support for multimedia elements without the need for third-party plugins like Flash. It introduced the <video> and <audio> elements, allowing developers to embed videos and audio directly into web pages.
 
     (3) Canvas: The <canvas> element allows dynamic, scriptable rendering of 2D graphics and bitmap images. It provides a powerful API for drawing shapes, applying transformations, and handling user interactions.
 
@@ -57,25 +109,71 @@
 
     (5) Offline Web Applications: HTML5 introduced technologies like the Application Cache and Web Storage (localStorage and sessionStorage) that allow web applications to work offline. The offline web application feature enables users to continue using the application even when they don't have an internet connection.
 
-    (6) Form Enhancements: HTML5 introduced several new input types and attributes for form elements, making form handling more powerful and user-friendly. New input types include email, url, number, date, range, color, etc. Additionally, HTML5 introduced form validation APIs to perform client-side form validation without the need for JavaScript.
+    (6) Form Enhancements: HTML5 introduced several new input types and attributes for form elements, making form handling more powerful and user-friendly. "New input types include email, url, number, date, range, color, etc. "Additionally, "HTML5 introduced form validation APIs to perform client-side form validation without the need for JavaScript."
 
-    (7) Drag and Drop: HTML5 introduced the Drag and Drop API, allowing developers to implement drag-and-drop functionality without resorting to JavaScript libraries or plugins. This feature makes it easier to create interactive and intuitive interfaces.
+    (7) "Drag and Drop": HTML5 introduced the Drag and Drop API, allowing developers to implement drag-and-drop functionality without resorting to JavaScript libraries or plugins. This feature makes it easier "to create interactive and intuitive interfaces".
 
     (8) Improved Accessibility: HTML5 includes several features and attributes that enhance accessibility for users with disabilities. These features include better support for semantic structure, ARIA (Accessible Rich Internet Applications) attributes, and audio/video captioning and description.
 
-    (9) Web Workers: HTML5 introduced the Web Workers API, which allows the execution of scripts in the background, separate from the main browser thread. Web Workers enable multitasking and better performance by offloading computationally intensive tasks to separate threads.
+    (9) Web Workers: "HTML5 introduced the Web Workers API, which allows the execution of scripts in the background, separate from the main browser thread". Web Workers enable multitasking and better performance by offloading computationally intensive tasks to separate threads.
 
-    (10) Web Storage: HTML5 introduced Web Storage, which provides a simple key-value storage mechanism in the user's browser. It allows websites to store data locally, improving performance and providing a way to persist user preferences and application state.
-
-    These are just some of the notable features of HTML5. Overall, HTML5 brought significant advancements to web development by providing new capabilities, better semantics, improved multimedia support, and enhanced user experience.
+    (10) "Web Storage": HTML5 introduced Web Storage, which provides a simple key-value storage mechanism in the user's browser. It allows websites to store data locally, improving performance and providing a way to persist user preferences and application state.
 
 ---------------------------------------
 
+##  Describe the difference between HTML and XHTML.
+HTML (Hypertext Markup Language) and XHTML (Extensible Hypertext Markup Language) are both markup languages used for creating web pages, but they have some key differences in terms of syntax, rules, and handling of content. Here's a comparison of HTML and XHTML:
+
+(1) "Syntax":
+
+(a)'HTML': HTML has a more 'forgiving' syntax. It "allows certain mistakes in code", such as unclosed tags or attribute values without quotes, to be ignored by web browsers. For example, in HTML, you can write <img src="image.jpg"> without quotes around the attribute value.
+
+(b)'XHTML': XHTML has a "stricter syntax". It enforces well-formedness rules borrowed from XML, which means that "all tags must be properly nested, closed, and attribute values must be enclosed in quotes". For example, in XHTML, you must write <img src="image.jpg" /> with a closing slash in the self-closing tag.
+
+(2) "Document Structure":
+
+(a) 'HTML': In HTML, there is "more flexibility in structuring documents". It allows you to omit certain elements, like the <html>, <head>, or <body> tags, and browsers will still render the content.
+
+(b) 'XHTML': XHTML requires a "more structured document". It mandates the presence of essential elements like <html>, <head>, and <body>, and missing any of these elements can lead to parsing errors.
+
+(3) "Lowercase Element and Attribute Names":
+
+(a) 'HTML': HTML "allows element and attribute names to be written in uppercase or mixed case", and it doesn't distinguish between them. For example, <IMG SRC="image.jpg"> is valid HTML.
+
+(b) 'XHTML': "XHTML mandates lowercase element" and attribute names. All element and attribute names must be in lowercase for the document to be considered valid.
+
+(4) "Quotation Marks":
+
+'HTML': HTML allows the use of "both single and double quotation marks" for attribute values. For example, <a href='https://www.example.com'> is valid HTML.
+
+'XHTML': XHTML requires attribute values to be "enclosed in double quotation" marks. For example, <a href="https://www.example.com"> is the correct way to write it in XHTML.
+
+(5) "Self-Closing Tags":
+
+HTML: In HTML, self-closing tags like <img>, <br>, and <input> are optional, and you can use them without the closing slash (e.g., <img> or <img /> both work).
+
+XHTML: XHTML requires all self-closing tags to include the closing slash (e.g., <img />, <br />, <input />).
+
+(6) "Error Handling":
+
+'HTML': HTML is more 'forgiving' of errors. Browsers often attempt to render the page even if there are minor markup errors.
+
+'XHTML': XHTML is "less forgiving of errors". Even small syntax errors can result in the browser refusing to render the page. This strictness can help identify and fix issues early in development but can also make XHTML documents more challenging to work with.
+
+(7) "MIME Type:"
+
+HTML: HTML documents are typically served with the MIME type text/html.
+
+XHTML: XHTML documents should be served with the MIME type application/xhtml+xml for strict adherence to XML rules. However, in practice, many web servers serve XHTML documents as text/html to ensure compatibility with older browsers.
+
+In summary, XHTML is an extension of HTML that enforces stricter rules and well-formedness, borrowing from XML's syntax. While XHTML was initially touted as the future of web development, HTML5 has become the dominant standard due to its flexibility, backward compatibility, and the fact that browsers have become more forgiving of HTML's quirks. Today, web developers primarily use HTML5 for creating web pages.
+
+-----------------------------------------
 ## What are different types of storages in HTML5?
     
         HTML5 introduced two types of storage mechanisms:
 
-        (1) Local Storage (localStorage): Local storage provides a way to store key-value pairs in the user's web browser with no expiration date. The data stored in local storage remains available even if the browser is closed and reopened. It is a persistent storage solution that can hold a larger amount of data (typically up to 5MB or more) compared to cookies. Local storage is accessed through the localStorage object in JavaScript.
+        (1) Local Storage (localStorage): Local storage provides "a way to store key-value pairs in the user's web browser with no expiration date". The data stored in local storage remains available even if the browser is closed and reopened. It is a persistent storage solution that can hold a larger amount of data (typically up to 5MB or more) compared to cookies. Local storage is accessed through the localStorage object in JavaScript.
         Example usage:
 
         
@@ -89,7 +187,7 @@
                   localStorage.removeItem('key');
 
 
-        (2) Session Storage (sessionStorage): Session storage is similar to local storage but has a different lifespan. It allows storing data that is specific to a particular browsing session. The data stored in session storage is available only as long as the browser tab or window remains open. Once the tab or window is closed, the session storage data is cleared. Like local storage, session storage also uses key-value pairs and can be accessed through the sessionStorage object in JavaScript.
+        (2) Session Storage (sessionStorage): Session storage is similar to local storage but has a different lifespan. "It allows storing data that is specific to a particular browsing session." The data stored in session storage is available only as long as the browser tab or window remains open. Once the tab or window is closed, the session storage data is cleared. Like local storage, session storage also uses key-value pairs and can be "accessed through the sessionStorage object in JavaScript".
         
         Example usage:
 
