@@ -93,35 +93,192 @@ eg. window.open('https://www.example.com');
           (8)Search engine optimisation: Properly structured HTML can improve a website's visibility in search engine results.
           (9) Cross browser compatibility
 
+-----------------------------------------
 
+## Describe the difference between HTML and HTML5.
 
-## What are features of HTML5? 
+HTML5, the fifth revision of the Hypertext Markup Language (HTML), brought several significant enhancements and new features compared to its predecessor, HTML 4.01. Here are some of the key differences between HTML and HTML5:
 
-    HTML5, the latest version of the Hypertext Markup Language, introduced several new features and improvements over its predecessor, HTML4. Some key features of HTML5 include:
+(1) "DOCTYPE Declaration":
 
-    (1) "Semantic Elements": HTML5 introduced new semantic elements that provide better structuring and meaning to the content, making it easier for search engines and assistive technologies to understand the page. Examples of semantic elements include <header>, <nav>, <article>, <section>, <footer>, etc.
+'HTML': In HTML 4.01, you typically used a transitional or strict Document Type Definition (DTD) declaration to define the version of HTML being used, which often looked like <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">.
 
-    (2) "Multimedia Support": HTML5 added native support for multimedia elements without the need for third-party plugins like Flash. It introduced the <video> and <audio> elements, allowing developers to embed videos and audio directly into web pages.
+'HTML5': In HTML5, the DOCTYPE declaration is simplified to <!DOCTYPE html>, making it easier to declare the document's HTML5 version.
 
-    (3) Canvas: The <canvas> element allows dynamic, scriptable rendering of 2D graphics and bitmap images. It provides a powerful API for drawing shapes, applying transformations, and handling user interactions.
+(2) 'New Semantic Elements':
 
-    (4) Geolocation: HTML5 introduced the Geolocation API, which enables websites to access the user's geographical location information (with user permission). This feature has applications in location-based services, mapping, and personalized content.
+'HTML': HTML 4.01 had limited semantic elements, and most of the document structure relied on <div> and <span> elements with class attributes for styling and scripting.
 
-    (5) Offline Web Applications: HTML5 introduced technologies like the Application Cache and Web Storage (localStorage and sessionStorage) that allow web applications to work offline. The offline web application feature enables users to continue using the application even when they don't have an internet connection.
+'HTML5': HTML5 introduced new semantic elements like <header>, <nav>, <section>, <article>, <aside>, <footer>, and <main>. These elements "provide a more meaningful way to structure web content, improve accessibility, and enhance search engine optimization".
 
-    (6) Form Enhancements: HTML5 introduced several new input types and attributes for form elements, making form handling more powerful and user-friendly. "New input types include email, url, number, date, range, color, etc. "Additionally, "HTML5 introduced form validation APIs to perform client-side form validation without the need for JavaScript."
+(3) "Audio and Video Support":
 
-    (7) "Drag and Drop": HTML5 introduced the Drag and Drop API, allowing developers to implement drag-and-drop functionality without resorting to JavaScript libraries or plugins. This feature makes it easier "to create interactive and intuitive interfaces".
+HTML: HTML 4.01 had "no built-in support" for audio and video content. Embedding multimedia typically relied on third-party plugins like Adobe Flash.
+HTML5: HTML5 introduced the <audio> and <video> elements, which allow you to embed audio and video directly into web pages without the need for plugins. This greatly improved compatibility and reduced reliance on external technologies.
 
-    (8) Improved Accessibility: HTML5 includes several features and attributes that enhance accessibility for users with disabilities. These features include better support for semantic structure, ARIA (Accessible Rich Internet Applications) attributes, and audio/video captioning and description.
+(4) "Canvas Element":
 
-    (9) Web Workers: "HTML5 introduced the Web Workers API, which allows the execution of scripts in the background, separate from the main browser thread". Web Workers enable multitasking and better performance by offloading computationally intensive tasks to separate threads.
+HTML: HTML 4.01 lacked native support for creating graphics and animations within the browser.
 
-    (10) "Web Storage": HTML5 introduced Web Storage, which provides a simple key-value storage mechanism in the user's browser. It allows websites to store data locally, improving performance and providing a way to persist user preferences and application state.
+HTML5: HTML5 introduced the <canvas> element and the "associated JavaScript API, which enables dynamic rendering of 2D and 3D graphics directly in the browser".
+
+(5) "Geolocation API":
+
+HTML: HTML 4.01 did not provide a standardized way to access a user's geographical location.
+
+HTML5: HTML5 introduced the Geolocation API, which allows web applications to request and utilize a user's location data with their permission.
+
+(6) "Offline Web Applications":
+
+HTML: HTML 4.01 had "no built-in support for creating offline web applications".
+
+HTML5: HTML5 introduced features like the "Application Cache and Web Storage", enabling web apps to work offline and store data on the user's device.
+
+(7) "Improved Form Elements":
+
+HTML: HTML 4.01 had limited form input types and attributes.
+
+HTML5: HTML5 introduced new input types (e.g., email, url, date, number) and attributes (e.g., required, placeholder) that enhance form usability and validation.
+
+(7) "Better Accessibility":
+
+HTML: HTML 4.01 had limited accessibility features.
+
+HTML5: HTML5 includes native support for accessibility features, making it easier to create web content that is more inclusive and usable by individuals with disabilities.
+
+(8) "Backward Compatibility":
+
+HTML: HTML 4.01 documents required careful adherence to strict rules for proper rendering across different browsers.
+
+HTML5: HTML5 was designed with better backward compatibility in mind, allowing older HTML documents to work in modern browsers without major issues.
+
+HTML5 represented a significant step forward in web development, offering improved semantics, multimedia support, and features for creating rich web applications. It has become the standard for modern web development, supplanting the older HTML versions like HTML 4.01.
+
+(9) "Drag and Drop": HTML5 introduced the Drag and Drop API, allowing developers to implement drag-and-drop functionality without resorting to JavaScript libraries or plugins. This feature makes it easier "to create interactive and intuitive interfaces".
+
+(10) Web Workers: "HTML5 introduced the Web Workers API, which allows the execution of scripts in the background, separate from the main browser thread". Web Workers enable multitasking and better performance by offloading computationally intensive tasks to separate threads.
+
+(11) "Web Storage": HTML5 introduced Web Storage, which provides a simple key-value storage mechanism in the user's browser. It allows websites to store data locally, improving performance and providing a way to persist user preferences and application state.
 
 ---------------------------------------
 
+## What is the purpose of the <table> element in HTML?
+
+-- Its used to create structured data tables within a web page.
+-- Tables are a fundamental component of web design and are used to display data in rows and columns.
+
+-- for the tabular data presentation,
+    <th> table head 
+    <tr> table row
+    <td> table tada (define each cell or data within row)
+
+    eg.
+      <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Dilip Sanap</td>
+            <td>dilipsanap@gmail.com</td>
+        </tr>
+      </table>
+
+
+"Captions": You can use the optional <caption> element to provide a title or description for the table, which is typically displayed above or below the table.
+
+    eg. <table>
+            <caption>Sample Table<caption>
+        </table>
+    
+
+"Cell margin":
+
+        We can use tha 'colspan' and 'rowspan' attributes with <td> or <th> elements to merge cells horizontally or vertically
+
+        eg.
+            <table>
+                <tr>
+                  <th>Header 1</th>
+                  <th>Header 2</th>
+                </tr>
+                <tr>
+                  <td colspan="2">Merged Cell</td>
+                </tr>
+            </table>
+          
+
+"Data Sorting and Interactivity":
+      JavaScript and libraries like jQuery and DataTables can be used to add interactivity to tables, such as sorting, filtering, and pagination.
+
+--------------------------------------
+
+## What is the difference between <bold>,  <strong> and <em> tags?
+
+
+The <b>, <strong>, and <em> tags are used in HTML to "apply various levels of emphasis or importance to text", but they have different meanings and purposes:
+
+(1) <b> (Bold):
+
+The <b> element is "used to simply make text bold without conveying any specific semantic meaning".
+It is typically used for presentational purposes, such as making text stand out visually. It does not imply any inherent importance or emphasis on the text.
+
+Example:
+
+This is <b>bold</b> text.
+
+
+(2) <strong> (Strong Emphasis):
+
+The <strong> element is "used to indicate strong importance or emphasis on text content".
+It "carries a semantic meaning of importance", indicating that the text should be emphasized for its inherent significance. "It is often rendered as bold text by default in browsers, but its primary purpose is to convey meaning, not just style".
+
+Example:
+
+This is <strong>strongly emphasized</strong> text.
+
+
+(3) <em> (Emphasis):
+
+The <em> element is "used to emphasize text, typically by italicizing it".
+Like <strong>, <em> carries semantic meaning, but it signifies a different kind of emphasis – one that is more subtle than strong importance. It often indicates that the text should be read with a slight change in tone or stress, rather than just for visual emphasis.
+
+Example:
+
+This is <em>emphasized</em> text.
+
+----------------------------------
+
+## Explain the use of the <iframe> element.
+
+The <iframe> (inline frame) element is used to embed another HTML document or web page within the current web page. It allows you to display external content, such as "web pages, videos, maps or other document" as part of your web page's content.
+
+The <iframe> element creates a separate frame or window within the current page where the embedded content is dispayed.
+
+eg.
+
+    <iframe 
+      src="URL of embeded page (attribute specifies the URL of the external content)" 
+      width=""
+      height="" 
+      frameborder="0" 
+      scrolling="auto">
+    </iframe>
+
+
+"Use cases":
+
+Common use cases for the <iframe> element include:
+
+(1) Embedding videos from platforms like YouTube or Vimeo.
+(2) Displaying maps using services like Google Maps or Mapbox.
+(3) Embedding social media content like tweets or Facebook posts.
+(4) Integrating external web applications or widgets.
+(4) Showing content from a different domain while maintaining separation between your site and the embedded content (though there might be security restrictions and cross-origin considerations in such cases).
+----------------------------------
+
 ##  Describe the difference between HTML and XHTML.
+
 HTML (Hypertext Markup Language) and XHTML (Extensible Hypertext Markup Language) are both markup languages used for creating web pages, but they have some key differences in terms of syntax, rules, and handling of content. Here's a comparison of HTML and XHTML:
 
 (1) "Syntax":
@@ -204,6 +361,14 @@ Both local storage and session storage provide a convenient way to store data on
 
 ------------------------------------------
 
+## What is the basic structure of the HTML tag?
+
+-- it consist of the two parts: an opening tag and closing tag.
+
+element name=> attribute => closing tag
+
+---------------------------------------
+
 ## What is an HTML Element?
 
 => In HTML element is that can be used to define the structure and content of web page.
@@ -215,7 +380,7 @@ An HTML element is defined by a start tag, some content, and an end tag:
 
    => HTML tags are not case sensitive.
 
-   => <hr> tag defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.
+   => <hr> (horizontal rule) tag defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.
 
    => The <br> tag is an empty tag, which means that it has no end tag.
      -> it defines a line break.
@@ -227,6 +392,104 @@ An HTML element is defined by a start tag, some content, and an end tag:
 
 
 ----------------------------------------
+
+## Explain the use of the <meta> tag.
+-- Its used to provide metadata or additional information about a web page.
+-- Meatadata is data about data and it helps browsers and search engines understand and display wabe pages correctly.
+
+-- <meta> tag does nor render any visible content on web-page itself but plays a crucial role in optimizing how page is displayed and indexed.
+
+-- Use cases:
+(1)"Character Encoding": to specify the character of the document. It ensure that the browser interprets the text in the correct character set.
+        eg.
+            <meta chatset="UTF-8">
+
+(2) "Viewport Configuration": For responsive design we can use the <meta> tag to set the viewport properties. This helps in controlling how a web page is displayed on different devices and screen size.
+
+eg. 
+  <meta name='viewport' content="width=device-width, initial-scale=1.0">
+
+(3) "Page Title and Description":
+  Search engines often use metadata to display search results. You can set the title and description that appear in search endgine results using <meta> tags:
+  eg.
+      <meta name="title" content="Page Title">
+      <meta name="description" content="This is a description of the page content.">
+
+(4)"Open Graph and Twitter Cards": These are meta tags used for sharing content on social media platforms. They allow you to control how your content appears when shared on platforms like Facebook and Twitter.
+
+------------------------
+
+## HTML headings:
+-- h1-h6
+
+--------------------------
+##What is the purpose of the <ol> and <ul> tags?
+
+(1)<ul>:
+-- To create the list of items that dont have a specific order or sequence.
+-- Items dispayed with bullet points or other markers
+
+eg.
+    <ul>
+          <li>Item1</li>
+          <li>Item2</li>
+    </ul>
+
+(2)<ol>:
+-- To list of items with specific ordering
+-- displayed with numbers or letters
+
+eg. 
+    <ol>
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+    </ol>
+
+--------------------------------------
+
+## Differentiate between <div> and <span> elements.
+
+-- div and span elements in HTML are both used for "grouping and styling content", 
+-- Both have default dispaly behavior.
+
+** Differences
+(1) Purpose:
+--'div':
+        Division is "block level container" used to group and structure content within a web page.
+        used to create block-level sections of content, such as sections, headers, footers, or entire lauout structures.
+        Div element is often used in conjuction with CSS for layout and styling purpose.
+
+--'span':
+        Its "inline-level" container.
+        used to apply styling or markup to small, inline portions of text or content.
+        used for apply CSS, Js actins, or sematic markup to specific portions of a larger block of text or content.
+
+(2) "Display Behavior":
+--'div':
+        'Block level' container: they start on new line and expand to fill the width of their parent container.
+        Muthiple <div> elements will stack vertically create distinct blocks of content.
+
+--<span>:
+        'inline': occupy as much horizontal space as necessary to contain their content.
+        multiple <span> elements can exist in single line.
+
+
+(3) "Use Cases":
+--<div>:
+        when we need to create distinct, block level sections of content, such as diciding your page into header, main content, sidebar, and foote sections.
+--<span>:
+        when we want apply style or markup to specific portions of text within a larger block of content.
+        eg.
+          <p>This is <span class="highlight">highlighed </span></p>
+        
+        
+
+-----------------------------------
+
+## What does the HTML <br> tag do?
+
+The <br> tag in HTML stands for "line break," and it is a self-closing tag used to create a line break or a new line within a block of text or content. When you use the <br> tag, it forces any content that follows it to appear on the next line, effectively creating a line break in the document
 
 ## CSS RGB Colors
 
@@ -624,7 +887,7 @@ Understanding the stacking context and its rules is important for managing the v
 
 --------------------
 
-## Building blocks of HTML5
+## Sematic Tags: Building blocks of HTML5
 
 Semantic tags in HTML are tags that give meaning to the content within them. They are used to describe the purpose or meaning of the content, rather than just its presentation. Using semantic tags can help search engines and screen readers to better understand the content on a web page, and can also make it easier for developers to maintain and update the code.
 
