@@ -277,6 +277,34 @@ Common use cases for the <iframe> element include:
 (4) Showing content from a different domain while maintaining separation between your site and the embedded content (though there might be security restrictions and cross-origin considerations in such cases).
 ----------------------------------
 
+## What is an HTML entity, and give an example.
+
+An HTML entity is a sequence of characters that represents a special or reserved character in HTML, allowing you to display characters that have special meanings in HTML or that are not easily typable on a keyboard. HTML entities are used to ensure proper rendering and interpretation of these characters in web documents.
+
+HTML entities are composed of an ampersand (&) followed by a specific code or name and closed with a semicolon (;). There are two main types of HTML entities:
+
+Character Entities: These are typically used to display characters that have a special meaning in HTML, such as < and > which are used to define HTML tags. Here are some examples:
+
+&lt; represents the less-than symbol <.
+&gt; represents the greater-than symbol >.
+&amp; represents the ampersand symbol &.
+For example, to display the text "2 < 3," you would write it as:
+
+html
+Copy code
+2 &lt; 3
+Numeric Entities: These are used to represent characters based on their Unicode code points. Numeric entities are especially useful when you need to display characters that are not readily available on your keyboard. Here's an example using the numeric entity for the copyright symbol (©):
+
+&#169; represents the copyright symbol ©.
+For example:
+
+html
+Copy code
+The copyright symbol is &#169;.
+HTML entities are essential for ensuring that web pages render correctly and consistently across different browsers and platforms. They are particularly useful when you need to include characters that might otherwise be interpreted as part of HTML markup or when working with characters from different languages or special symbols.
+
+--------------------------------------
+
 ##  Describe the difference between HTML and XHTML.
 
 HTML (Hypertext Markup Language) and XHTML (Extensible Hypertext Markup Language) are both markup languages used for creating web pages, but they have some key differences in terms of syntax, rules, and handling of content. Here's a comparison of HTML and XHTML:
@@ -526,15 +554,19 @@ eg. <p style="color:"#bfff00">I am paragraph</p>
 
 (1) Block Elements:
     The element will start on a new line and occupy the full width available. And you can set width and height values.
-    Block elements accept all the margins
+    Block elements accept all the margins.
+    They create 'block' or 'box' in the layout.
 
-    eg. Div, p, h1-h6, ul, ol
+    eg. div, p, h1-h6, ul, li, table and form
+
 
 (2) Inline Elemnets:
     The element doesnt start on a new line and only occupy just the width it requires. You cant set the width or height.
-    Inline elements accept "only left and right margins" and do not accept top and
+    Inline elements accept "only left and right margins" and do not accept top and bottom margins.
+    -- Often used withn block level elements to style or modify text or other inline content.
 
-    eg. span, b(bold), strong, a, img
+
+    eg. span, b(bold), strong, a, img,em,br
 
 (3) ## Inline-Block Elements
 
@@ -894,9 +926,17 @@ Semantic tags in HTML are tags that give meaning to the content within them. The
 Here are some examples of semantic tags:
 
 <header>: defines the header of a web page or section.
-<nav>: defines a section of navigation links.
+<nav>: defines a section of navigation links.Used to create navigation menus, menus or other navigation-realted content.
+      
+      Usage:
+          -- Main navigation.
+          -- Footer navigation
 <main>: defines the main content of a web page.
-<article>: defines a self-contained piece of content, such as a blog post or news article.
+
+<article>: 
+    -- defines a self-contained piece of content, such as a blog post or news article or comment that can stand alone.
+    -- 
+
 <section>: defines a section of related content.
 <aside>: defines a section of content that is related to the main content, but not necessarily part of it.
 <footer>: defines the footer of a web page or section.
@@ -932,6 +972,49 @@ It’s easier to read and edit, which saves time and money during maintenance.
 
 ---------------------------------
 
+##How do you create a hyperlink that opens in a new window or tab?
+
+-- By using the 'target' attribute wihtin <a>.
+-- it specifies the target browsing context where the linked content will be displayed.
+
+-- eg. <a href="URL" target="_blank">Text<a>
+
+-------------------------------
+
+## What is the HTML5 data-* attribute?
+
+-- data attribute is a set of attributes that allows you to store custom data private to the page or application.
+-- eg.
+        <div data-custom-value="some-data"></div>
+
+  ** Asigning the data attribute values with JavaScript.
+
+  # get element with data custom value
+  var element=document.querySelector(`div[data-custom-value]`)
+
+  # access the value
+  var customData=element.getAttribute(`data-custom-value`);
+
+  console.log(customData);
+
+
+** Use cases:
+-- Strong configuration data for Js functions or scripts.
+-- Providing additional information for styling or CSS purposes.
+-- Storing unique identities or custom sttributes for elements that need to be manipulated dynamically.
+-- Passing data from the server to the client-side Js for use in the client-side logic.
+
+
+
+-----------------------------------------
+
+## How do you create a numbered list using Roman numerals?
+
+we can use the <ol> element and specify the 'type' attribute as 'I' to indicate Roman numerals.
+
+
+
+--------------------------------
 ## Responsive web
 
   => Add viewport
