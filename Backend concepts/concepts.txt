@@ -1,9 +1,9 @@
 ## Explain in brief what is node.js?
 
 => Node.js is an open-source, cross-platform, server-side JavaScript runtime environment built on the V8 engine of Google Chrome.
-=> It enables developers to use JavaScript for both server-side and client-side scripting. Node.js was created to provide a more efficient way to build scalable network applications, as it allows developers to write JavaScript code that runs outside of a web browser, which makes it ideal for developing high-performance and event-driven applications such as web servers, real-time chat applications, and APIs.
+=> It enables developers to use JavaScript for both server-side and client-side scripting. Node.js was created to provide a more "efficient way to build scalable network applications", as it allows developers to write JavaScript code that runs outside of a web browser, which makes it ideal for "developing high-performance and event-driven applications" such as "web servers", "real-time chat applications", and "APIs".
 => Node.js is built on top of JavaScript and provides a rich set of built-in modules that make it easy to build scalable and reliable applications.
-=> Some popular frameworks that are built on top of Node.js include Express.js, Koa.js, and Nest.js.
+=> Some popular frameworks that are" built on top of Node.js include Express.js, Koa.js, and Nest.js".
 => Node.js has gained significant popularity in recent years and is widely used by developers worldwide for building web applications and services.
 
 -----------------------------------------------------

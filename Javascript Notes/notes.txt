@@ -2,7 +2,7 @@
 
 JavaScript helps you to interact with the HTML page via DOM.
 
-DOM stands for Document Object Model. It is a programming interface for HTML and XML documents. The DOM represents the structure of a document as a tree-like model where each element, attribute, and piece of text in the document is represented as a node in the tree.
+DOM stands for Document Object Model. It is a programming interface for HTML and XML documents. The DOM represents the structure of a "document as a tree-like model where each element, attribute, and piece of text in the document is represented as a node in the tree".
 
 The DOM provides a way for programs and scripts to access and manipulate the content, structure, and style of a web page. It allows developers to dynamically modify the content and appearance of a webpage, add or remove elements, change styles, and handle user interactions.
 
@@ -204,7 +204,7 @@ console.log(squareNumbers); // [1, 4, 9, 16, 25]
      console.log(sum); // 15
 
 (4) Foreach():
-   =>  function that is used to iterate over an array and execute a provided callback function on each element in the array. 
+   =>  function that is "used to iterate over an array and execute a provided callback function" on each element in the array. 
    => The callback function takes three arguments: the current element being processed, the index of the current element, and the array that forEach() was called upon.
    => Example:
       const numbers = [1, 2, 3, 4, 5];
@@ -331,7 +331,7 @@ myMap.delete('age');
 
 console.log(myMap); // Output: Map {"name" => "John"}
 
-In summary, Sets are designed for storing unique values, while Maps are designed for storing key-value pairs. Sets prioritize uniqueness, while Maps prioritize key-based access to values.
+In summary, "Sets are designed for storing unique values, while Maps are designed for storing key-value pairs. Sets prioritize uniqueness, while Maps prioritize key-based access to values".
 
 ------------------------------------
 
@@ -449,7 +449,7 @@ function foo() {
       foo();
 
 => advantages:
-  -Variable shadowing can be used to improve code readability and clarity. We can declare same variable in diff block or function scopes
+  -Variable shadowing can be used to improve code readability and clarity. We can declare same variable in diff block or function scopes.
   -- Shadowing can also be used to reduce the likelihood of errors. This can help to prevent accidental errors where the value of a variable is unintentionally reassigned.
 
   => Disadvantages:
@@ -474,7 +474,7 @@ function foo() {
     }
     init();
 
-  => This is an example of lexical scoping, which describes how a parser resolves variable names when functions are nested.
+  => This is an example of lexical scoping, which describes "how a parser resolves variable names when functions are nested."
   => The word "lexical" refers to the fact that lexical scoping uses the "location where a variable is declared within the source code" to determine where that variable is available. Nested functions have access to variables declared in their outer scope.
 
   => function makeFunc() {
@@ -602,7 +602,7 @@ for (var i = 0; i < arr.length; i++){
 
 ## Bigint
 
-    In JavaScript, the bigint data type is used to "represent integers with arbitrary precision". It was introduced in "ECMAScript 2020" to provide a way to work with numbers beyond the limitations of the standard number data type, which is a "64-bit floating-point number."
+    In JavaScript, the bigint data type is used to "represent integers with arbitrary precision". It was introduced in "ECMAScript 2020" to "provide a way to work with numbers beyond the limitations of the standard number data type", which is a "64-bit floating-point number."
 
     BigInts allow you to perform mathematical operations on integers of any size without the risk of losing precision or encountering overflow/underflow errors. Here's an example of creating and working with BigInts:
       
@@ -862,7 +862,7 @@ Despite its advantages, strict mode also has some potential disadvantages:
 In js when event occurs it goes through the three phases known as event phases or event propagation.
 
 (1) Capture Phase:
-    In this phase, the event is captured or detected at the highest level of the DOM hierarchy (the root element) and then propagates throughthe DOM tree, moving from the outermost parent down to the target element. During the capture phase, event listeners with the capture option set to 'true' are triggered.
+    In this phase, the event is captured or detected at the highest level of the DOM hierarchy (the root element) and then propagates through the DOM tree, moving from the outermost parent down to the target element. During the capture phase, event listeners with the capture option set to 'true' are triggered.
 
 (2) Target(or Event) Phase:
     Once the event reaches the target element, the target phase begins. In this phase, the event listeners attached directly to the target element are triggered. These listeners are often refered to as 'click handlers' and typically registered using methods such as 'addEventListener'.
@@ -874,17 +874,19 @@ In js when event occurs it goes through the three phases known as event phases o
 -------------------------------------
 ## Promises 
 
--- Promises are way to handle the asynchronous operations, such as making the natework requests, reading files, or executing time consuming tasks,in a more organised and manageble manner. 
--- Promises provide clean and easier way to work with asynchronous code, making it easier to handle success or failure scenarios without falling into the callback hell trap
+-- Promises are "way to handle the asynchronous operations", such as making the "network requests, reading files, or executing time consuming tasks",in a "more organised and manageble manner". 
 
-The concept of promises revolves around the idea of representing the eventual result (or failure) of an asynchronous operation. A promise is an object that represents a value that may not be available yet but will be resolved at some point in the future. A promise can be in one of three states:
+-- "Promises provide clean and easier way to work with asynchronous code, making it easier to handle success or failure scenarios without falling into the callback hell trap".
 
- => Promises have three states:
+The "concept of promises revolves around the idea of representing the eventual result (or failure) of an asynchronous operation".
+A promise is an object that represents a value that may not be available yet but will be resolved at some point in the future. A promise can be in one of three states:
+
+=> Promises have three states:
 
   (1) Pending: The initial state, neither fulfilled nor rejected.
   (2) Fulfilled: The operation completed successfully, and the promise has a resulting value.
   (3) Rejected: The operation failed, and the promise has a reason for the failure.
-   
+
   => You can create a promise using the Promise constructor, and you can attach handlers to it using the "then method" to handle the fulfilled state or the "catch method"to handle the rejected state. You can also chain multiple promises together using the then method, which returns a new promise that represents the eventual outcome of the chain.
 
   => Example:
