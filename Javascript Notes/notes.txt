@@ -1058,9 +1058,9 @@ Library and framework are two diff concepts in software devlopment.
 
 (A) Library :
 
-      -- Library is a collection of precompiled and reusable modules or functions that provide specific functionality to be used by an application.
-      -- It consists of a set of files that developers can include in their projects to perform certain tasks or operations. 
-      -- Libraries are designed to be used as tools to accomplish specific programming tasks, such as handling file operations, performing mathematical calculations, or interacting with a network.
+      -- Library is a collection of "precompiled and reusable modules" or functions that provide specific functionality to be used by an application.
+      -- It consists of a "set of files that developers can include in their projects to perform certain tasks" or operations. 
+      -- "Libraries are designed to be used as tools to accomplish specific programming tasks, such as handling file operations, performing mathematical calculations, or interacting with a network."
       -- When using a library, developers have more control over the flow of their application. They can choose which parts of the library they want to use and integrate them into their code as needed.
       
       -- Examples of popular libraries include the 'React' library for building user interfaces in JavaScript, the 'NumPy' library for numerical computing in 'Python', and the 'jQuery' library for simplifying JavaScript coding.
@@ -1068,7 +1068,7 @@ Library and framework are two diff concepts in software devlopment.
 
     (B) Framework : 
 
-        --A framework, on the other hand, is a more extensive and comprehensive set of tools, libraries, and guidelines that provide a structured way to build applications.
+        -- A framework, on the other hand, is a "more extensive and comprehensive set of tools, libraries, and guidelines that provide a structured way to build applications".
         -- It offers a foundation for developing software by providing a predefined structure, architecture, and a set of rules and conventions.
         -- Frameworks typically dictate the overall design of an application and provide a scaffolding that developers can build upon. They often include libraries and provide additional features such as database access, user authentication, and routing mechanisms.
 
@@ -1140,8 +1140,9 @@ Due to the security and performance concerns, it's generally recommended to avoi
 
 ## What is a prototype?
 
-A blueprint we can use to create a new object.
-An original object from which a new object is created.
+"A blueprint we can use to create a new object".4
+
+"An original object from which a new object is created".
 
 => In JavaScript, prototype is a mechanism that allows objects to inherit properties and methods from other objects. It's a fundamental feature of the language's object-oriented programming model.
 
