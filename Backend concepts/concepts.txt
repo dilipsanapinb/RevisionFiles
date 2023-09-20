@@ -1643,6 +1643,7 @@ This will return "detailed information about the query execution, including the 
 -- helps:- improved availability, scalability, and reliability, as well as "better disaster recovery" and backup options.
 -- In a replicated changes made to the data on one server are automatically propagated to the other servers, to maintain consistency.
 -- Replication can be performed at different levels, such as at the transaction level, statement level, or even the data block level, depending on the specific database management system being used.
+
 -- different replication topologies that can be used such as , 
       -- master-slave replication, 
       -- master-master replication, 
@@ -1657,7 +1658,7 @@ Overall, database replication is an important technique for building scalable an
 
 ### What is PACELC ?
 
--- PACELC is a concept related to distributed systems that expands on the CAP theorem (Consistency, Availability, Partition tolerance) to include additional factors that affect the behavior of distributed systems.
+-- PACELC is a concept "related to distributed systems that expands on the CAP theorem" (Consistency, Availability, Partition tolerance) to include additional factors that affect the behavior of distributed systems.
 
 -- PACELC stands for:
 
@@ -1668,10 +1669,10 @@ Overall, database replication is an important technique for building scalable an
     -- Every request received by a non-failing node must receive a response, although the response may not contain the most recent data.
 
  (3) Consistency (C): 
-    -- All nodes in the system see the same data at the same time, although this may require slowing down or blocking requests in order to maintain consistency.
+    -- All nodes in the system see the same data at the same time, although this "may require slowing down or blocking requests in order to maintain consistency".
 
  (4) Else (E):
-    -- In the presence of a network partition, the system can choose to either prioritize Availability or Consistency.
+    -- In the presence of a network partition, the system can choose to "either prioritize Availability or Consistency".
 
  (5) Latency (L):
     -- The time it takes for a request to be processed.
@@ -1689,13 +1690,13 @@ Overall, database replication is an important technique for building scalable an
 
 -- Normalization and denormalization are techniques "used in database design to optimize the structure of tables and improve the efficiency and performance of queries".
 
-Normalization:
+(A) Normalization:
 
   -- It's the process of "organizing the data in a database into tables" that have "well-defined relationships", "reducing data redundancy" and "improving data integrity".
   -- The goal of normalization is to "minimize the amount of duplicate data in a database by breaking up larger tables into smaller ones with more specific purposes".
   -- The normalization process typically "involves creating multiple tables and establishing relationships between them using foreign keys".
 
-Denormalization:
+(B) Denormalization:
 
   -- It's the process of "intentionally adding redundancy" to a database table in order "to improve performance".
   -- This can involve "combining tables or duplicating data", making it easier to query data without joining multiple tables.
@@ -1812,53 +1813,9 @@ Denormalization:
         });
         ->In this example, we're using Mongoose's updateOne() method to update the age of a user with the name "John Doe". The updateOne() method returns a Query object that implements the Promise API, which allows us to use the .then() method to handle the result of the query.
 
-   ------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------
 
-   ## What are aggregation pipelines with mongoose? **
-
-  => An aggregation pipeline consists of one or more stages that process documents:
-
-  -> Each stage performs an operation on the input documents.  For example, a stage can filter documents, group documents, and calculate values.
-
-  -> The documents that are output from a stage are passed to the next stage.
-
-  -> An aggregation pipeline can return results for groups of documents. For example, return the total, average, maximum, and minimum values.
-
-  -> we can update documents with an aggregation pipeline if you use the stages shown in Updates with Aggregation Pipeline.
-
-  => Aggregation pipelines in Mongoose are a way to perform advanced data processing and transformation on collections of documents in MongoDB.
-  => An aggregation pipeline is a series of stages that documents pass through, each stage applying a transformation or computation to the data.
-  => Mongoose provides a powerful API for building aggregation pipelines using its aggregate() method.
-    -- The aggregate() method takes an array of pipeline stages as its argument and returns a Aggregate object that can be used to execute the pipeline.
-
-   =>Example:
-    db.orders.insertMany( [
-   { _id: 0, name: "Pepperoni", size: "small", price: 19,
-     quantity: 10, date: ISODate( "2021-03-13T08:14:30Z" ) },
-   { _id: 1, name: "Pepperoni", size: "medium", price: 20,
-     quantity: 20, date : ISODate( "2021-03-13T09:13:24Z" ) },
-   { _id: 2, name: "Pepperoni", size: "large", price: 21,
-     quantity: 30, date : ISODate( "2021-03-17T09:22:12Z" ) },
-    ]);
-
-    -> Calculate the total order quantity:->
-
-       db.orders.aggregate( [
-       // Stage 1: Filter pizza order documents by pizza size
-      {
-      $match: { size: "medium" }
-      },
-      // Stage 2: Group remaining documents by pizza name and calculate total quantity
-      {
-      $group: { _id: "$name", totalQuantity: { $sum: "$quantity" } }
-      }
-      ] )
-
-      => The result of the aggregation pipeline will be an array of objects that contains the computed filterd by size and total quantity.
-      => Mongoose's aggregation pipelines provide a powerful way to perform complex data processing and transformation in MongoDB. The API is flexible and expressive, allowing you to compose pipelines with multiple stages and operators to compute exactly the data you need.
-
-------------------------------------------------------------------------
-
+  
 ## I'm using an arrow function for a virtual, middleware, getter/setter, or method and the value of this is wrong. Why? 
 
 => Arrow functions in JS are lexically scopped, which means they "don't have their own 'this' scope" like traditional function expressions.
@@ -2071,7 +2028,7 @@ Denormalization:
 
 => Hashing is a technique used in computer science to transform data of any size or format into a "fixed size value or key", which represents the original data in a compact and standardized format.
 => A "hash function is a mathematical algorithm" that takes in data as input and produces a fixed-length output, which is refered to as a hash code, hash value, or simply hash.
-=> Its widely used fields like cryptography, data retrieval, data compression, and digital signatures.
+=> Its widely used fields like "cryptography, data retrieval, data compression, and digital signatures".
 => It is commonly used to verify the integrity of data and to store passwords security by hashing them before storing them in a database,
 => The hash function is designed in such a way that "even a small change in the input data will result in a completely different hash value". This property is referred to as the "avalanche effect" and is important for ensuring the security and integrity of the data.
 
@@ -2109,7 +2066,7 @@ Denormalization:
 
 ## What is encryption? 
 
-    => Encryption is the process of converting plain text or data into a coded format that is unintelligible without a key or a password, making it unreadable to unauthorized users.
+    => Encryption is the process of c"onverting plain text or data into a coded format that is unintelligible without a key or a password, making it unreadable to unauthorized users."
     => It is used to protect the confidentiality, integrity, and authenticity of sensitive data during transmission or storage.
     => Encryption uses mathematical algorithms to scramble the original data into ciphertext that can only be decrypted using a specific key or password.
 
@@ -2155,19 +2112,19 @@ Denormalization:
 
       Here are a few notable examples of where developers can use the AES encryption:
 
-      -- VPNs (Virtual Private Networks): As the job of a VPN is to securely connect you to another server online, only the best methods of encryption can be considered so that your data wouldn't leak. The VPNs that use the advanced encryption standard with 256-bit keys include NordVPN, Surfshark, and ExpressVPN.
+      --" VPNs" (Virtual Private Networks): As the job of a VPN is to securely connect you to another server online, only the best methods of encryption can be considered so that your data wouldn't leak. The VPNs that use the advanced encryption standard with 256-bit keys include NordVPN, Surfshark, and ExpressVPN.
 
-      -- Wi-Fi:  That's right - wireless networks also use AES encryption (usually, together with WPA2). This is not the only type of encryption Wi-Fi networks can use, however, most of the other encryption methods are far less safe.
+      -- "Wi-Fi":  That's right - wireless networks also use AES encryption (usually, together with WPA2). This is not the only type of encryption Wi-Fi networks can use, however, most of the other encryption methods are far less safe.
 
-      -- Mobile applications: Many popular apps (like Snapchat and Facebook Messenger) use AES encryption in order to safely send info like photos and messages.
+      -- "Mobile applications": Many popular apps (like Snapchat and Facebook Messenger) use AES encryption in order to safely send info like photos and messages.
 
-      -- Archive and compression tools: All major file compression programs use AES to prevent data from leaking. These tools include 7z, WinZip, and RAR.
+      -- "Archive and compression tools": All major file compression programs use AES to prevent data from leaking. These tools include 7z, WinZip, and RAR.
 
-      -- OS system components: Some operating system components (like file systems) use the advanced encryption standard for an extra layer of safety.
+      -- "OS system components": Some operating system components (like file systems) use the advanced encryption standard for an extra layer of safety.
 
-      -- Programming language libraries: The libraries of such coding languages like Java, Python, and C++ implement AES encryption.
+      -- "Programming language libraries": The libraries of such coding languages like Java, Python, and C++ implement AES encryption.
 
-      -- Password managers. These are the programs that carry a lot of sensitive information. That’s why password managers like LastPass and Dashlane don't skip the important step of AES implementation.
+      -- "Password managers". These are the programs that carry a lot of sensitive information. That’s why password managers like LastPass and Dashlane don't skip the important step of AES implementation.
 
 
     ------------------------------------------
@@ -2212,8 +2169,8 @@ Denormalization:
 
 ## What is JWT? 
 
-    => JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.
-    -> This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
+    => JSON Web Token (JWT) is an open standard (RFC 7519) that defines a "compact and self-contained way for securely transmitting information between parties as a JSON object".
+    -> This information can be verified and trusted because it is digitally signed. "JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA".
     => JSON Web Tokens can be used in,
 
     -> Authorization: 
@@ -2224,10 +2181,10 @@ Denormalization:
         -- JSON Web Tokens are a good way of securely transmitting information between parties. Because JWTs can be signed—for example, using public/private key pairs—you can be sure the senders are who they say they are. 
         -- Additionally, as the signature is calculated using the header and the payload, you can also verify that the content hasn't been tampered with.
 
-    => JSON Web Tokens consist of three parts separated by dots (.), which are:
+    => JSON Web Tokens consist of "three parts" separated by dots (.), which are:
 
         (1) Header:
-            -> The header typically consists of two parts: the type of the token, which is JWT, and the signing algorithm being used, such as HMAC, SHA256 or RSA.
+            -> The header typically consists of "two parts: the type of the token, which is JWT, and the signing algorithm" being used, such as HMAC, SHA256 or RSA.
 
         (2) Payload:
             -> It contains the claims. Claims are statements about an entity (typically, the user) and additional data. There are three types of claims: registered, public, and private claims.
