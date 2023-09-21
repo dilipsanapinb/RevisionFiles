@@ -2423,8 +2423,8 @@ DELETE /tasks/{id}: Delete a task.
 
   => REST API's  allows developers to "create flexible and scalable APIs" that can be used by a variety of different applications and systems.
 
-  => REST API's are "easy to implement", as it uses standard web protocols and HTTP methods, and can be used with a wide range of programming languages and frameworks.
-  => Advantages of REST API include its scalability, flexibility, and compatibility with a wide range of systems and devices.
+  => REST API's are "easy to implement", as it "uses standard web protocols and HTTP methods, and can be used with a wide range of programming languages and frameworks".
+  =>" Advantages of REST API include its scalability, flexibility, and compatibility with a wide range of systems and devices."
   => However, designing and implementing a REST API can be complex, as it requires careful consideration of resource design, URL structure, and HTTP method usage. Additionally, security is also a concern, and proper authentication and authorization mechanisms must be implemented to prevent unauthorized access to resources.
 
 ----------------------------------------------------------------------------------
@@ -2581,9 +2581,9 @@ Consider high availability using systems like Redis for a reliable cache environ
 
     => Methods/ways to store the cache:
 
-    (1) In-Memmory-Caching:
+    (1) "In-Memmory-Caching:"
     -- The cache is stored in servers RAM, making it faster to retrive data. However this method has limitation of storage and cached data is lost if server is restarted.
-    (2) File-based caching:
+    (2) "File-based caching":
     -- The cache is stored in files on servers hard disk. This provide more storage capacity but slower to retrieve data.
     (3) Database caching:
     -- Chache is stored in database, providing a balance between storage capacitty and retrieval speed. 
@@ -2905,7 +2905,7 @@ Note: It's important to mention that URLs can have additional components such as
 
       => Techniques can used to high throughput,
 
-      => Event-driven, non-blocking I/O: Node.js uses an event-driven, non-blocking I/O model, which allows it to handle multiple concurrent connections without blocking the main event loop. This enables high concurrency and efficient handling of incoming requests, leading to higher throughput.
+      => Event-driven, non-blocking I/O: Node.js uses an "event-driven, non-blocking I/O model, which allows it to handle multiple concurrent connections without blocking the main event loop". This enables high concurrency and efficient handling of incoming requests, leading to higher throughput.
 
       => Asynchronous programming: Node.js encourages the use of asynchronous programming techniques, such as callbacks, Promises, and async/await, which allow for efficient handling of I/O-bound operations. This prevents the server from blocking while waiting for I/O operations to complete, resulting in higher throughput.
 
@@ -3075,7 +3075,7 @@ module.exports={rate}
 
   => A load balancer is a "device or software component that distributes incoming network traffic across multiple servers or nodes in a server cluster". The primary purpose of a load balancer is to evenly distribute the load or traffic among the servers, improving the overall performance, availability, and scalability of the system.
   => When client send request the load balancer received the request and distributes it to one of the availble server based on various algoriths such as "round-robin"," least connections or IP hash". This ensures that no single server is overloaded and all servers are utilized efficiently.
-  => Load balancers can be implemented as hardware devices or software applications that run on dedicated servers or in the cloud. They can also provide additional functionalities such as SSL termination, session persistence, and health checks to ensure that only healthy servers receive traffic.
+  => Load balancers can be implemented as hardware devices or software applications that run on dedicated servers or in the cloud. They can also provide additional "functionalities such as SSL termination, session persistence, and health checks to ensure that only healthy servers receive traffic."
 
 ------------------------------------------------------------------------------------
 
@@ -3210,9 +3210,9 @@ Following these steps results in a system that's reliable, resilient, and meets 
 ## How does your Node.js application handle scale? Elaborate.
 
 -- Scaling Reasons:
-  -- Workload is a primary reason for scaling applications.
+  -- "Workload is a primary reason for scaling applications.
   -- Scaling also enhances availability and failure tolerance.
-
+"
 -- Cluster Module for Load Balancing:
   -- Cluster module balances load across CPU cores.
   -- Uses fork method from child process module.
@@ -3535,14 +3535,14 @@ Message Queues: Asynchronous Communication in Distributed Systems
 
 ## What is AWS S3?
 
-=> Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. 
+=> Amazon Simple Storage Service (Amazon S3) is an "object storage service" that "offers industry-leading scalability, data availability, security, and performance". 
 => Customers of all sizes and industries can use Amazon S3 to store and protect any amount of data for a range of use cases, such as data lakes, websites, mobile applications, backup and restore, archive, enterprise applications, IoT devices, and big data analytics. Amazon S3 provides management features so that you can optimize, organize, and configure access to your data to meet your specific business, organizational, and compliance requirements.
 
 -------------------------------------------------------
 
 ## What is EC2 Instance in AWS?
 
-  => Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud.
+  => Amazon "Elastic Compute Cloud" (Amazon EC2) provides "scalable computing capacity in the Amazon Web Services (AWS) Cloud".
   => "Using Amazon EC2 eliminates your need to invest in hardware up front", so you can develop and deploy applications faster.
   => You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
   => Amazon EC2 enables you to scale up or down to handle changes in requirements or spikes in popularity, reducing your need to forecast traffic.
@@ -3741,7 +3741,7 @@ In octal: 02322 (Equivalent to 18^3 + 28^2 + 38^1 + 28^0 = 666 in decimal)+
     Yes, there are a few potential pitfalls to be aware of when using destructuring in JavaScript:
 
     (1) "Variable declaration and assignment": 
-        When using destructuring assignment, be careful with variable declarations and assignments. If you accidentally omit the var, let, or const keyword, JavaScript treats it as a regular assignment expression, potentially causing unintended side effects by modifying an existing variable or creating a global variable.
+        When using destructuring assignment, be careful with variable declarations and assignments. If you accidentally omit the "var, let, or const keyword, JavaScript treats it as a regular assignment expression", potentially causing unintended side effects by modifying an existing variable or creating a global variable.
 
     (2) "Default values and falsy values":
         When using default values in destructuring assignments, be aware of values that are considered falsy in JavaScript (e.g., 0, '', false, null, undefined). If the destructured value is one of these falsy values, the default value will be used instead. This behavior can sometimes lead to unexpected results if you're not careful.
@@ -4380,7 +4380,7 @@ NoSQL Databases:
 
 "Lack of Data Consistency Enforcement": NoSQL databases often sacrifice strong data consistency in favor of high availability and partition tolerance (as per the CAP theorem). They may offer eventual consistency, where data changes propagate asynchronously, and there may be a delay before all replicas are updated. This trade-off allows for high scalability but can result in data inconsistencies in certain scenarios.
 
-"Scalability and Performance": NoSQL databases are designed to scale horizontally, allowing them to handle massive amounts of data and high read/write throughput. The flexible schema and distributed nature of NoSQL databases make it easier to scale by adding more nodes to the cluster, providing excellent performance for certain use cases.
+"Scalability and Performance": NoSQL databases are designed to scale horizontally, allowing them to handle "massive amounts of data and high read/write throughput". The flexible schema and distributed nature of NoSQL databases make it easier to scale by adding more nodes to the cluster, providing excellent performance for certain use cases.
 
 In summary, the impact of schema in SQL databases is more structured, rigid, and focused on data integrity, while NoSQL databases offer flexibility and scalability at the expense of strong data consistency. The choice between the two depends on the specific requirements of your application, such as data structure, scalability needs, and consistency trade-offs.
 

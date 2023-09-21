@@ -127,9 +127,9 @@ During my time at Masai School and other learning experiences, I had the opportu
 "BeautyGem: Appointment Booking Application": In another project, we created a Appointment Booking application with features like user authentication, slot creation, and slot booking. "This project enhanced my understanding of back-end development and the complexities of building scalable and secure applications". I learned to work with databases, handle user authentication, and databse management.
 
 
-From these collaborative projects, I learned the value of effective communication, coordination, and division of responsibilities within a team. I gained insights into agile development methodologies and the significance of regular updates and feedback sessions. These experiences also reinforced the importance of writing clean and maintainable code, adhering to coding standards, and implementing best practices for collaborative development.
+From these collaborative projects, I learned the value of "effective communication, coordination, and division of responsibilities within a team". I gained insights into agile development methodologies and the significance of regular updates and feedback sessions. These experiences also reinforced the importance of writing clean and maintainable code, adhering to coding standards, and implementing best practices for collaborative development.
 
-Overall, these collaborative projects have not only expanded my technical skills but also improved my ability to work effectively in a team, meet project goals, and deliver high-quality solutions.
+Overall, these "collaborative projects have not only expanded my technical skills but also improved my ability to work effectively in a team, meet project goals, and deliver high-quality solutions."
 
 "Through collaborative projects at Masai School, I gained valuable experience working in teams. Key learnings include effective communication, coordination, and division of responsibilities. I developed skills in building scalable web applications, handling databases, implementing RESTful APIs, and adhering to coding standards. These experiences improved my ability to work in a team, meet project goals, and deliver high-quality solutions."
 

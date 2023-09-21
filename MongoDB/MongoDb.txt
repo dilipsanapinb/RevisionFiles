@@ -42,3 +42,378 @@
         => Mongoose's aggregation pipelines provide a powerful way to perform complex data processing and transformation in MongoDB. The API is flexible and expressive, allowing you to compose pipelines with multiple stages and operators to compute exactly the data you need.
 
     ------------------------------------------------------------------------
+**to find total pop of e.Europian regin;
+data> db.world.aggregate([{$match:{Region:'EASTERN EUROPE'}},{$group:{_id:{reg:'$Region'},totalP:{$sum:'$Population'}}}]).pretty()
+[ { _id: { reg: 'EASTERN EUROPE' }, totalP: 119914717 } ]
+
+**Avg Population By Region
+1.E.Europe
+data> db.world.aggregate([{$match:{Region:'EASTERN EUROPE'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[ { _id: { reg: 'EASTERN EUROPE' }, avgPop: 9992893.083333334 } ]
+
+2.Asia;
+data> db.world.aggregate([{$match:{Region:'ASIA (EX. NEAR EAST)'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[
+  { _id: { reg: 'ASIA (EX. NEAR EAST)' }, avgPop: 131713651.28571428 }
+]
+
+3.NAmerica
+data> db.world.aggregate([{$match:{Region:'NORTHERN AMERICA'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[ { _id: { reg: 'NORTHERN AMERICA' }, avgPop: 66334461.4 } ]
+
+4.N Africa
+data> db.world.aggregate([{$match:{Region:'NORTHERN AFRICA'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[ { _id: { reg: 'NORTHERN AFRICA' }, avgPop: 26901188.833333332 } ]
+
+5.'C.W. OF IND. STATES'
+data> db.world.aggregate([{$match:{Region:'C.W. OF IND. STATES'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[ { _id: { reg: 'C.W. OF IND. STATES' }, avgPop: 23340129 } ];
+
+6.Baltics
+data> db.world.aggregate([{$match:{Region:'BALTICS'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[ { _id: { reg: 'BALTICS' }, avgPop: 2394991.3333333335 } ];
+
+7.
+data> db.world.aggregate([{$match:{Region:'WESTERN EUROPE'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[ { _id: { reg: 'WESTERN EUROPE' }, avgPop: 14154999.92857143 } ];
+
+8.
+data> db.world.aggregate([{$match:{Region:'SUB-SAHARAN AFRICA'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[ { _id: { reg: 'SUB-SAHARAN AFRICA' }, avgPop: 14694843.137254901 } ];
+
+9.
+data> db.world.aggregate([{$match:{Region:'OCEANIA'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[ { _id: { reg: 'OCEANIA' }, avgPop: 1577698.1904761905 } ];
+
+10.
+data> db.world.aggregate([{$match:{Region:'LATIN AMER. & CARIB'}},{$group:{_id:{reg:'$Region'},avgPop:{$avg:'$Population'}}}]).pretty()
+[ { _id: { reg: 'LATIN AMER. & CARIB' }, avgPop: 12484991.08888889 } ];
+
+
+***Avg Birth Rate
+
+data> db.world.aggregate([{$group:{_id:{},birtRate:{$avg:'$Birthrate'}}}])
+[ { _id: {}, birtRate: 21.822466960352422 } ]
+
+
+
+****Find all the countries, sort them by GDP ascending, population descending, take top 10 countries out
+
+data> db.world.aggregate([{$group:{_id:{country:'$Country'}}},{$sort:{'GDP ($ per capita)':1}},{$sort:{'Population':-1}},{$limit:10}])
+[
+  { _id: { country: 'Mauritius' } },
+  { _id: { country: 'Hong Kong' } },
+  { _id: { country: 'Saint Kitts & Nevis' } },
+  { _id: { country: 'Albania' } },
+  { _id: { country: 'Marshall Islands' } },
+  { _id: { country: 'Colombia' } },
+  { _id: { country: 'Bolivia' } },
+  { _id: { country: 'Trinidad & Tobago' } },
+  { _id: { country: 'Macedonia' } },
+  { _id: { country: 'Zambia' } }
+];
+
+
+***Find all the countries Birthrate lower than 20, group them by region, find lowest birthrate region.
+
+data> db.world.aggregate([{$match:{Birthrate:{$lt:20}}},{$group:{_id:{Reg:'$Region'}}},{$sort:{'Birthrate':1}},{$limit:1}])
+[ { _id: { Reg: 'C.W. OF IND. STATES' } } ];
+
+
+******Find sum of population according to region
+data> db.world.aggregate([{$group:{_id:{Reg:'$Region',totalP:{$sum:'$Population'}}}}])
+[
+  { _id: { Reg: 'WESTERN EUROPE', totalP: 299388 } },
+  { _id: { Reg: 'SUB-SAHARAN AFRICA', totalP: 3177388 } },
+  { _id: { Reg: 'WESTERN EUROPE', totalP: 91084 } },
+  { _id: { Reg: 'LATIN AMER. & CARIB', totalP: 168458 } },
+  { _id: { Reg: 'SUB-SAHARAN AFRICA', totalP: 8090068 } },
+  { _id: { Reg: 'WESTERN EUROPE', totalP: 10688058 } },
+  { _id: { Reg: 'EASTERN EUROPE', totalP: 10235455 } },
+  { _id: { Reg: 'EASTERN EUROPE', totalP: 4498976 } },
+  { _id: { Reg: 'SUB-SAHARAN AFRICA', totalP: 12127071 } },
+  { _id: { Reg: 'NORTHERN AFRICA', totalP: 5900754 } },
+  { _id: { Reg: 'EASTERN EUROPE', totalP: 3581655 } },
+  { _id: { Reg: 'C.W. OF IND. STATES', totalP: 10293011 } },
+  { _id: { Reg: 'SUB-SAHARAN AFRICA', totalP: 201234 } },
+  { _id: { Reg: 'WESTERN EUROPE', totalP: 9016596 } },
+  { _id: { Reg: 'NEAR EAST', totalP: 21456188 } },
+  { _id: { Reg: 'C.W. OF IND. STATES', totalP: 2976372 } },
+  { _id: { Reg: 'SUB-SAHARAN AFRICA', totalP: 1240827 } },
+  { _id: { Reg: 'LATIN AMER. & CARIB', totalP: 39129 } },
+  { _id: { Reg: 'LATIN AMER. & CARIB', totalP: 8308504 } },
+  { _id: { Reg: 'SUB-SAHARAN AFRICA', totalP: 1136334 } }
+]
+
+***
+data> db.world.aggregate([{$group:{_id:'$Region',avgBR:{$avg:'$Birthrate'}}},{$sort:{'avgBR':1}}])
+[
+  { _id: 'BALTICS', avgBR: 9.343333333333334 },
+  { _id: 'EASTERN EUROPE', avgBR: 9.506666666666666 },
+  { _id: 'WESTERN EUROPE', avgBR: 10.553571428571429 },
+  { _id: 'NORTHERN AMERICA', avgBR: 13.154 },
+  { _id: 'NORTHERN AFRICA', avgBR: 17.345 },
+  { _id: 'C.W. OF IND. STATES', avgBR: 17.855833333333333 },
+  { _id: 'LATIN AMER. & CARIB', avgBR: 19.08111111111111 },
+  { _id: 'OCEANIA', avgBR: 21.055238095238096 },
+  { _id: 'ASIA (EX. NEAR EAST)', avgBR: 21.157857142857143 },
+  { _id: 'NEAR EAST', avgBR: 25.031875 },
+  { _id: 'SUB-SAHARAN AFRICA', avgBR: 36.043921568627454 }
+]
+
+***
+Sort all countries by population descending, get 11 to 20 position countries from these.
+data> db.world.aggregate([{$group:{_id:{pop:'$Population',cou:'$Country'}}},{$sort:{'_id.pop':-1}},{$skip:10},{$limit:10}])
+[
+  { _id: { pop: 107449525, cou: 'Mexico' } },
+  { _id: { pop: 89468677, cou: 'Philippines' } },
+  { _id: { pop: 84402966, cou: 'Vietnam' } },
+  { _id: { pop: 82422299, cou: 'Germany' } },
+  { _id: { pop: 78887007, cou: 'Egypt' } },
+  { _id: { pop: 74777981, cou: 'Ethiopia' } },
+  { _id: { pop: 70413958, cou: 'Turkey' } },
+  { _id: { pop: 68688433, cou: 'Iran' } },
+  { _id: { pop: 64631595, cou: 'Thailand' } },
+  { _id: { pop: 62660551, cou: 'Congo, Dem. Rep.' } }
+];
+
+***Write an update query for: find all the countries with phones per thousand greater than 400, set it to 1000.
+data> db.world.aggregate([{$match:{"PhonesPerThousand":{$gt:400}}},{$set:{"PhonesPerThousand":1000}}]);
+
+****Write an update query for: replace all the countries Climate to 0.
+graduates> db.users.insert([{
+...  "first_name": "Ida",
+...  "last_name": "Hammerman",
+...  "percentage": 41,
+...  "gender": "Female",
+...  "university": "Fordham University",
+...  "isMarried": false
+... }, {
+...  "first_name": "Phyllida",
+...  "last_name": "Gauntlett",
+...  "percentage": 73,
+...  "gender": "Non-binary",
+...  "university": "Medical Academy in Bialystok",
+...  "isMarried": false
+... }, {
+...  "first_name": "Gilemette",
+...  "last_name": "Balshen",
+...  "percentage": 34,
+...  "gender": "Female",
+...  "university": "Universidad Rey Juan Carlos",
+...  "isMarried": false
+... }, {
+...  "first_name": "Pebrook",
+...  "last_name": "Currum",
+...  "percentage": 82,
+...  "gender": "Male",
+...  "university": "Universidade Cruzeiro do Sul",
+...  "isMarried": false
+... }, {
+...  "first_name": "Sidney",
+...  "last_name": "Corbert",
+...  "percentage": 82,
+...  "gender": "Male",
+...  "university": "Hogeschool voor Wetenschap en Kunst (VLEKHO), Brussel",
+...  "isMarried": false
+... }])
+
+------------------------------------------------
+
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63b2b47afce2a64d5478cbbf"),
+    '1': ObjectId("63b2b47afce2a64d5478cbc0"),
+    '2': ObjectId("63b2b47afce2a64d5478cbc1"),
+    '3': ObjectId("63b2b47afce2a64d5478cbc2"),
+    '4': ObjectId("63b2b47afce2a64d5478cbc3")
+  }
+}
+
+
+graduates> db.users.find({$and:[{gender:"Male"},{isMarried:false}]})
+[
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc2"),
+    first_name: 'Pebrook',
+    last_name: 'Currum',
+    percentage: 82,
+    gender: 'Male',
+    university: 'Universidade Cruzeiro do Sul',
+    isMarried: false
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc3"),
+    first_name: 'Sidney',
+    last_name: 'Corbert',
+    percentage: 82,
+    gender: 'Male',
+    university: 'Hogeschool voor Wetenschap en Kunst (VLEKHO), Brussel',
+    isMarried: false
+  }
+]
+graduates> db.users.find({$and:[{gender:"Female"},{percentage:{$gt:80}}]})
+
+graduates> db.users.find({percentage:{$gte:50}})
+[
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc0"),
+    first_name: 'Phyllida',
+    last_name: 'Gauntlett',
+    percentage: 73,
+    gender: 'Non-binary',
+    university: 'Medical Academy in Bialystok',
+    isMarried: false
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc2"),
+    first_name: 'Pebrook',
+    last_name: 'Currum',
+    percentage: 82,
+    gender: 'Male',
+    university: 'Universidade Cruzeiro do Sul',
+    isMarried: false
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc3"),
+    first_name: 'Sidney',
+    last_name: 'Corbert',
+    percentage: 82,
+    gender: 'Male',
+    university: 'Hogeschool voor Wetenschap en Kunst (VLEKHO), Brussel',
+    isMarried: false
+  }
+]
+
+graduates> db.users.update({gender:"Female"},{$set:{field:{scholarship:true}}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+graduates> db.users.updateMany({gender:"Female"},{$set:{field:{scholarship:true}}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+graduates> db.users.find()
+[
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbbf"),
+    first_name: 'Ida',
+    last_name: 'Hammerman',
+    percentage: 41,
+    gender: 'Female',
+    university: 'Fordham University',
+    isMarried: false,
+    field: { scholarship: true }
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc0"),
+    first_name: 'Phyllida',
+    last_name: 'Gauntlett',
+    percentage: 73,
+    gender: 'Non-binary',
+    university: 'Medical Academy in Bialystok',
+    isMarried: false
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc1"),
+    first_name: 'Gilemette',
+    last_name: 'Balshen',
+    percentage: 34,
+    gender: 'Female',
+    university: 'Universidad Rey Juan Carlos',
+    isMarried: false,
+    field: { scholarship: true }
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc2"),
+    first_name: 'Pebrook',
+    last_name: 'Currum',
+    percentage: 82,
+    gender: 'Male',
+    university: 'Universidade Cruzeiro do Sul',
+    isMarried: false
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc3"),
+    first_name: 'Sidney',
+    last_name: 'Corbert',
+    percentage: 82,
+    gender: 'Male',
+    university: 'Hogeschool voor Wetenschap en Kunst (VLEKHO), Brussel',
+    isMarried: false
+  }
+]
+graduates> db.users.updateMany({gender:"Female"},{$set:{scholarship:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+graduates> db.users.find()
+[
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbbf"),
+    first_name: 'Ida',
+    last_name: 'Hammerman',
+    percentage: 41,
+    gender: 'Female',
+    university: 'Fordham University',
+    isMarried: false,
+    field: { scholarship: true },
+    scholarship: true
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc0"),
+    first_name: 'Phyllida',
+    last_name: 'Gauntlett',
+    percentage: 73,
+    gender: 'Non-binary',
+    university: 'Medical Academy in Bialystok',
+    isMarried: false
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc1"),
+    first_name: 'Gilemette',
+    last_name: 'Balshen',
+    percentage: 34,
+    gender: 'Female',
+    university: 'Universidad Rey Juan Carlos',
+    isMarried: false,
+    field: { scholarship: true },
+    scholarship: true
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc2"),
+    first_name: 'Pebrook',
+    last_name: 'Currum',
+    percentage: 82,
+    gender: 'Male',
+    university: 'Universidade Cruzeiro do Sul',
+    isMarried: false
+  },
+  {
+    _id: ObjectId("63b2b47afce2a64d5478cbc3"),
+    first_name: 'Sidney',
+    last_name: 'Corbert',
+    percentage: 82,
+    gender: 'Male',
+    university: 'Hogeschool voor Wetenschap en Kunst (VLEKHO), Brussel',
+    isMarried: false
+  }
+]
+graduates> db.users.deleteMany({percentage:{$lt:40}})
+{ acknowledged: true, deletedCount: 1 }
+graduates>
