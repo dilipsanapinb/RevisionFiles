@@ -1,19 +1,256 @@
- ## What are aggregation pipelines with mongoose? **
+## What is MOngoDb, and how does it differ from relational database?
 
-    => An aggregation pipeline consists of one or more stages that process documents:
+-- Its used to store the unstructured or semistructured data.
 
-    -> Each stage performs an operation on the input documents.  For example, a stage can filter documents, group documents, and calculate values.
+-- It is classified as "document-oriented database" i.e. it organise the data in a way that is similar to how data is structured in JSON(Js Object Notation) documents.
 
-    -> The documents that are output from a stage are passed to the next stage.
+-- used in scenario's like modern web application, big data and where we need 'flexibility' and 'scalability'.
 
-    -> An aggregation pipeline can return results for groups of documents. For example, return the total, average, maximum, and minimum values.
+*** Diff:
+1. Data Model:
+-- Relational databse use a tabular structure with rows and columns, where data is organised into structured tables with predefined schemas. 
 
-    -> we can update documents with an aggregation pipeline if you use the stages shown in Updates with Aggregation Pipeline.
+-- MongoDB stores the data in flexible, schema-less docs, typically in BSON(Binary JSON) format, allowing dynamic and nested data  structure.
 
-    => Aggregation pipelines in Mongoose are a way to perform advanced data processing and transformation on collections of documents in MongoDB.
-    => An aggregation pipeline is a series of stages that documents pass through, each stage applying a transformation or computation to the data.
-    => Mongoose provides a powerful API for building aggregation pipelines using its aggregate() method.
-        -- The aggregate() method takes an array of pipeline stages as its argument and returns a Aggregate object that can be used to execute the pipeline.
+2. Schema flexibility:
+
+-- MOngo has a 'flexible schema', which means that "diff documents in the same collection can have diffeent fields and data types." 
+
+-- This allow us to adopt the database schrma as application requirement evolve, without need of the complex migration.
+
+3. Query language:
+
+-- RDS use SQL
+-- MOngoDb uses a rich query language that is designed for querying JSON-like documents.
+
+4. Scalability:
+--  Horizontally: for "handlling large volume of data and high-velocity workloads".
+-- Mongo "supports the sharding", which "allow data to be distributed across multiple servers or clusters, for improving read and write performance"
+
+5. ACID Transactions:
+
+-- Mongo is not strictly ACID compliant.
+-- Mongo supports the transactions and ther are typpically used for operations that affects multiplr documents within a single collection.
+
+6. Joins:
+
+-- Relational databases excel at handling complex joins between tables.
+
+-- MongoDB, on the other hand, does not support joins between collections directly. Instead, it encourages denormalization and embedding related data within documents to reduce the need for joins.
+
+
+7. Use cases:
+
+-- Mongo is well suited for data is unstructured, semi-structured, or rapidly changing.
+
+-- used in apps like 
+    -content management
+    -real time analytics
+    -IOT 
+    -Mobile apps
+
+---------------------------------------------
+
+## Explain BSON and how it is used in MongoDB.
+-- Binary JSON is a 'binary-encoded serialization' format 'used by MongoDB to store and transmit data'.
+-- It's compact, efficient, and platform independent way of representing data structures, and it's designed to be both human-redable and efficient for parsing and encoding.
+
+-- BSON is used extensively in MongoDB for storing documents and exchanging data b/w the databses and client application
+.
+
+*** use case in MongoDB:
+
+1. Binary Encoding: 
+
+-- BSON is a binary format, which means it represents data in a binary form, as opposed to plain text like JSON. This binary encoding allows for efficient storage and transmission of data, making it suitable for database where performance and compactness are important.
+
+2. BSON supports:
+-Double
+-String
+-Object
+-boolean
+-Null
+-integers
+
+3. Extensibility:
+
+-- BSON is designed to be extensible, allowing MongoDb to add new data types or features without breaking compactibility with existing data.
+
+-- its required for accomodating the evolving requirements.
+
+4. Document Storage:
+
+-- Documents are stores as BSON objects. 
+
+5. Indexing and querying:
+
+-- BSON documents can be indexed, enable the efficient querying and retrivel of data.
+
+6. efficiency:
+
+-- BSON's binary encoding is more compact and efficient than plain text format like JSON.
+
+-- faster data access and lower storage overhead i.e. higher throughput.
+
+7. Wire protocol:
+
+-- BSON based wired protocol allows for the efficient communication and parsing of data, reducing the overhead associated with converting data between diff formats.
+
+-----------------------------------------
+
+## What is a document in MongoDB?
+
+-- fundamental unit of data storage.
+-- it's primary data structure used to store and represent data within the database.
+
+** Characteristics:
+
+1. JSON like format:
+-- stored format that is similar to JSON.
+-- key-value pair.
+
+2. Schema free
+3. Nested structure
+4. No-joins:
+-- MongoDB not supports the SQL like join b/w documents.
+-- mongo encorouge the denormaization of data
+
+5. Atomic operations:
+-- we can perform atomoc operations of individual document i.e. either the document is fully updated or not performed. This ensure the data consistency for single document operations.
+
+6. unique id
+7. collectiosn
+8. rich querying
+
+---------------------------------------
+
+## What is a collection in MongoDB?
+
+In MongoDB, a collection is a 'group of related documents'. It is a fundamental concept that plays a crucial role in organizing and storing data. Collections are roughly analogous to tables in relational databases.
+
+'Naming Conventions': Collection names in MongoDB are 'case-sensitive' and can contain up to 120 characters. It's 'common practice to use plural nouns' for collection names (e.g., "users," "products").
+
+----------------------------------------
+
+## How do you create a new database in MongoDB?
+
+-- Its created automatically whent we insert data into them.
+-- Unlike the RDS we dont need to create the databse befre using it.
+
+-- We can use mongo commamds
+
+    use dbName
+    db.users.insertOne({
+      name:'Dilip Sanap',
+      email:'dilip@gmail.com'
+    });
+
+-------------------------------------------
+
+## Explain the concept of indexing in MongoDB. Why is it important?
+
+-- Its databse optimization technique for speed and efficiency queries.
+-- it allows the sppedly ocate the document in MongoDB.
+
+-- Indexes are data structures that store a small, sorted subset of ata in a collection, along with the reference location of full document in database.
+
+1. Purpose:
+-- to improve the query persormance.
+-- without indexing MongoDB have to perform full collection scan.
+-- indexing significantly reduce the number of documents it needs to examine.
+
+2. Structure:
+-- stores key-value pair form. Key is fiels or combination of fields from the documents in the collection and value is a reference ti the location of the corresponding document.
+
+3. Automatic and mannually indexing:
+
+-- MongoDB can automatically create indexes for the '_id' field and can also create indexes based on specific query patterns.
+
+-- We can create the custom indexes of our choice
+      eg. db.users.createIndex({name:1});
+
+4. Single field ans compound indexes:
+
+    db.users.createIndex({name:1,email:1});
+
+5. Types:
+-ascending(default)
+-descending
+-geospacial
+-text
+-hashed
+
+
+6. Importance:
+(1) Faster queries: by narrow down set of documetns.
+(2) Sorting: If we frequently need to sort the specific data, indexing improve the performance.
+(3) Aggregation: indexing allows efficient grouping and aggregation operations.
+(4) Better Performance
+(5)Data consistency: by enforcing the unique constrains(e.g unique indexes) or ensuring the specific field present in that document.
+(6)"Covered queries": well designed indexes can make queries 'covered' i.e index contains all the daa needed to satisfy the query, eliminating the need to acces the actual documents. This further improves the performance.
+
+** We need to use the indexing judiciously, overindexing can lead to increased storage overhead and slower write operations.
+
+
+-------------------------------------------
+
+## What is the purpose of the _id field in MongoDB documents?
+
+
+In MongoDB documents, the _id field serves as a 'unique identifier for each document' within a collection. It plays a crucial role in document management and is "often referred to as the primary key of a document."
+
+-- The default behavior is to create a unique ObjectId, which is a' 12-byte identifier' consisting of a 'timestamp', 'machine' 'identifier', 'process identifier', and a "random value". This ensures that _id values are unique across distributed systems.
+
+-- We can give custom id also.
+
+--"Document Removal:" When deleting documents, MongoDB can use the _id field as a reference point
+---------------------------------------------
+
+##What is the difference between find() and findOne() in MongoDB?
+
+-- find() returns a cursor and can retrieve multiple documents, while findOne() returns a single document or null.
+
+-- Use find() when you need to retrieve multiple documents that match the query criteria.
+
+-- Use findOne() when you expect to retrieve only a single document or when you want the first matching document.
+
+-------------------------------------------------
+
+## Explain the aggregation framework in MongoDB. Provide an example.
+
+-- Its powerful and flexible for performing data transformation and analysis of operations on data.
+
+-- It allows us to process and manupulate documents in a collction, applying series of operations to filter, transform, group, and project data.
+
+-- Its usefull for the complex data analysis tasks go beyond basic querying.
+
+*** An aggregation pipeline consists of one or more stages that process documents:
+
+--Each stage performs an operation on the input documents.  For example, a stage can filter documents, group documents, and calculate values.
+
+--The documents that are output from a stage are passed to the next stage.
+
+An aggregation pipeline can return results for groups of documents. For example, return the total, average, maximum, and minimum values.
+
+--we can update documents with an aggregation pipeline if you use the stages shown in Updates with Aggregation Pipeline.
+
+-- Aggregation pipelines in Mongoose are a way to perform advanced data processing and transformation on collections of documents in MongoDB.
+
+* Key concepts:
+(1) "Pipeline":
+        Aggregation operations are organised into a pipeline, which consists of multiple stages, each representong a specific oeration or transformation to be applied to the data.
+
+(2) "Stages": 
+        Each stage in pipeline performs the specific operation on data.
+        stages like `$match`, '$group', '$project', '$sort'.
+
+(3) "Expression Operators":
+        allow us to perform calculations and transformations within pipeine stages
+        -'$sum'
+        -'$avg'
+        -'$concat'
+        -'$dateToString'
+
 
     =>Example:
         db.orders.insertMany( [
@@ -28,20 +265,329 @@
         -> Calculate the total order quantity:->
 
         db.orders.aggregate( [
-        // Stage 1: Filter pizza order documents by pizza size
+
+        // "Stage 1": Filter pizza order documents by pizza size
+
         {
         $match: { size: "medium" }
         },
-        // Stage 2: Group remaining documents by pizza name and calculate total quantity
+
+        // "Stage 2": Group remaining documents by pizza name and calculate total quantity
+
         {
         $group: { _id: "$name", totalQuantity: { $sum: "$quantity" } }
         }
+
         ] )
 
-        => The result of the aggregation pipeline will be an array of objects that contains the computed filterd by size and total quantity.
-        => Mongoose's aggregation pipelines provide a powerful way to perform complex data processing and transformation in MongoDB. The API is flexible and expressive, allowing you to compose pipelines with multiple stages and operators to compute exactly the data you need.
+        -- The result of the aggregation pipeline will be an array of objects that contains the computed filterd by size and total quantity.
 
-    ------------------------------------------------------------------------
+Mongoose's aggregation pipelines provide a powerful way to perform complex data processing and transformation in MongoDB. The API is flexible and expressive, allowing you to compose pipelines with multiple stages and operators to compute exactly the data you need.
+
+-----------------------------------------------
+
+##What is a cursor in MongoDB, and how do you work with it using Node.js?
+
+-- It's a database object used to traverse the result of a query.
+
+-- It's a pointer to the result set of a query, and it allow us to retrive and iterate over documents from collection one at a time.
+
+-- They are perticularly useful when dealing with large result sets, as they allow you to process data efficiently without loading all the results into meory at once.
+
+* Create a cursor
+
+-- start with query "find()" method on MongoDB collection.
+
+    const cursor=collection.find({status:"active"});
+
+* Iterating over documents:
+
+-- common methods used for iteration 'forEach()', 'toArray()', 'next()'.
+
+        cursor.foEach((document)=>{
+
+          // process each document here
+
+          console.log(document);
+
+        },(err)=>{
+          if(err){
+            console.log('Error', err);
+          }else{
+            console.log('Cursor iteration finished.');
+
+          }
+        })
+
+    
+      // Closing a cursor
+
+      cursor.close((err)=>{
+        if(err){
+          console.error('Error closing cursor:',err);
+
+        }else{
+
+          console.log('Cursor closed.');
+
+        }
+      });
+
+-------------------------------------------
+
+## How do you perform a join operation in MongoDB?
+
+-- MongoDb doesn't support SQL like join, insted it promotes the denormalised data model where related data is typicallystored within a single document or embeded documents.
+
+-- This process called 'embeding' to reduce the need of join.
+
+* We can do the join by:
+
+1. Embedding Data: 
+        -- we can embed the related data within the document.
+        -- This approach is suitable for the "one-to-many" realationship.
+
+        e.g. Store the comments inside a blog post document.
+        {
+          "_id":1,
+          "title":"Sample Blog Post",
+          "content":"This is content",
+          "comments":[
+            {"author":"User1","text":"Great Post!"},
+            {"author":"User1","test":"I learned lot."}
+          ]
+        }
+
+2. Reference:
+
+-- It's is like 'foreign key' in RDS.
+
+    eg.
+
+    //User
+        {
+          "_id":ObjectId("12345"),
+          "username":"Dilip",
+          "email":"dilip@gmail.com"
+        }
+
+    //Post
+        {
+          "_id":1,
+          "title":"Sample",
+          "content":"Conntent",
+          "author":ObjectId("12345")
+        }
+
+3. Aggregation framework:
+
+-- We can use the '$lookup' to perform a "left outer join". 
+--
+          eg.
+            db.orders.aggregate([
+              {
+                $lookup:{
+                  from:"products",
+                  localField:"productId",
+                  foreignField:"_id",
+                  as:'product'
+                }
+              },
+              {
+                # flatten the aaray of joined products
+                $unwind: '$product'  
+              }
+            ])
+
+
+------------------------------
+
+## What are the benefits and use cases of embedding documents in MongoDB?
+
+-- Its "data modeling technique where related data is stored within a single document".
+
+* Benefits:
+
+1. Improve the query performance:
+-- All data come in sigle query, no need of complex queries.
+
+2. Reduce latency:
+-- it monimizes the need for multiple round-trip databse queries, which significantly reduce latency, it makes app more responsive.
+
+3. Simplified data retrivel:
+-- we dont need to perdorm the join to combine the data from multiple columns.
+
+4. Atomic updates:
+-- we can update the related data within a single document in a single operation. This ensures the consistency.
+
+5. Fewer database operations:
+
+6. Reduced schema complexity:
+
+
+* Use cases:
+(1) One to many relationship.
+(2) Hirarchial data / nested data.eg. address in profile.
+
+-----------------------------------
+
+## Explain the concept of sharding in MongoDB.
+
+-- It's a 'database scaling' technique used in MongoDB to horizontally partition and distribute data scross multiple servers or nodes.
+
+-- Primary goal of shrading is to "address the challenges associated with managing large and growing databse", or" to provide improved performance, scalability, and high availability".
+
+* components of shrading:
+
+1. Shard: 
+
+-- a shard is single MongoDb server or a replica set stores a portion of the overall dataset. 
+
+-- Each shard contains a subset of the data and can handle read and write operations for that portion of the data.
+
+-- Shards are responsible for managing and storing their portion of dataset.
+
+2. Shard Key:
+-- field or combination of field chosen to determine how data is distributed across shards.
+-- MongoDB uses the shard key to route data to the appropriate shard based on the shard key field.
+-- carefull selection of shard key is crucial,as it impacts data distribution and query performance.
+
+3. Mongos:
+-- Mongos(MOngoDB Router) is a component that acts as an interface between client application and MongoDB sharded cluster.
+
+
+
+* Use Cases for Sharding:
+
+(1) Sharding is typically used in MongoDB when you have a "large dataset that cannot fit on a single server or when you need to distribute the read and write load across multiple servers to achieve high availability and performance."
+
+(2) Sharding is beneficial for applications with high write volumes, large amounts of data, and demanding read/write operations.
+
+(3) It is suitable for scenarios where data needs to be geographically distributed across data centers or regions to reduce latency for users in different locations.
+
+
+----------------------------------------
+
+## How can you enforce data validation and schema in MongoDB?
+
+-- to mantain data intergity and consistency within database mongoDB allows validation.
+
+* Two primary methods to enforce data validation and schema in MongoDB:
+
+1. Schema Validation(JSON Schema):
+
+    -- It's powerful feature that enables you to define a JSON schema for your collections.
+    -- JSON schema is a standard for describing the structure and constrains of JSON data.
+    -- We can use the JSON Schema to specify rules for the shape and content of documents within a collection.
+
+        * Define JSON Schema: 
+              {
+                "$jsonSchema":{
+                  "bsonType": "object",
+                  "required":["name", "age"],
+                  "properties":{
+                    "name":{
+                      "bsonType":"string"
+                    },
+                    "age":{
+                      "bsonType":"int",
+                      "minimum":18
+                    }
+                  }
+                }
+              }
+
+        * Validation rule:
+
+        db.createCollection("people",{
+          validation:{
+            $jsonSchema:{
+              bsonType: "object",
+              required: ["name", "age"],
+              properties:{
+                name:{
+                  bsonType: "string"
+                },
+                age:{
+                  bsonType:'int',
+                  minimum: 18
+                }
+              }
+            }
+          }
+        });
+
+
+        -- MongoDB enforce the validation rules when you insert or update documents in the collection.
+        -- If documents do not match the schema will be rejected.
+
+
+2. Document Validation:
+
+-- If we use the Object-Document-Mapping(ODM) library like Mongoose in Node.js application, we can define and enforce document validation rules using the ODM's schema definations.
+
+-- These schemas specify the structure and constrains for documents in your MongoDB collections.
+
+          eg.
+            const mongoose= require('mongoose');
+            const personSchema=new mongoose.Schema({
+              name:{
+                type:String,
+                required:true,
+              },
+              age:{
+                type: Number,
+                min: 18,
+              }
+            });
+
+            const Person= mongoose.model("Person", personSchema);
+
+
+----------------------------------------------
+
+## How do you handle transactions in MongoDB using Node.js?
+
+MongoDB introduced support for multi-document transactions in version 4.0 and later. Transactions provide data integrity and consistency guarantees when you need to perform multiple operations that depend on one another, such as multiple updates or inserts, and you want all these operations to succeed or fail together.
+
+------------------------------------
+
+## What is replica set in MongoDB, and how does it ensure high availability?
+
+A replica set in MongoDB is a group of MongoDB servers that work together to provide high availability and data redundancy. Replica sets are a core feature of MongoDB's data architecture, and they are used to ensure data durability, fault tolerance, and automatic failover in the event of server failures. Here's how replica sets work and how they ensure high availability:
+
+Components of a MongoDB Replica Set:
+
+Primary Node: In a replica set, one server is designated as the primary node. The primary node is the only node that accepts write operations from client applications. All changes to the data are initially made on the primary node.
+
+Secondary Nodes: Secondary nodes are copies of the data on the primary node. They replicate the data from the primary node and can serve read operations. Secondary nodes also have the ability to become the primary node in the event of a primary node failure.
+
+Arbiter: An arbiter is an optional, lightweight node that is used to break ties in the event of a network partition or when a primary node is unavailable. Arbiter nodes do not store data but participate in replica set elections.
+
+How Replica Sets Ensure High Availability:
+
+Data Redundancy: Data is replicated across multiple nodes in a replica set. This redundancy ensures that if one node fails, there are other copies of the data available on secondary nodes.
+
+Automatic Failover: In the event that the primary node becomes unavailable (due to hardware failure, network issues, etc.), replica sets have an automatic failover mechanism. When the primary node goes down, an election is held among the eligible secondary nodes to select a new primary. Once a new primary is elected, it takes over accepting write operations.
+
+Read Scalability: Secondary nodes can serve read operations, distributing the read workload and providing read scalability. This is useful for applications with high read-to-write ratios.
+
+Data Consistency: MongoDB ensures data consistency across all nodes in the replica set. Write operations are replicated to secondary nodes in the same order they were applied on the primary node, ensuring data consistency.
+
+Data Durability: Data written to the primary node is guaranteed to be durable. Once a write operation is acknowledged, it is persisted to the majority of replica set members (including the primary) before the acknowledgment is sent to the client.
+
+Minimal Downtime: Automatic failover reduces the downtime associated with server failures. In the event of a primary node failure, the replica set can quickly elect a new primary, minimizing application disruption.
+
+Monitoring and Alerts: MongoDB provides tools and mechanisms for monitoring the health and status of replica sets. Administrators can set up alerts to be notified of any issues that may require intervention.
+
+Replica sets are the foundation of high availability and fault tolerance in MongoDB. They provide a robust mechanism for ensuring that your MongoDB databases are available, reliable, and resilient to server failures. Replica sets are commonly used in production environments where data availability and durability are critical.
+
+
+
+
+
+
+---------------------------------------
 **to find total pop of e.Europian regin;
 data> db.world.aggregate([{$match:{Region:'EASTERN EUROPE'}},{$group:{_id:{reg:'$Region'},totalP:{$sum:'$Population'}}}]).pretty()
 [ { _id: { reg: 'EASTERN EUROPE' }, totalP: 119914717 } ]

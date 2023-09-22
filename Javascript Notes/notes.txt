@@ -18,7 +18,7 @@ element.setAttribute(attributeName,attributeValue)
 
 The getAttribute() method returns the value of an element's attribute.
 
-element.getAttribute(name)
+element.getAttribute(name);
 
 -------------------------------------------------
 
@@ -155,7 +155,7 @@ It's important to note that not all operators are unary or binary. For example, 
 
 ## Precedence:
 
-  =>Operator precedence determines how operators are parsed concerning each other. Operators with higher precedence become the operands of operators with lower precedence.
+  =>Operator precedence determines" how operators are parsed concerning each other". Operators with higher precedence become the operands of operators with lower precedence.
   =>Left-associativity (left-to-right) means that it is interpreted as (a OP1 b) OP2 c,
   => while right-associativity (right-to-left) means it is interpreted as a OP1 (b OP2 c).
   => a = b = 5; // same as writing a = (b = 5);
@@ -168,7 +168,7 @@ It's important to note that not all operators are unary or binary. For example, 
 
 ## Higher Order Functions:
 
-=> In JavaScript, higher-order functions are functions that operate on other functions by taking them as arguments, returning them as values, or both.
+=> In JavaScript, higher-order functions are "functions that operate on other functions by taking them as arguments, returning them as values, or both".
 => They enable functional programming paradigms and are a fundamental concept in JavaScript programming.
 
 Here are some examples of higher-order functions in JavaScript:
@@ -487,11 +487,10 @@ function foo() {
 
 const myFunc = makeFunc();
 myFunc();
-   
-   displayName() inner function is returned from the outer function before being executed.
+  displayName() inner function is returned from the outer function before being executed.
 
   =>The reason is that functions in JavaScript form closures. A closure is the combination of a function and the lexical environment within which that function was declared. This environment consists of any local variables that were in-scope at the time the closure was created.
-------
+-------------------------
   =>
       function makeAdder(x) {
       return function (y) {
