@@ -1,0 +1,1141 @@
+
+### CSS HEX Colors
+
+-- The colors in CSS can be specified in Hexadecimal values also.
+-- A hexadecimal color is a 6 digit representation of the color.
+-- The notation of the HEX value starts with the "#" symbol followed by the six characters within the range of 0 to F.
+
+eg. <p style="color:"#bfff00">I am paragraph</p>
+
+----------------------------------------------
+
+# Text-align:
+
+-- We use the CSS `text-align` property to align content inside a 'block-level element'.
+-- This alignment affects the 'horizontal axis only'.
+--The text-align property accepts 'left', 'center', 'right', 'justify' as values.
+-- The justify Value:The justify value of the text-align property lines up the content on the left and right edges of the block-level element (the box). If the last line isn't a full line, then it leaves it alone.
+-------------------------------------------
+
+# What is the CSS Box Model, and what are its components?
+
+-- 'Box model' is a fundamental concept in web design and layout that describes how elements on web page ae structured and how the space is distributed in elements.
+
+-- The CSS box model is a container that contains multiple properties/ components including 'borders', 'margin', 'padding', and the 'content' itself. It is used to create the design and layout of web pages. According to the CSS box model, the web browser supplies each element as a square prism.
+
+-------------------------------------------
+
+# Block vs inline elements
+
+(1) Block Elements:
+    The element will start on a new line and occupy the full width available. And you can set width and height values.
+    Block elements accept all the margins.
+    They create 'block' or 'box' in the layout.
+
+    eg. div, p, h1-h6, ul, li, table and form
+
+
+(2) Inline Elemnets:
+    The element doesnt start on a new line and only occupy just the width it requires. You cant set the width or height.
+    Inline elements accept "only left and right margins" and do not accept top and bottom margins.
+    -- Often used withn block level elements to style or modify text or other inline content.
+
+
+    eg. span, b(bold), strong, a, img, em, br
+
+(3) ## Inline-Block Elements
+
+Inline-block elements are similar to inline elements, except they can have "padding and margins added on all four sides".
+One common use for using inline-block is for creating navigation links horizontally.
+Some examples of inline-block elements are <input>, <button>, <select>, <textarea> etc.
+---------------------------------------------
+
+# BEM(Block,Element,Modifier);
+
+BEM methodology is "popular naming convention for classes in css".
+BEM, which stands for Block, Element, Modifier, is a methodology for organizing and naming CSS classes in order to create more maintainable and modular stylesheets. It provides a structured approach to writing CSS and helps in avoiding style conflicts and increasing code reusability.
+
+Here's a brief explanation of the three main components in BEM:
+
+(1) Block: A block represents a standalone component or a higher-level module on a web page. It can be thought of as a reusable, self-contained unit. Blocks are usually defined by a class name that describes their purpose or function. For example, a navigation bar could be a block with the class name "navbar".
+
+(2) Element: Elements are the components that make up a block. They are dependent on the block they belong to and have no standalone meaning. Elements are typically denoted by two underscores (__) followed by a name within the context of the block. For instance, within the "navbar" block, there could be elements such as "logo" and "menu" with class names like "navbar__logo" and "navbar__menu".
+
+(3) Modifier: Modifiers are used to modify the appearance or behavior of blocks or elements. They allow for variations of a block or element without duplicating code. Modifiers are denoted by two hyphens (--) followed by a name. For example, if you have a "button" block, you might have modifiers like "button--primary" and "button--large" to indicate a primary button or a larger button size.
+
+By using BEM, you can create clear and structured class names that help identify the purpose and relationships of different components in your CSS. This methodology promotes code maintainability, reusability, and reduces the chances of style conflicts, especially in larger projects with many developers working together.
+
+ eg.
+ /* Block component */
+.btn {}
+
+/* Element that depends upon the block */ 
+.btn__price {}
+
+/* Modifier that changes the style of the block */
+.btn--orange {} 
+.btn--big {}
+
+-> block is a top level abstraction of new component eg. .btn{}. this block should be thought as parent.
+-> Child elements, can be places inside and denoted by two underscores following the name of block like btn__price{}.
+-> Finally Modifiers can manipulate the block so that we can theme or style the particular component without inflicting changes on a completely unrelated module. This is done by appending two hypens to the nameof the block just like btn--orange.
+
+---------------------------------------
+
+# What Are Selectors?
+
+-- A selector in CSS is a part of the CSS ruleset, that is basically used to select the element you want to style. CSS selectors select HTML elements according to their id, class, type, attribute, etc.
+
+Types of Selectors
+
+There are various types of selectors in CSS. They are:
+1. CSS Element / tag Selector
+2. CSS Id Selector
+3. CSS Class Selector
+4. CSS Universal Selector
+5. CSS Group Selector
+
+order of "specificity"/scores of selectors
+
+Inline-Style(1000)
+id(100)
+class,attribute,pseudo class(10)
+tag,pseudo element(1)
+Universal,combinatos(0)
+----------------------------------------
+
+## Difference between the Id and Class selector in CSS:
+
+-- they both used to target and style HTML elements.
+
+* ID selector:
+-- denoted '#' followed by unique identifier for HTML element. 
+-- ID's must unique within single HTML document, i.e. no two element in the same document should share the same id.
+
+#uniqueId
+{
+    color: blue;
+}
+
+* Class selector:
+
+-- denoted by (period)'.'followed by class name.
+
+-- Class names can be used on multiple HTML elements within the same document, allowing you to apply the same style to multiple elements.
+
+* Key differences:
+1. Uniqueness:
+-- ID selectors must be unique within document, while class selectors can be applied to multiple elements.
+
+2. Specificity:
+-- ID have higher specificity than class selectors.
+-- If there is conflict between an ID and class selector targeting the same element, the ID selector's styles will take precedence.
+
+3. Use cases:
+-- ID's are used when you want to uniquelly identify and style a specific element, such as header or footer.
+-- Classes are used for styling multiple elements that share common characteristics, styling all buttons or highlighting specific content sections.
+
+4. CSS Reusibility:
+-- Class selectors promote CSS reuisbility because you can apply the same class to multiple elements to give them a consistent style.
+
+-- Id's are not reisable.
+
+5. JavaScript Interaction:
+-- ID's are used in Js to target and manupulate specific elements due to their uniqueness.
+-- Classes are also used in Js for multiple elements, especially when they share similar behavior.
+
+---------------------------------------------------------------
+
+# CSS Combinators
+
+-- The CSS combinators represent the relationship between two selectors.
+-- The CSS selectors are the patterns that can be used for styling the particular HTML element. Sometimes, it is possible that there is more than one simple selector, and to combine the multiple simple selectors, we use the combinators.
+
+
+Types of Combinators in CSS
+
+The combinators are of 4 types, which are given below:
+
+1. `Descendant selector ( ) (space)`
+eg. 
+    div p {
+        /* It will select all p's which are descendants of div */
+        background-color: teal;
+    }
+
+2. `Child selector (>)`
+
+eg. 
+    div>p
+
+3. `General sibling selector (~)`
+eg.
+    
+    <div>
+    <h1>Heading</h1>
+    <p>para</p>
+    <p>para</p>
+    <p>para</p>
+    </div>
+
+    h1~p
+
+4. `Adjacent sibling selector (+)`
+<h1>Heading</h1>
+    <p>para</p>
+
+    h1+p
+
+* Attributes selector
+
+a[href="example.com"]
+{
+  color:red
+}
+a[targer="_blank"]{
+  font-size:40px
+}
+------------------------------------------
+
+## How can you select all even or odd elements using CSS?
+
+-- we can select all even or odd elements using pseudo-classes.
+-- psuedo classes are ued to define special states or positions of elements like ':hover', ":active", ':first-child', 'nth-child' and more.
+
+-- We can select even or odd elements, we can use 'nth-child' psuedo class with 'even' or 'odd' keyword.
+
+        eg. 
+        div:nth-child(even){
+
+        }
+
+        div:nth-child(odd){
+
+        }
+
+-------------------------------------------
+
+# CSS pseudo-classes CSS pseudo-classes
+
+A pseudo-class is used to "define a special state of an element".
+
+For example, it can be used to:
+
+-- Style an element when a user mouses over it.
+
+-- Style visited and unvisited links differently.
+
+-- Style an element when it gets focus.
+
+        syntax:
+            selector:pseudo-class {
+	        property:value;
+            }
+
+:active         -select the acive link
+
+:checked        -select every checked element
+
+:disabled       -select every disabled element
+
+:empty          -select every empty element
+
+:enabled        -select every enabled element
+
+:first-child    -select every first child of parent
+
+:first-of-type  -
+
+:focus          - select element has focus
+
+:hover          
+
+:last-child    
+
+:link           - select all unvisited links
+
+:not(p)         - select every element which is not P
+
+:nth-child()
+
+:read-only, :write-only, :required
+
+---------------------------------------------
+
+# Pseudo-elements
+
+A CSS "pseudo-element is used to style specified parts of an element".
+
+For example, it can be used to:
+
+-- Style the first letter, or line, of an element
+-- Insert content before, or after, the content of an element.
+
+-- Syntax:
+        selector::pseudo-element{
+            property:value;
+        }
+
+        p::first-line {
+        color: red;
+        font-size: 40px;
+        }
+
+        p::first-letter {
+        color: red;
+        font-size: 40px;
+        }
+
+        p::before{
+            content:"masai"
+        }
+
+        # insert content before and after
+        p::after{
+            content:"masai"
+        }
+
+        p::selection
+
+----------------------------------------------
+
+## Difference between display none and display hidden.
+
+* display: none:
+
+1. display: none:
+    --it's a CSS property that removes the element from the document flow entirely.
+    --This means the element is not rendered on the page, and its space is also removed. 
+    --It's as if the element doesn't exist in the layout.
+
+-Elements with display: 
+    --'none' are not visible and "do not take up any space on the page". 
+    -- This is often used when you want to hide an element and free up the space it occupies.
+
+-Hidden elements with display: 
+    --none are not accessible to users, and they are not part of the interactive content on the page.
+
+To make an element visible again, you need to change its display property to something other than none, like display: block or display: inline.
+        Example:
+
+            .hidden-element {
+                display: none;
+            }
+
+2. visibility: hidden:
+
+-- "hides an element while still preserving its space in the layout". 
+-- The element is not visible, but it continues to occupy the same space it would if it were visible.
+
+Hidden elements with visibility: hidden are still part of the document and can be interacted with, such as through JavaScript or screen readers.
+
+To make an element visible again, you can change its visibility property to visible.
+
+        Example:
+
+            .hidden-element {
+            visibility: hidden;
+            }
+
+* summary:
+'display: none' removes the element from both view and layout, while 'visibility: hidden' hides the element from view but maintains its layout space. 
+Your choice between the two depends on your specific use case. If you want to completely hide an element and free up the space it occupies, use display: none. If you want to hide an element but preserve its layout space, use visibility: hidden.
+
+--------------------------------------
+
+## ## What is the display property, and what are some common values for it?
+
+-- used to control how an HTML element is displayed in the document layout.
+
+1. block:
+-- 'display:block' generate block level box.
+-- Start on new line and expand to fill the available horizontal space within their containing element.
+-- eg.
+        'div'
+        'p'
+        'h1'
+        'header'
+        'nav'
+        'footer'
+
+2. inline:
+-- 'display: inline' generate inline-level box.
+-- They start on a new line and expand to fill the available horizonatal space within their containing element.
+-- not start on new line.
+
+        eg.
+        'span'
+        'a'
+        'strong'
+        'em'
+
+3. inline-block:
+            eg.
+            'button'
+            'input'
+            'textarea'
+            'form'
+
+4. none:
+
+5. table, table-row, table-cell :
+
+6. flex and grid
+
+7. li, ol, ul
+
+---------------------------------------
+
+## What is the float property, and how does it affect the layout of elements?
+
+-- used to define how an element should be positioned within it's containing element, with respect to surrounding element.
+
+-- primarily effect the block-level layout such as images, text, and was used to create multi column layout before modern tech like 'Flexbox' and 'CSS Grid'.
+
+        eg.
+        .float-left{
+            float:left
+        }
+
+---------------------------------------------
+## styling the HTML using the formating elements:
+
+    <b> - Bold text
+    <strong> - Important text- semantic
+
+    <i> - Italic text
+    <em> - Emphasized text(italic) -semantic
+
+    <mark> - Marked text
+    <small> - Smaller text
+    <del> - Deleted text
+    <ins> - Inserted text  
+<p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
+
+* <sub> - Subscript text
+            The HTML <sub> element defines subscript text. Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font. Subscript text can be used for chemical formulas, like H2O:
+            <p>This is <sub>subscripted</sub> text.</p>
+
+* <sup> - Superscript text;
+    
+        eg. Like denoting the square of number;
+
+------------------------------------------------------------------
+
+## HTML Attributes:
+
+-- it provide additional info abt HTML element.
+-- All HTML elements can have attribute.
+-- attribute are always specified in the start tag.
+-- attributes are usually came in name/value pairs like: name="value";
+
+eg. id, class, style, src, href, alt, title, value, type, name, placeholder, disabled, selected, checked, maxlength.
+
+        eg.
+            <a href="https://www.w3schools.com">Visit W3Schools</a>
+
+        <img src="img_girl.jpg">
+
+        src--absolute url eg:httts://example.jpg
+
+        relative /images/example.jpg
+
+width and height attributes.
+
+style attributes
+
+You should always include the lang attribute inside the <html> tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
+
+    <html lang="en"></html>
+
+title attribute
+    -- it give some extra info abt an element
+
+<p title="I am a tooltip"> This is a paragraph</p>
+
+----------------------------------------
+
+## Web Browsers :
+
+    The purpose of a web browser (Chrome, Edge, Firefox, Safari) is to read HTML documents and display them correctly.
+
+    A browser does not display the HTML tags, but uses them to determine how to display the document:
+
+---------------------------------------------------------------------
+
+## Z-index 
+
+-- z-index is a CSS property that "controls the vertical stacking order of elements that overlap in a web page".
+
+-- The z-index property specifies the stack order of an element, relative to the other elements in the same stacking contex.
+
+-- The z-index value can be either an integer or the keyword "auto". 
+
+-- The "higher the z-index value, the closer the element is to the top of the stacking order".
+
+-- If two elements overlap, the element with the higher z-index value will appear on top of the other element.
+
+    Example:
+    
+    <div style="position: relative; z-index: 1;">This element has a lower z-index value</div>
+
+    <div style="position: absolute; top: 50px; left: 50px; z-index: 2;">This element has a higher z-index value</div>
+
+-- In this example, the second div has a higher z-index value and will be displayed on top of the first div
+
+    Note that z-index only works on positioned elements (position: relative, position: absolute, position: fixed, or position: sticky).
+
+------------------------------------------
+
+# What is stacking-context?
+    
+The stacking context is a concept in CSS that determines how elements are layered and stacked on top of each other within a web page. It defines the order in which elements are painted and displayed on the screen. Understanding the stacking context is crucial when dealing with overlapping elements and controlling their visibility.
+
+Each stacking context consists of one or more stacking contexts, which can be created in the following scenarios:
+
+"Root Stacking Context": The root of the document establishes the initial stacking context. It typically represents the viewport or the browser window.
+
+"Stacking Contexts within Elements": Certain CSS properties and values create stacking contexts within individual elements. These properties include position (with values other than static) and z-index.
+
+When elements belong to different stacking contexts, their stacking order is determined by a set of rules:
+
+Elements in the same stacking context are painted in the order they appear in the HTML markup, with the last one painted on top.
+
+Stacking contexts with a higher stacking order (higher z-index value) are painted on top of stacking contexts with a lower stacking order.
+
+If an element is positioned outside its stacking context, it may still overlap elements within other stacking contexts if its stacking order is higher.
+
+Understanding the stacking context and its rules is important for managing the visibility and layering of elements, especially when dealing with complex layouts, overlapping elements, and managing z-index values. It allows you to control how elements are stacked and which elements are visually displayed on top of others on the web page.
+
+-----------------------------------------------------------------------------------
+
+## Header, article, section, footer
+
+(1) <header> 
+    => used to introductory and navigational information about a section of page.
+    -> authors name
+    -> time and date of publication
+    -> table of contents
+    -> navigational information
+
+        eg. 
+
+            <header>
+                <h1>Website Title</h1>
+                <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                </nav>
+            </header>
+
+(2) <article>
+-- is ment to house a self-contained composition the can logically be independently recreated out of the pagewithout loosing its meaning.
+
+    Examples ;
+        -individual blog post or news stories.
+
+                eg. 
+                
+                <article>
+                    <h2>Article Title</h2>
+                    <p>Article content goes here.</p>
+                </article>
+
+(3) <section>
+    =>is a flexible container for holding content that shares a common information themes or purpose.
+
+    eg. 
+        
+        <section>
+            <h2>Section Title</h2>
+            <p>Section content goes here.</p>
+        </section>
+
+(4) <footer>
+    => used to hold the information that should appear at the end of section of content and contain additional information about the section.
+    =>Authors name, copyright information,and related links like contacts.
+
+--------------------
+
+## Sematic Tags: Building blocks of HTML5
+
+Semantic tags in HTML are tags that give meaning to the content within them. They are used to describe the purpose or meaning of the content, rather than just its presentation. Using semantic tags can help search engines and screen readers to better understand the content on a web page, and can also make it easier for developers to maintain and update the code.
+
+Here are some examples of semantic tags:
+
+<header>: defines the header of a web page or section.
+
+<nav>: defines a section of navigation links.Used to create navigation menus, menus or other navigation-realted content.
+
+    Usage:
+        -- Main navigation.
+        -- Footer navigation
+
+<main>: defines the main content of a web page.
+
+<article>: 
+    -- defines a self-contained piece of content, such as a blog post or news article or comment that can stand alone.
+    -- 
+
+<section>: defines a section of related content.
+
+<aside>: defines a section of content that is related to the main content, but not necessarily part of it.
+
+<footer>: defines the footer of a web page or section.
+
+Using semantic tags can make your HTML code more readable and understandable, both for human developers and for automated tools like search engines and screen readers. It can also help you structure your content more effectively, making it easier to maintain and update over time.
+
+    (1) "Semantics": allowing you to describe more precisely what your content is.
+
+    (2) "Connectivity": allowing you to communicate with the server in new and innovative ways.
+
+    (3) "Offline and storage": allowing web pages to store data on the client-side locally and operate offline more efficiently.
+
+    (4) Multimedia: making video and audio first-class citizens in the Open Web.
+
+    (5) 2D/3D graphics and effects: allowing a much more diverse range of presentation options.
+
+    (6) Performance and integration: providing greater speed optimization and better usage of computer hardware.
+
+    (7) Device access: allowing for the usage of various input and output devices.
+
+    (8) Styling: letting authors write more sophisticated themes
+
+------------------------------------------------------
+
+
+## Why you would like to use semantic tag?
+
+Search Engine Optimization, accessibility, repurposing, light code.
+
+Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly.
+
+Search engine needs to understand page content to rank and semantic tag helps.
+
+Semantic code aids accessibility. Specially, many people whose eyes are not good rely on speech browsers to read pages to them. These programs cannot interpret pages very well unless they are clearly explained.
+
+Help Search engines to better understand pages. Search engine need to understand what your content is about when rank you properly on search engines. Semantic code tends to improve your placement on search engines, as it is easier for the "search engine spiders" to understand.
+
+
+It’s easier to read and edit, which saves time and money during maintenance.
+
+---------------------------------
+
+##How do you create a hyperlink that opens in a new window or tab?
+
+-- By using the 'target' attribute wihtin <a>.
+-- it specifies the target browsing context where the linked content will be displayed.
+
+-- eg. <a href="URL" target="_blank">Text<a>
+
+-------------------------------
+
+## What is the HTML5 data- attribute?
+
+-- data attribute is a set of attributes that allows you to store custom data private to the page or application.
+-- eg.
+        <div data-custom-value="some-data"></div>
+
+* Asigning the data attribute values with JavaScript.
+
+* get element with data custom value
+
+    var element=document.querySelector(`div[data-custom-value]`)
+
+* access the value
+
+    var customData=element.getAttribute(`data-custom-value`);
+
+        console.log(customData);
+
+
+* Use cases:
+
+-- Strong configuration data for Js functions or scripts.
+-- Providing additional information for styling or CSS purposes.
+-- Storing unique identities or custom sttributes for elements that need to be manipulated dynamically.
+-- Passing data from the server to the client-side Js for use in the client-side logic.
+
+
+-----------------------------------------
+
+## How do you create a numbered list using Roman numerals?
+
+we can use the <ol> element and specify the 'type' attribute as 'I' to indicate Roman numerals.
+
+        eg.
+        <ol type="I">
+            <li>list1</li>
+        <ol>
+
+--------------------------------
+## Responsive web
+
+-- Add viewport
+
+-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+--------------------------------------------------------
+
+## Show different Images depending on Browser Width
+
+The HTML <picture> element allows you to define different images for different browser window sizes.
+
+------------------------------------------------------
+
+## Responsive Text Size
+
+The text size can be set with a "vw" unit, which means the "viewport width". That way the text size will follow the size of the browser window.
+
+-----------------------------------------------------
+
+## Can you name the four types of @media properties?
+
+(1) all, which applies to all media type devices
+(2) print, which only applies to printers
+(3) screen, which only applies to screens (desktops, tablets, mobile etc.)
+(4) speech, which only applies to screen readers
+
+
+## media query:
+
+    @media screen (min-width:320px) and (max-width:768px){
+
+    }
+
+                or
+
+    @media all and (min-width:1024px){
+
+    }
+
+    @media all and (min-width:768px) and (max-width:1024px){
+
+    }
+
+    @media all and (min-width:320px) amd (max-width:767px){
+
+    }
+
+------------------------------------------------------------
+
+## What are optional closing tag?
+
+<p>, <li>, <td>, <tr>, <th>, <html>, <body>, etc. don't have to provide end tag. Whenever browser hits a new tag it automatically ends the previous tag.
+
+
+----------------------------------------
+
+## Inline-Block Elements
+
+Inline-block elements are similar to inline elements, except they can have padding and margins added on all four sides.
+One common use for using inline-block is for creating navigation links horizontally.
+Some examples of inline-block elements are <input>, <button>, <select>, <textarea> etc.
+
+-----------------------------------------
+
+## Explain the meaning of each of these CSS units for expressing length:
+
+-> cm centimeters
+-> em elements (i.e., relative to the font-size of the element; e.g., 2 em means 2 times the current font size)
+-> in inches
+-> mm millimeters
+-> pc picas (1 pc = 12 pt = 1/6th of an inch)
+-> pt points (1 pt = 1/72nd of an inch)
+-> px pixels (1 px = 1/96th of an inch)
+
+--------------------------------
+
+## In CSS3, how would you select
+
+=> Every <a> element whose href attribute value begins with “https”.
+
+    a[href^="https"]
+
+
+=> Every <a> element whose href attribute value ends with “.pdf”.
+
+    a[href$=".pdf"]
+
+=> Every <a> element whose href attribute value contains the substring “css”.
+    a[href*="css"]
+
+
+---------------------------------------
+
+## How to create a zebra striped table with CSS?
+
+To create a zebra-striped table, use the nth-child() selector and add a background-color to all even (or odd) table rows:
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+-------------------------------------------
+
+## RGB, HEX(Hexadecimal color values), HSLa(Hue Saturation Lightness alpha)
+
+-> eg. of hsla 
+
+    p {
+        color: hsla(209, 55%, 32%, 1);
+    }
+
+
+--------------------------------------------
+
+## What is CSS preprocessor? 
+
+=> A CSS preprocessor is a scripting language that extends the capabilities of CSS (Cascading Style Sheets) and provides a more efficient and convenient way to write CSS code.
+
+=> The main purpose of a CSS preprocessor is to simplify the process of creating and managing CSS stylesheets by adding features that are not available in standard CSS, such as:
+
+(1) Variables: allowing you to define and reuse values throughout your CSS code.
+(2) Nesting: allowing you to nest CSS selectors inside one another, making your code more readable and easier to manage.
+(3) Mixins: allowing you to group together sets of CSS declarations that can be reused throughout your code.
+(4) Functions: allowing you to define and reuse custom functions within your CSS code.
+(5) Importing: allowing you to split your CSS code into multiple files and import them into a single stylesheet,  but doing so will require an HTTP request to download each CSS file
+(6) Popular CSS preprocessors include Sass, Less, and Stylus,
+PostCSS each with their own syntax and features. These preprocessors are compiled into standard CSS code that can be used in web pages and applications.
+
+Using a CSS preprocessor can help you to write cleaner, more maintainable, and more efficient CSS code, and can save you time and effort in the long run.
+
+--------------------------------------------------------------------------
+
+## What is the difference between "resetting" and "normalizing" CSS?
+
+1. Resetting: CSS resets aim to remove all built-in browser styling. For example margins, paddings, font-sizes of all elements are reset to be the same. You will have to redeclare styling for common typographic elements.
+
+2. Normalizing: Normalize CSS aims to make built-in browser styling consistent across browsers. It also corrects bugs for common browser dependencies.
+
+--------------------------------------------------------------------------
+
+##  Describe the layout of the CSS Box Model and briefly describe each component.
+
+"Content": The inner-most part of the box filled with content, such as text, an image, or video player. It has the dimensions content-box width and content-box height.
+
+"Padding": The transparent area surrounding the content. It has dimensions padding-box width and padding-box height.
+
+"Border": The area surrounding the padding (if any) and content. It has dimensions border-box width and border-box height.
+
+"Margin": The transparent outer-most layer that surrounds the border. It separates the element from other elements in the DOM. It has dimensions margin-box width and margin-box height.
+
+------------------------------------------------------------------
+
+## What is the difference between em and rem units?
+
+=> Both em and rem "units are based on the font-size CSS property". The only difference is where they inherit their values from.
+
+=> em units inherit their value from the "font-size of the parent element"
+=> rem units inherit their value from the "font-size of the root element (html)"
+=> In most browsers, the font-size of the root element is set to 16px by default.
+
+--------------------------------------------------------------------------
+
+## What are the advantages of using CSS sprites and how are they utilized?
+
+"CSS sprites" combine multiple images into one image, limiting the number of HTTP requests a browser has to make, thus improving load times. Even under the new HTTP/2 protocol, this remains true.
+
+=> To utilize a spritesheet in CSS, one would use certain properties, such as background-image, background-position and background-size to ultimately alter the background of an element.
+
+-----------------------------------------------------------------------------
+
+## What is the purpose of cache busting and how can you achieve it?
+
+Browsers have a cache to temporarily store files on websites so they don't need to be re-downloaded again when switching between pages or reloading the same page. The server is set up to send headers that tell the browser to store the file for a given amount of time. This greatly increases website speed and preserves bandwidth.
+
+However, it can cause problems when the website has been changed by developers because the user's cache still references old files. This can either leave them with old functionality or break a website if the cached CSS and JavaScript files are referencing elements that no longer exist, have moved or have been renamed.
+
+"Cache busting is the process of forcing the browser to download the new files. This is done by naming the file something different to the old file."
+
+A common technique to force the browser to re-download the file is to append a query string to the end of the file.
+
+src="js/script.js" => src="js/script.js?v=2"
+
+The browser considers it a different file but prevents the need to change the file name.
+
+-------------------------------------------------------
+
+## What are defer and async attributes on a <script> tag?
+
+-- If neither attribute is present, the script is downloaded and executed synchronously, and will halt parsing of the document until it has finished executing
+
+-- The "defer" attribute downloads the script while the document is still parsing but waits until the document has finished parsing before executing it, equivalent to executing inside a DOMContentLoaded event listener. defer scripts will "execute in order".
+
+-- The "async "attribute downloads the script during parsing the document but will pause the parser to execute the script before it has fully finished parsing. async scripts will "not necessarily execute in order".
+
+=> Example:
+    
+    <script src="myscript.js"></script>
+    <script src="myscript.js" defer></script>
+    <script src="myscript.js" async></script>
+
+-------------------------------------------
+
+## What's the difference between a relative, fixed, absolute and statically positioned element?
+
+A positioned element is an element whose computed position property is either relative, absolute, fixed or sticky.
+
+(1) "static "- The default position; the element will flow into the page as it normally would. The top, right, bottom, left and z-index properties do not apply.
+
+(2) "relative" - The element's position is adjusted relative to itself, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned).
+
+(3) "absolute" - The element is removed from the flow of the page and positioned at a specified position relative to its closest positioned ancestor if any, or otherwise relative to the initial containing block. Absolutely positioned boxes can have margins, and they do not collapse with any other margins. These elements do not affect the position of other elements.
+
+(4) "fixed" - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and doesn't move when scrolled.
+
+(5) "sticky" - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.
+
+----------------------------------
+
+## What is the purpose of main element?
+
+The HTML <main> element represents the "dominant content of the of a document". The main content area "consists of content that is directly related to or expands upon the central topic of a document", or the central functionality of an application.
+
+<main role="main">
+    <p>Geckos are a group of usually small, usually nocturnal lizards. 
+       They are found on every continent except Australia.</p>
+    <p>Many species of gecko have adhesive toe pads which enable them to climb walls and even windows.</p>
+</main>
+
+Note: A document must not have more than one <main> element that doesn't have the hidden attribute specified.
+
+----------------------------------------------
+
+## Where and why is the rel="noopener" attribute used?
+
+The rel="noopener" attribute is commonly used in HTML anchor (<a>) tags, specifically in the target="_blank" scenario. When a link with target="_blank" is clicked, it opens the linked page in a new browser tab or window.
+
+The purpose of the rel="noopener" attribute is to enhance security and protect against a potential security vulnerability known as the "reverse tabnabbing" attack. This attack occurs when the newly opened tab has the ability to manipulate the original page that opened it. An attacker can modify the opened page's window.opener property to gain control over the original page, potentially redirecting it or executing malicious scripts.
+
+By adding rel="noopener" to the anchor tag, you prevent the newly opened page from having access to the window.opener property of the original page. This restricts any potential malicious actions that could be performed by the opened page.
+
+Here's an example of how the attribute is used:
+
+
+<a href="https://example.com" target="_blank" rel="noopener">Open Link</a>
+
+Including rel="noopener" ensures that the link opens in a new tab/window securely without exposing the original page to potential attacks. It's considered a best practice to include this attribute when using target="_blank".
+
+
+
+----------------------------------------
+
+## What does !important mean in CSS?
+
+=> It "overrides the cascade and gives the style rule the highest precedence."
+
+    p {
+        color: red !important;
+        }
+    .thing {
+        color: green;
+        }
+    <p class="thing">Will be RED.</p>
+
+---------------------
+
+## What is CSS opacity?
+
+-- The opacity CSS property sets the opacity of an element. "Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency."
+
+        div { background-color: yellow; }
+
+        .light {
+        opacity: 0.2; /* Barely see the text over the background */
+        }
+
+        .medium {
+        opacity: 0.5; /* See the text more clearly over the background */
+        }
+
+        .heavy {
+        opacity: 0.9; /* See the text very clearly over the background */
+        }
+
+        <div class="light">You can barely see this.</div>
+        <div class="medium">This is easier to see.</div>
+        <div class="heavy">This is very easy to see.</div>
+
+----------------------------------------------------------------
+
+## How do you handle browser differences in your user base?
+
+    The @supports query in CSS can be very useful to scan if the user’s current browser has a certain feature. The @supports CSS at-rule lets you specify declarations that depend on a browser's support for one or more specific CSS features. This is called a feature query. The rule may be placed at the top level of your code or nested inside any other conditional group at-rule.
+
+        Example:
+        @supports (display: grid) {
+            div {
+                display: grid;
+            }
+            }
+
+        @supports not (display: grid) {
+            div {
+                float: right;
+            }
+            }
+
+----------------------------
+
+## What is Cascade?
+
+    Cascade is a method of defining the weight (importance) of individual styling rules thus allowing conflicting rules to be sorted out should such rules apply to the same selector.
+
+    P {color: white ! important} /* increased weight */
+    P {color: black} /* normal weight */
+
+-------------------------------------------------
+
+## What are CSS vendor prefixes?
+
+Vendor prefixes are extensions to CSS standards that can be added to these features to prevent incompatibilities from arising when the standard is extended. CSS vendor prefixes for some common platforms are listed below.
+
+-webkit-: Android, Chrome, iOS, and Safari
+-moz-: Mozilla Firefox
+-ms-: Internet Explorer
+-o-: Opera
+
+-------------------------------------------------
+
+# Display-flex
+
+-- `flex-wrap` is used to control the wrapping of items within a container. If we reduce the browser width, we lose some items for the browser width. The behavior changes with the `flex-wrap` property. 
+
+It can accept three possible values:
+
+-- `nowrap` (default value)
+    This is the flex-wrap property default value. If you set the property value to nowrap, there are no changes.
+
+-- `wrap`
+    When you set the flex-wrap property to wrap, you reduce the browser width that the items have wrapped in the container:
+
+-- `wrap-reverse`
+
+
+---------------------------------------------
+
+# Justify-content
+
+-= `justified-content` defines the alignment of the items along the main axis/ "horizontLy". There are six possible values for the `justified-content` property:
+    -- `flex-start`
+    -- `flex-end`
+    -- `center`
+    -- `space-between`
+    -= `space-around`
+    -- `space-evenly`
+
+---------------------------------------------
+
+# Align-items
+
+The `align-items` property defines how the flex items are laid out along the cross axis / "verticaly".
+
+-- `align-items: stretch`
+-- `align-items: flex-start`
+-- `align-items: flex-end`
+-- `align-items: center`
+-- `align-items: baseline`
+
+--------------------------------------------
+
+# align-content
+
+-- `align-content` is similar to `justify-content` with the difference being this will align along the cross axis instead of the main axis. Also, `align-content` works only when there are multiple rows of flex items in the container. The container must have a height and also wrapping.
+
+-- `align-content: stretch`
+-- `align-content: flex-start`
+-- `align-content: flex-end`
+-- `align-content: center`
+-- `align-content: space-between`
+-- `align-content: space-around`
+
+------------------------------------------
+
+#order
+
+-- The order property of CSS can be" used for ordering flex items". It specifies the order of a flex item with respect to the other flex items. The element has to be a flexible item for the order property to work. The elements are displayed in ascending order of their order values. If two elements have the same order value then they are displayed on the basis of their occurrence in the source code.
+eg.
+<style>
+    .box {
+        display: flex;
+    }
+    .item-1 {
+        order: 7;
+    }
+    .item-2 {
+        order: 8;
+    }
+
+</style>
+    <div class="box">
+    <div class="item-1">1</div>
+    <div class="item-2">2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    </div>
+
+-----------------------------------------------
+
+## flex-grow
+
+-- `flex-grow` allows a flex item to grow if necessary. This property specifies what amount of  remaining space inside the flex container the item should take up. All flex items have a `flex-grow` of zero.
+
+eg.
+<style>
+    .box {
+        display: flex;
+    }
+    .item-1 {
+        flex-grow: 1;
+    }
+</style>
+<div class="box">
+  <div class="item-1">1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+
+-----------------------------------------
+
+## flex-shrink
+
+-- `flex-shrink` defines the capacity for a flex item to shrink if necessary. The default value of `flex-shrink` is one.
+
+-------------------------------------------
+
+# flex-basis
+
+-- `flex-basis` specifies the initial main size of a flex item before the extra space in the container is distributed.
+
+<style>
+    .box {
+        display: flex;
+    }
+    .item-1 {
+        flex-basis: 400px;
+    }
+</style>
+<div class="box">
+    <div class="box-item">1</div>
+    <div class="box-item">2</div>
+    <div class="box-item">3</div>
+    <div class="box-item">4</div>
+</div>
+
+--------------------------------------------
+
+# What is Div in HTML?
+
+In HTML, <div> is a generic container element used to group and organize other elements. It stands for "division" and is a block-level element, meaning it creates a rectangular box that takes up the full width available by default.
+
+The <div> element itself does not have any specific semantic meaning. Its purpose is to provide a way to logically group and style sections of content on a webpage. Developers commonly use <div> elements as a container for other HTML elements, such as text, images, forms, or other nested <div> elements.
