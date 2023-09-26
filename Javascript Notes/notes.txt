@@ -12,6 +12,69 @@ Overall, the DOM serves as an intermediary between web content and programming l
 
 -----------------------------------------------
 
+## What is JavaScript, and how does it differ from Java?
+
+1. Origin and History:
+
+* JavaScript: 
+-- JavaScript was developed by Netscape in the mid-1990s. 
+-- It was originally known as LiveScript but was later renamed to JavaScript to capitalize on the popularity of Java. 
+-- JavaScript is primarily used for web development, allowing for interactive and dynamic features on websites.
+
+* Java: 
+-- Java, on the other hand, was developed by Sun Microsystems (now owned by Oracle) and released in 1995. 
+-- It was designed as a general-purpose, object-oriented programming language. 
+-- Java is known for its "write once, run anywhere" principle, which means that Java code can be executed on any platform with a Java Virtual Machine (JVM).
+
+2. Type:
+
+* JavaScript: 
+-- JavaScript is a dynamically typed language, which means that "you don't have to declare the data type of a variable explicitly". 
+-- The data type is determined at runtime.
+
+* Java: 
+-- Java is a statically typed language, which means that you need to declare the data type of a variable explicitly, and type checking is done at compile-time.
+
+3. Platform:
+
+* JavaScript: 
+-- JavaScript is primarily used for front-end web development and can also be used on the server-side (Node.js). 
+-- It's executed in web browsers to make web pages interactive.
+
+* Java: 
+-- Java can be used for a wide range of applications, including web development (via JavaServer Pages), mobile app development (Android apps), desktop applications, and server-side applications.
+
+4. Syntax:
+
+* JavaScript: 
+-- JavaScript's syntax is influenced by C and C++, making it somewhat similar to these languages. 
+-- It uses curly braces and semicolons to define code blocks and statements.
+
+* Java: 
+-- Java's syntax is similar to C and C++ as well, and it also uses curly braces and semicolons. However, it enforces stricter coding conventions.
+
+5. Typing System:
+
+* JavaScript: 
+-- JavaScript is "loosely typed" and allows for flexible type conversions. This can lead to unexpected behavior if not handled carefully.
+
+* Java: 
+-- Java is "strongly typed", and type conversions are more strict and explicit. This helps catch type-related errors at compile-time.
+
+6. Usage:
+
+* JavaScript: 
+-- JavaScript is mainly used for enhancing the user interface of web applications and creating interactive web pages. 
+-- It's often used in combination with HTML and CSS.
+
+* Java: 
+-- Java has a wide range of applications, including mobile app development, server-side programming, embedded systems, and more.
+
+
+* summary: 
+-- JavaScript and Java share some similarities in terms of syntax due to their C-like influences, but they are different languages with distinct use cases and characteristics. JavaScript is primarily used for web development, while Java is a general-purpose language used in a variety of domains.
+
+-----------------------------------------------
 element.setAttribute(attributeName,attributeValue)
 
 ------------------------------------------------
@@ -72,6 +135,50 @@ In JavaScript, a primitive (primitive value, primitive data type) is data that i
 
 -----------------------------------------
 
+## What are truthy and falsy values in JavaScript?
+
+-- In Js values categorised as "truthy" or "falsy" based on their "inherent boolen evalution".
+-- It's important when working with conditional statement or part of language that rely on boolean logic.
+
+* Truthy Values:
+-- if evaluated in boolean context, it's treated as 'true'.
+
+1. Non-empty strings: 
+      eg. "Hello";
+2. Numbers: 
+    Any non-zero number(positive or negative) is truthy.
+    eg. 1, -1, 2, -5
+3. Object:
+    built in or user defined objects
+4. Arrays: even an empty [] array.
+5. Functions: 
+6. Non-null values:
+
+
+* False Values:
+
+-- Value considered as 'falsy' when evaluated in boolen context, it's treated as 'false'.
+
+1. Empty string: ""
+2. zero
+3. NaN 
+4. null
+5. undefined
+6. false
+
+-----------------------------------------
+
+## negation operator:
+
+-- '!!'
+
+var value= "hello";
+
+if(!!value){
+  // this code block the execution becouse value is truthy
+}
+
+-----------------------------------------
 ## Undefined:
 
     Its falsy value.
@@ -127,6 +234,129 @@ In JavaScript, a primitive (primitive value, primitive data type) is data that i
 
 
 --------------------------------------------------
+
+## What is a function in JavaScript?
+
+-- Function is a "fundamental building block" of JavaScript.
+
+* Purpose:
+
+1. Code Organization:
+    -- Functions allow you to break your code into smaller, manageable, and reusable pieces.
+    -- This promotes a modular and organized code structure.
+
+2. Abstraction: 
+    -- You can encapsulate a series of actions or operations within a function, providing an abstract interface to the functionality, which makes the code more readable and easier to maintain.
+
+3. Reusablility:
+    -- Functions can be called multiple times from diiferent parts of code, making it efficient to reuse code without duplicating it.
+
+4. Parameterization:
+    Functions can accept input parameters, allowing you to pass data to them for processing.
+    -- This makes functions versatile and adaptable to different situations.
+
+
+    function functionName(parameters){
+      
+      return result;
+    }
+
+----------------------------------------------
+
+## Explain the difference between function declarations and function expressions
+
+-- In Js, there are two ways to define functions:
+    1. function declarations
+    2. function expressions
+-- "They differ in how they are defined and when they are hoisted", which can affect when we can use them in code.
+
+1. Function Declarations:
+    -- define using the 'function' keyword followed by function name.
+
+      eg. function functionName(parameters){
+        return result;
+      }
+
+* Hoisting:
+      -- function declarations are hoisted(moved to top during compilation phase, can be used before declared);
+
+        eg.
+          hoistedFunction();
+
+          function hoistedFunction(){
+            console.log("Hello")
+          }
+  
+  -- function name is required. It becomes a varible in the current scope that holds the reference to the function.
+
+
+  
+2. Function Expressions:
+
+-- function expressions define a function as a part of an expression.
+
+        eg.
+          var functionName= function(parameters){
+
+            return result;
+          }
+
+* Hoisting: 
+    -- function expressions are "not hoisted in the same way" as function declarations.
+    -- The variable ('functionName') is hoisted, but it initially 'undefined', not the function, i.e. we cannot call function before it's defined.
+
+* Naming: 
+    -- functions may or maynot have a name.
+    -- if it does not have a name, that name is scoped within the function itselfand is not accessible from the outer scope.
+    -- "function expression often used for anonymous functions," passing functions as arguments to the other functions, and creating functions on the fly.
+
+
+* summary: 
+-- function declarations are hoisted and have a named function identifier, making them accessible throughout the scope, including before the actual declaration. 
+-- Function expressions are not hoisted in the same way, and their availability depends on the order in which they are defined in the code. Understanding these differences is crucial when working with functions in JavaScript.
+
+
+
+--------------------------------------------
+
+## What is a callback function, and how is it used?
+
+-- This functions passed as an argument to the another function and is intended to be executed after the completion of a task.
+
+-- Callbacks are the fundamental concept of the asynchronous programming.
+
+* Use case:
+
+1. Asynchrounous Operations:
+
+-- used in asynchronous operations, such as reading a file,making an HTTP request, or handling user interactions.
+
+      eg.
+
+      async function getData(url,callback){
+
+        setTimeout(function(){
+          var data="Some data from the server";
+          callback(data);
+        },1000)
+      }
+
+      getData('https://example.com',function(result){
+        console.log(result);
+      });
+
+2. Event Handling:
+
+Callbacks are frequently used in event-driven programming. 
+
+      eg.
+      document.getElementById('muButton').addEventListener('click', function(){
+        console.log("Button Clicked!");
+      });
+
+
+
+--------------------------------------------
 
 ## Operators:
 
@@ -276,6 +506,90 @@ person.job = "Engineer"; // Adds a new 'job' property
 
 --------------------------------------------
 
+## How do you create an object in JavaScript?
+
+In JavaScript, there are several ways to create objects. Here are the most common methods:
+
+1. Object Literal Notation:
+The simplest way to create an object is by using object literal notation, which involves defining key-value pairs within curly braces {}.
+
+
+var person = {
+  name: "John",
+  age: 30,
+  gender: "male"
+};
+
+
+2. Object Constructor Function:
+You can create objects using constructor functions, which are like regular functions but are used with the new keyword to create instances of objects.
+
+function Person(name, age, gender) {
+  this.name = name;
+  this.age = age;
+  this.gender = gender;
+}
+
+var person = new Person("John", 30, "male");
+
+
+3. Object.create method:
+You can use the Object.create() method to create an object with a specified prototype. This allows you to create objects with a specific prototype object.
+
+
+var personPrototype = {
+  sayHello: function() {
+    console.log("Hello, my name is " + this.name);
+  }
+};
+
+var person = Object.create(personPrototype);
+person.name = "John";
+person.age = 30;
+
+
+6. ES6 Class Syntax:
+With the introduction of ES6 (ECMAScript 2015), JavaScript introduced class syntax, which is a more structured way to create objects. It's syntactic sugar over constructor functions.
+
+
+class Person {
+  constructor(name, age, gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
+
+var person = new Person("John", 30, "male");
+
+
+7. Factory Functions:
+A factory function is a function that returns an object. It's a more flexible alternative to constructor functions.
+
+
+function createPerson(name, age, gender) {
+  return {
+    name,
+    age,
+    gender,
+    sayHello: function() {
+      console.log("Hello, my name is " + this.name);
+    }
+  };
+}
+
+var person = createPerson("John", 30, "male");
+
+
+8. Using the Object constructor:
+You can create objects using the Object constructor.
+
+var person = new Object();
+person.name = "John";
+person.age = 30;
+person.gender = "male";
+
+------------------------------------------
 ## Diff b/w Sets and Map :
 
 Sets and Maps are two different data structures in JavaScript that are used for storing and organizing data. While they have some similarities, they serve different purposes and have different characteristics.
@@ -1183,27 +1497,110 @@ var son = Object.create(family);
    }
    Pesron.prototype.setCity=function(c){
     this.city=c
-   }
-   Person.prototype.eat=function(e){
+    }
+    Person.prototype.eat=function(e){
     this.eat=e
-   }
+    }
 
-   var.p1=new Person("Dilip",26)
-   p1.setCity('Nashik');
-   p1.eat('Veg')
+    Person.prototype.sayHello = function() {
+  console.log("Hello, my name is " + this.name);
+}
 
-  var.p2=new Person("Kalpesh",26)
-   p1.setCity('Sinnar');
-   p1.eat('Non-veg')
+*  Create a instance:
 
-   console.log(p1);
+    var.p1=new Person("Dilip",26)
+    p1.setCity('Nashik');
+    p1.eat('Veg')
+
+    var.p2=new Person("Kalpesh",26)
+    p1.setCity('Sinnar');
+    p1.eat('Non-veg')
+
+    console.log(p1);
    // p1:Person{name:'Dilip',age:26,city:'Nashik',eat:'Veg'}
-   console.log(p2)
+    console.log(p2)
    //   // p2:Person{name:'Kalpesh',age:26,city:'Sinnar',eat:'Non-veg'}
 
   => "Using prototypes can help reduce memory usage "and "make code more efficient" by allowing objects to share common properties and methods. It also makes it easier to add new properties and methods to a group of related objects by modifying the prototype instead of each individual object.
 
--------------------------------------------------------------------------------
+---------------------------------------------
+
+## What is the prototype chain, and how does it work?
+
+-- It's fundamental concept in Js OOPS.
+-- It determines how objects in  JS inherit properties and methods from other objects.
+
+* Working of prototypes:
+
+1. Objects and Prototypes:
+
+-- In Js, each object has prototype, which is another object.
+-- This prototype object contains properties and methods that the object can inherit.
+-- Objects are linked together in a chain, forming the prototype chain.
+
+
+2. Accessing Properties and Methods:
+
+-- When you access a property or method on an object, Js first checks if the object has that property.
+-- If doesn't, it looks up the prototype chain to find the property or method in the prototype object.
+-- This process continue up the chain untill the property is found or the chain ends with 'null'.
+
+    eg.
+      var person= {
+        name:"Dilip",
+        greet:function(){
+          console.log("Hello, I am ${this.name}");
+        }
+      };
+
+      console.og(person.name);
+
+      person.greet();
+
+3. Prototype Objects:
+-- You can create objects with prototypes explicitly set to other objects using Object.create(), constructor functions, or class syntax. 
+-- In such cases, the prototype of the newly created object is the specified prototype.
+
+    For example:
+
+            var parent = {
+              sayHello: function() {
+                console.log("Hello from the parent!");
+              }
+            };
+
+            var child = Object.create(parent); // child's prototype is parent
+
+child.sayHello(); // "Hello from the parent!"
+
+In this example, child inherits the sayHello method from its prototype, which is parent.
+
+4. Changing the Prototype:
+
+-- You can change an object's prototype by modifying its __proto__ property or using Object.setPrototypeOf() method (not recommended due to performance and compatibility concerns). However, it's generally not recommended to manipulate the prototype chain this way unless you have a compelling reason to do so.
+
+    For example:
+
+
+        var person = {
+          name: "Alice"
+        };
+
+        var prototype = {
+          greet: function() {
+            console.log("Hello, my name is " + this.name);
+          }
+        };
+
+        person.__proto__ = prototype; // Change the prototype
+        person.greet(); // "Hello, my name is Alice"
+
+* Summary:
+
+-- The prototype chain allows for a form of inheritance in JavaScript, where objects can inherit properties and methods from other objects in a hierarchical structure. 
+-- This makes it possible to create reusable and efficient code by sharing functionality among objects, as objects lower in the prototype chain can inherit from objects higher up in the chain. 
+-- However, care should be taken when modifying the prototype chain, as it can lead to unexpected behavior if not handled properly.
+----------------------------------------
 
 ## What is inheritance?
 
@@ -1613,8 +2010,102 @@ console.log(p1.age)  //undefined
     console.log( v3 );
     v3.run();
 
-    --------------------------------------------
+---------------------------------------------
 
+## Explain the difference between callbacks and Promises.
+
+-- They are two diff approches for the handle asynchronous programming.
+-- Both are used to manage the flow of asynchrounous cde execution, but they differ in terms of "readability, error handling, and managing complex asynchronous operations".
+
+* Callbacks:
+
+1. Readibility:
+-- Callbacks often lead to 'callback hell' or 'pyramid of doom' when you have many nested asynchrounous operations.
+-- This can make the code difficult to read and maintain.
+
+      asyncFunction1(function(result1){
+        asyncFunction2(reset1, function(reset2){
+          asyncFunction3(result2, function(result3){
+
+          });
+        });
+      });
+
+2. Error Handling:
+    -- error handling can be challenging with callbacks.
+    -- Each callback need to check for errors and handle them, leading to respective and verbose error-handling code.
+
+    eg.
+      asyncFunction(function(result){
+        if(result.error){
+          handleError(result.error);
+        }else{
+
+        }
+      });
+
+3. Limited Controll Flow:
+    -- Callbacks lack built-in control flow mechanisms.
+    -- For complex asynchronous tasks, managing executin order and dependencies can be tricky.
+
+
+* Promises:
+
+1. Readibility:
+    -- Promises provide more readble and organized way to handle asynchrounous operations.
+    -- They allow you to chain tasks, making the code more look like synchrounous code.
+
+    eg. asyncFunction1()
+      .then(result1=> asyncFunction2(result1))
+      .then(resut2=> asyncFunction3(result2))
+      .then(result3=>{
+
+      })
+      .catch(error=> handlError(error));
+
+2. Error Handling:
+    -- Promises have built-in error handling with `.catch()` method.
+    -- Any error thrown in promose chain will be cought by nearest ',catch()' method.
+
+    asyncFunction()
+  .then(result => {
+    // Continue with the result
+  })
+  .catch(error => {
+    handleError(error);
+  });
+
+3. Control Flow:
+    -- Promises provide more controll over the flow of execution.
+    -- We can use features like 'Promise.all' to run multiple asynchronous tasks concurrently ans wait for all to complete, or 'Promise.race' to handle first resolve promise.
+
+    eg.
+      const promises=[asyncFunctiona1(), asyncFunction2(),asyncFunction3];
+
+      Promise.all(promises)
+        .then(results=>{
+          // all promises resolved successfully
+        })
+        .catch(error=>{
+          // at least one promise rejected
+        })
+
+4. Chaining:
+    -- Promises can be chained, allowing us to pass the data between asynchrounous operations.
+
+    eg.
+        asyncFunction()
+          .then(result=> anothetAsyncFunc(result))
+          .then(funaleResult=>{
+            // use final result
+          });
+
+* Summary:
+    -- Promises provide a more structured and readable way to handle asynchronous code, making it easier to manage errors, control the flow of execution, and pass data between asynchronous tasks.
+    -- They are especially useful when dealing with complex and nested asynchronous operations.
+
+
+----------------------------------------------
     ## Arrow Functions
 
     => They have a shorter syntax, which makes them more concise and easier to read.
@@ -2156,3 +2647,91 @@ generators
 yield
 BigInt
 Optional Chaining 
+
+--------------------------------------------
+
+## Explain the difference between innerHTML and textContent.
+
+-- both used to access and modify the content of HTML elements.
+
+* innerHTML:
+  -- allow us to get or set the HTML contetn within an element.
+  -- when we set 'innerHTML' property, it replace the existing content, including HTML tags.
+  -- Be cautious when using innerHTML with user-generated or untrusted content, as it can lead to cross-site scripting (XSS) vulnerabilities if not properly sanitized.
+
+    eg.
+      var element = document.getElementById("example");
+
+element.innerHTML = "<strong>This is new content</strong>";
+
+* textContent:
+  -- The textContent property, on the other hand, "gets or sets the text content of an element, stripping any HTML tags and treating the content as plain text."
+  -- It's safer to use textContent with user-generated or untrusted content because it doesn't interpret the content as HTML.
+
+    eg.
+      var element = document.getElementById("example");
+
+element.textContent = "This is plain text content";
+
+* Summary:
+'innerHTML' works with HTML content, including tags, and can be used to insert new HTML content. In contrast, 'textContent' treats the content as plain text, stripping HTML tags, and is often preferred when dealing with text content to mitigate security risks associated with HTML injection.
+
+-----------------------------------------------
+
+## How do you add and remove elements from the DOM dynamically?
+
+* Adding the elements to DOM:
+
+1. Create new element:
+    let newDiv= document.createElement('div');
+    newDiv.textContent='new content';
+
+2. Append Element:
+  -- use methods like 'appendChild()', 'insertBefore()' or 'insertAdjacentElement()'.
+
+  eg. 
+
+(1) 
+var parentElement = document.getElementById("parent");
+
+parentElement.appendChild(newDiv);
+
+(2)
+var referenceElement = document.getElementById("reference");
+
+parentElement.insertBefore(newDiv, referenceElement);
+
+(3)
+parentElement.insertAdjacentElement("beforeend", newDiv); // Inserts at the end of the parent
+
+
+* Remove Elements from DOM:
+
+1. Removing Removing Element:
+-- You can remove a child element from its parent using the removeChild() method.
+
+
+    var parentElement = document.getElementById("parent");
+
+    var childElement = document.getElementById("child");
+
+    parentElement.removeChild(childElement);
+
+2. Removing Itself:
+
+    var element = document.getElementById("element");
+    
+    element.remove();
+
+
+-------------------------------------------
+
+## How do you prevent the default behavior of an event in JavaScript?
+
+--"event.preventDefault() method"
+
+
+--------------------------------------------
+
+## 
+
