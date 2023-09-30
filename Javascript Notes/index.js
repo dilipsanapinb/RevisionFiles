@@ -1,32 +1,14 @@
-
-// function sayHello() {
-//         let name = 'Dilip';
-//         function printName() {
-//                 console.log(name);
-//         };
-//         printName();
-// };
-// sayHello();
-
-// function makeAdded(x) {
-//         return function (y) {
-//                 return x+y
-//         }
-// }
-
-// const add5 = makeAdded(5);
-// const add10 = makeAdded(10);
-
-// console.log(add5(2));
-// console.log(add10(2));
-
-function printFactorial(num) {
-        if (num <= 1) {
-                return 1
-        } else {
-                return num*printFactorial(num-1)
+function prtinHello(time) {
+    return new Promise((res, rej) => {
+        if (typeof (time) !== 'number') {
+            rej('assignment of function should be a number')
         }
+        return;
+        setTimeout(() => {
+            res({ status: 200 });
+        }, time);
+    })
 }
-
-let x = printFactorial(5);
-console.log(x);
+prtinHello(2000)
+    .then(res => console.log('printed after 2s'))
+    .catch(err => console.log(err));

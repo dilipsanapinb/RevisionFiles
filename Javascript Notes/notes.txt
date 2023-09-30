@@ -146,7 +146,7 @@ In JavaScript, a primitive (primitive value, primitive data type) is data that i
 1. Non-empty strings: 
       eg. "Hello";
 2. Numbers: 
-    Any non-zero number(positive or negative) is truthy.
+    Any "non-zero number"(positive or negative) is truthy.
     eg. 1, -1, 2, -5
 3. Object:
     built in or user defined objects
@@ -179,13 +179,16 @@ if(!!value){
 }
 
 -----------------------------------------
+
 ## Undefined:
 
-    Its falsy value.
+    Its 'falsy value'.
+
     property attributes of undefined:
       -> non-writabel
       -> non-enumerable
-    undefined is primitive value that is automatically assigned to variable that has been declared but has not been assigned.
+
+    undefined is 'primitive value' that is automatically assigned to variable that has been declared but has not been assigned.
       -> It can also be returned by function that doesn't explicitly return a value.
       -> Example:
         (1) let x
@@ -198,7 +201,8 @@ if(!!value){
 
 ## Null :
 
-  => Null is intentional absence of any object value.
+  => Null is "intentional absence of any object value".
+
   => It can be assigned to varible to indicate that it has no value.
   => Example:
     (1) let y=null;
@@ -268,6 +272,7 @@ if(!!value){
 -- In Js, there are two ways to define functions:
     1. function declarations
     2. function expressions
+
 -- "They differ in how they are defined and when they are hoisted", which can affect when we can use them in code.
 
 1. Function Declarations:
@@ -307,7 +312,7 @@ if(!!value){
 
 * Naming: 
     -- functions may or maynot have a name.
-    -- if it does not have a name, that name is scoped within the function itselfand is not accessible from the outer scope.
+    -- if it does not have a name, that name is scoped within the function itself and is not accessible from the outer scope.
     -- "function expression often used for anonymous functions," passing functions as arguments to the other functions, and creating functions on the fly.
 
 
@@ -321,7 +326,7 @@ if(!!value){
 
 ## What is a callback function, and how is it used?
 
--- This functions passed as an argument to the another function and is intended to be executed after the completion of a task.
+-- This functions "passed as an argument to the another function" and is "intended to be executed after the completion of a task."
 
 -- Callbacks are the fundamental concept of the asynchronous programming.
 
@@ -360,7 +365,7 @@ Callbacks are frequently used in event-driven programming.
 
 ## Operators:
 
-Operator is a symbol or keyword that represents a specific action to be performed on one or more operands (values or variables).
+Operator is a "symbol or keyword that represents a specific action to be performed on one or more operands" (values or variables).
 
 Unary operators operate on a single operand, while binary operators operate on two operands.
 
@@ -386,6 +391,7 @@ It's important to note that not all operators are unary or binary. For example, 
 ## Precedence:
 
   =>Operator precedence determines" how operators are parsed concerning each other". Operators with higher precedence become the operands of operators with lower precedence.
+
   =>Left-associativity (left-to-right) means that it is interpreted as (a OP1 b) OP2 c,
   => while right-associativity (right-to-left) means it is interpreted as a OP1 (b OP2 c).
   => a = b = 5; // same as writing a = (b = 5);
@@ -427,16 +433,16 @@ console.log(squareNumbers); // [1, 4, 9, 16, 25]
   => The reduce() method applies a function against an "accumulator and each element in the array (from left to right) to reduce it to a single value".
   => The provided function is a callback function that takes two arguments: the accumulator and the current element being processed.
   => Example:
-     const numbers = [1, 2, 3, 4, 5];
-     const sum = numbers.reduce(function(acc, num) {
-     return acc + num;
-     }, 0);
+      const numbers = [1, 2, 3, 4, 5];
+      const sum = numbers.reduce(function(acc, num) {
+      return acc + num;
+      }, 0);
      console.log(sum); // 15
 
 (4) Foreach():
-   =>  function that is "used to iterate over an array and execute a provided callback function" on each element in the array. 
-   => The callback function takes three arguments: the current element being processed, the index of the current element, and the array that forEach() was called upon.
-   => Example:
+    =>  function that is "used to iterate over an array and execute a provided callback function" on each element in the array. 
+    => The callback function takes three arguments: the current element being processed, the index of the current element, and the array that forEach() was called upon.
+    => Example:
       const numbers = [1, 2, 3, 4, 5];
       numbers.forEach(function(number) {
       console.log(number);
@@ -481,6 +487,7 @@ fruits.unshift("grapes"); // Adds "grapes" to the beginning of the 'fruits' arra
 let citrusFruits = fruits.slice(1, 3); // Creates a new array with elements from index 1 to 2 (not inclusive).
 
 let allFruits = fruits.concat(citrusFruits); // Combines two arrays into a new array.
+
 --------------------------------------------
 
 ## Object in Js :
@@ -590,6 +597,7 @@ person.age = 30;
 person.gender = "male";
 
 ------------------------------------------
+
 ## Diff b/w Sets and Map :
 
 Sets and Maps are two different data structures in JavaScript that are used for storing and organizing data. While they have some similarities, they serve different purposes and have different characteristics.
@@ -776,7 +784,7 @@ function foo() {
 ## Closures :
 
 => A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
-=> In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+=> In other words, a "closure gives you access to an outer function's scope from an inner function". In JavaScript, closures are created every time a function is created, at function creation time.
 
     function init() {
       var name = "Mozilla"; // name is a local variable created by init
@@ -804,7 +812,9 @@ myFunc();
   displayName() inner function is returned from the outer function before being executed.
 
   =>The reason is that functions in JavaScript form closures. A closure is the combination of a function and the lexical environment within which that function was declared. This environment consists of any local variables that were in-scope at the time the closure was created.
--------------------------
+
+
+-------------------------------------
   =>
       function makeAdder(x) {
       return function (y) {
@@ -881,7 +891,7 @@ for (var i = 0; i < arr.length; i++){
           console.log(localVariable); // throws an error
 
   3) In addition to these two types of scopes, JavaScript also has function scope, which means that variables declared inside a function are not accessible outside of that function.
-     Example:
+    Example:
         function example() {
         var functionVariable = 'Hello, world!';
         console.log(functionVariable); // outputs 'Hello, world!'
@@ -890,7 +900,7 @@ for (var i = 0; i < arr.length; i++){
         console.log(functionVariable); // throws an error
 
   #* Lexical Scope:
-    => The word "lexical" refers to the fact that lexical scoping uses the "location where a variable is declared within the source code" to determine where that variable is available. Nested functions have access to variables declared in their outer scope.
+    => The word "lexical" refers to the fact that lexical scoping uses the "location where a variable is declared within the source code" to determine "where that variable is available". Nested functions have access to variables declared in their outer scope.
     => Lexical scope refers to "the way that variable names are resolved in a programming language". It is based on the physical structure of the code, and determines which variables are accessible in a particular part of the code.
 
     => In JavaScript, lexical scope is determined by the placement of functions and blocks in the code. When a variable is declared inside a function or block, it is only accessible within that function or block and any nested functions or blocks.
@@ -955,6 +965,7 @@ for (var i = 0; i < arr.length; i++){
     Object.defineProperty() and Object.hasOwnProperty() are two methods provided by the Object global object in JavaScript for working with objects.
 
     (A) Object.defineProperty(): This method allows you to define a new property on an object or modify an existing property with more control over its behavior. It provides fine-grained control over property attributes such as configurability, writability, and enumerability.
+
     The syntax for Object.defineProperty() is as follows:
 
     Object.defineProperty(object, propertyname, descriptor);
@@ -1004,6 +1015,7 @@ In the above example, we define a new property name on the obj object using Obje
 
     object: The object on which to check the property.
     propertyname: The name or symbol of the property to check.
+    
     Here's an example that demonstrates the usage of Object.hasOwnProperty():
 
 
@@ -1077,8 +1089,6 @@ To invoke strict mode for an entire script, put the exact statement "use strict"
 const v = "Hi! I'm a strict mode script!";
 
 
-
-
 => Strict mode for functions:
 
 Likewise, to invoke strict mode for a function, put the exact statement "use strict"; (or 'use strict';) in the function's body before any other statements.
@@ -1107,7 +1117,7 @@ To enable strict mode in JavaScript, you can place a special directive at the be
 *****
 When strict mode is enabled, the following changes take effect:
 
-(1) Variables must be declared with var, let, or const before being used. Without strict mode, omitting the variable declaration creates an implicit global variable, which can lead to unexpected behavior and bugs.
+(1) "Variables must be declared with var, let, or const before being used." Without strict mode, omitting the variable declaration creates an implicit global variable, which can lead to unexpected behavior and bugs.
 
 (2) Assigning a value to an undeclared variable, deleting undeletable properties, or modifying read-only properties throws an error.
 
@@ -1123,7 +1133,7 @@ function test(){
 }
 test() //window object in losely typed js
 
-// usefined in strict mode
+// undefined in strict mode
 
 
 (6) The "with" statement is not allowed. It can cause performance issues and makes code harder to analyze and understand.
@@ -1203,7 +1213,7 @@ A promise is an object that represents a value that may not be available yet but
   => You can create a promise using the Promise constructor, and you can attach handlers to it using the "then method" to handle the fulfilled state or the "catch method"to handle the rejected state. You can also chain multiple promises together using the then method, which returns a new promise that represents the eventual outcome of the chain.
 
   => Example:
-     
+
         let moviesData=[1,2,3,4,5]
     const getMeData = new Promise((resolve, rejecte) => {
       setTimeout(() => {
@@ -1245,6 +1255,7 @@ Promises provide a way to write more concise and maintainable asynchronous code 
     .catch(err=>console.log(err))
 
   => Using async await
+
   async function test(){
     console.log('waiting for results')
     let res=await prinHello(2000);
@@ -1288,7 +1299,7 @@ There are several methods to call APIs in JavaScript. Here are some of the commo
           xhr.send();
 
 
-   (2) Fetch API: Introduced in modern browsers, the Fetch API provides a more powerful and flexible way to make HTTP requests. Here's an example:
+    (2) Fetch API: Introduced in modern browsers, the Fetch API provides a more powerful and flexible way to make HTTP requests. Here's an example:
 
       fetch('https://api.example.com/data')
         .then(function(response) {
@@ -1491,12 +1502,12 @@ var son = Object.create(family);
 
 
   => Example:
-   function Person(n,a){
-    this.name = n;
-    this.age = a;
-   }
-   Pesron.prototype.setCity=function(c){
-    this.city=c
+    function Person(n,a){
+      this.name = n;
+      this.age = a;
+    }
+    Pesron.prototype.setCity=function(c){
+      this.city=c
     }
     Person.prototype.eat=function(e){
     this.eat=e
@@ -1928,10 +1939,11 @@ myAc.withdraw(1000); //insufficient balance
             }
           }
 
---------------------------
+-------------------------------------------
+
 ## Abstraction :
 
-Abstraction in JavaScript is a fundamental concept in object-oriented programming that allows you to "hide the implementation details of an object and only expose the relevant features or functionalities". It helps in simplifying complex systems by providing a clear and easy-to-understand interface to interact with objects, without worrying about the internal complexities.
+Abstraction in JavaScript is a fundamental concept in object-oriented programming(OOPS) that allows you to "hide the implementation details of an object and only expose the relevant features or functionalities". It helps in simplifying complex systems by providing a clear and easy-to-understand interface to interact with objects, without worrying about the internal complexities.
 
 It allows developers to focus on the essential features of an object or function without worrying about how it works internally.
 
@@ -1977,9 +1989,9 @@ console.log(p1.age)  //undefined
 
 ## Polymorphism:
 
-  => As JavaScript has a mechanism to support the OOPS paradigm, Polymorphism is one of the basic principles which is supported by it.
+  => As JavaScript has a mechanism to support the OOPS paradigm, "Polymorphism is one of the basic principles which is supported by it."
   => As object-oriented programming concepts revolve mainly around objects the objects can behave differently in different scenarios.
-  => Polymorphism is nothing but one type but many forms.
+  => "Polymorphism is nothing but one type but many forms."
   => One type of object can behave differently depending upon the runtime scenario.
   => Polymorphism uses the concept of Inheritance to achieve this.
   => In polymorphism, multiple objects will have the same method but different implementation and depending upon the user preference the corresponding object will be selected and the method corresponding to that object will be executed.
@@ -2015,12 +2027,12 @@ console.log(p1.age)  //undefined
 ## Explain the difference between callbacks and Promises.
 
 -- They are two diff approches for the handle asynchronous programming.
--- Both are used to manage the flow of asynchrounous cde execution, but they differ in terms of "readability, error handling, and managing complex asynchronous operations".
+-- "Both are used to manage the flow of asynchrounous code execution", but they differ in terms of "readability, error handling, and managing complex asynchronous operations".
 
 * Callbacks:
 
 1. Readibility:
--- Callbacks often lead to 'callback hell' or 'pyramid of doom' when you have many nested asynchrounous operations.
+-- Callbacks often lead to 'callback hell' or 'pyramid of doom' when you "have many nested asynchrounous operations."
 -- This can make the code difficult to read and maintain.
 
       asyncFunction1(function(result1){
@@ -2045,8 +2057,8 @@ console.log(p1.age)  //undefined
       });
 
 3. Limited Controll Flow:
-    -- Callbacks lack built-in control flow mechanisms.
-    -- For complex asynchronous tasks, managing executin order and dependencies can be tricky.
+    -- "Callbacks lack built-in control flow mechanisms."
+    -- For complex asynchronous tasks, managing execution order and dependencies can be tricky.
 
 
 * Promises:
@@ -2065,7 +2077,7 @@ console.log(p1.age)  //undefined
 
 2. Error Handling:
     -- Promises have built-in error handling with `.catch()` method.
-    -- Any error thrown in promose chain will be cought by nearest ',catch()' method.
+    -- Any error thrown in promose chain will be cought by nearest '.catch()' method.
 
     asyncFunction()
   .then(result => {
@@ -2077,10 +2089,10 @@ console.log(p1.age)  //undefined
 
 3. Control Flow:
     -- Promises provide more controll over the flow of execution.
-    -- We can use features like 'Promise.all' to run multiple asynchronous tasks concurrently ans wait for all to complete, or 'Promise.race' to handle first resolve promise.
+    -- We can use features like 'Promise.all' to run multiple asynchronous tasks concurrently and wait for all to complete, or 'Promise.race' to handle first resolve promise.
 
     eg.
-      const promises=[asyncFunctiona1(), asyncFunction2(),asyncFunction3];
+      const promises=[asyncFunctiona1(), asyncFunction2(),asyncFunction3()];
 
       Promise.all(promises)
         .then(results=>{
@@ -2108,10 +2120,10 @@ console.log(p1.age)  //undefined
 ----------------------------------------------
     ## Arrow Functions
 
-    => They have a shorter syntax, which makes them more concise and easier to read.
-    => They have an implicit ("not expressed in a direct way but understood by the people involved.") return statement, which means that if the function body is a single expression, it will be automatically returned.
+    => They have a "shorter syntax", which "makes them more concise and easier to read".
+    => They have an implicit return statement, which means that if the "function body is a single expression, it will be automatically returned".
 
-    => They have a "lexical this binding", which means that the "this value inside an arrow function is the same as the this value outside the function".
+    => They have a "lexical this binding" they dont have their own this binding, which means that the "this value inside an arrow function is the same as the this value outside the function".
     
     => While arrow functions have several advantages and are widely used in JavaScript, there are a "few scenarios where they cannot be used or may not be suitable".
 
@@ -2212,7 +2224,7 @@ To summarize, the value of this in JavaScript depends on the context in which it
 
 ## Difference between .call , .apply and .bind
 
-=>In JavaScript, call, apply, and bind are three "object methods" that can be used to call functions with a specific this value, as well as arguments to be passed to the function.
+=>In JavaScript, call, apply, and bind are three "object methods" that "can be used to call functions with a specific this value", as well as arguments to be passed to the function.
 => Here's the difference between them:
 
 1) .call():
@@ -2733,5 +2745,4 @@ parentElement.insertAdjacentElement("beforeend", newDiv); // Inserts at the end 
 
 --------------------------------------------
 
-## 
 
