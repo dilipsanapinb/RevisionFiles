@@ -2321,7 +2321,7 @@ console.log("pesron2:", person2);
 
 let ans=myName.bind(person2, 27, "Nimgaon");
 ans()
- console.log("pesron2:", person2);
+console.log("pesron2:", person2);
 
 ---------------------------------------------------
 
@@ -2349,7 +2349,7 @@ myFunc(); // Output: Hello
 
 In this example, the outer function returns the inner function, which is assigned to the myFunc variable. When myFunc is called, it logs the value of the message variable from the outer function's lexical scope, even though the outer function has already returned.
 
-Closures are used in JavaScript to create private variables and functions, as well as to create higher-order functions that can take other functions as arguments. They are a powerful feature of the language and can be used to write more efficient and concise code.
+"Closures are used in JavaScript to create private variables and functions, as well as to create higher-order functions that can take other functions as arguments." They are a" powerful feature of the language and can be used to write more efficient and concise code."
 
 
         var arr=[1,2,3,4,5];
@@ -2400,7 +2400,6 @@ Closures are used in JavaScript to create private variables and functions, as we
         // 5 4
 
 --------------------------------------------------
----------------------------    
 
 ## What is IIFE
 
@@ -2414,7 +2413,7 @@ Here's an example of an IIFE:
 
 In this example, we define an anonymous function and wrap it in parentheses. Then, we immediately invoke the function by adding another pair of parentheses at the end. The function is executed as soon as the JavaScript interpreter encounters it.
 
-The primary purpose of using an IIFE is to create a new scope for your code. By doing this, you can prevent variables and functions declared inside the IIFE from conflicting with variables and functions in the global scope or other scopes. It helps to encapsulate code and maintain better code organization.
+"The primary purpose of using an IIFE is to create a new scope for your code". By doing this, "you can prevent variables and functions declared inside the IIFE from conflicting with variables and functions in the global scope or other scopes." "It helps to encapsulate code and maintain better code organization."
 
 Additionally, IIFEs are often used to create private variables and functions. Since the variables and functions defined within an IIFE are scoped to that function, they are not accessible from outside the IIFE. This allows you to create modules or libraries with private implementation details.
 

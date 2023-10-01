@@ -1,14 +1,9 @@
-function prtinHello(time) {
-    return new Promise((res, rej) => {
-        if (typeof (time) !== 'number') {
-            rej('assignment of function should be a number')
-        }
-        return;
-        setTimeout(() => {
-            res({ status: 200 });
-        }, time);
-    })
+
+var arr=[1,2,3,4,5]
+for (var i = 0; i < arr.length; i++){
+    (function (i) {
+        setTimeout(function () {
+            console.log(arr[i], i);
+        },i*1000)
+    })(i)
 }
-prtinHello(2000)
-    .then(res => console.log('printed after 2s'))
-    .catch(err => console.log(err));
