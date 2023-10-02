@@ -1,0 +1,367 @@
+# Python:
+-- Python is a versatile and beginner-friendly programming language known for its simplicity and readability.
+-- Python is indentation-sensitive, menaning the proper indentation is crucial. User four spaces(or a tab) to indent you code.
+-- use "#" symbol for comments.
+
+----------------------------------------------
+
+## Basic data types in Python:
+
+1. Integers:
+    -- whole numbers 
+    -- eg. 5, 0, -10
+
+2. Floating-Points Numbers:
+    -- decimal numbers
+    -- eg. 3.14, -0.1
+
+3. String:
+    -- "python"
+
+4. Booleans:
+    -- True, False.
+
+------------------------------------------
+
+# Operations on Data types:
+
+1. Addition:
+
+    x=5
+    y=6
+
+    result=x+y
+
+    print(result) # output 11
+
+2. String operations
+
+    greeting="Hello"
+    name="Dilip"
+
+    message = greeting + ", " + name
+
+    print(message) # Output "Hello, Dilip"
+
+------------------------------------------------
+
+# Variables and DataStructures:
+
+1. Variable Declarion
+
+    number=42
+    name= "Dilip"
+
+    # Rules
+    -Varible names can contain letters, numbers and underscores
+    -- variable names are case sensitive.
+
+2. Data Types and Dynamic Typing:
+
+-- Python uses the dynamic typing, i.e we dont need to explicitly specify a varible's dta type. It's determined at runtime.
+
+    eg.
+    x = 5       # x is integer
+    x = "Hello" # x is string
+
+    print(x) # hello will be printed
+
+-------------------------------------
+
+# Data structures:
+
+1. Lists / Array in Js:
+
+-- ordered collection of any data type.
+
+    my_List=[1,2,3,4,5]
+
+    print(my_List)  #Output [1, 2, 3, 4, 5]
+
+2. Tuples:
+
+-- Similar to the list,but its immutable("cannot change once created").
+
+    eg. my_tuple=(1,3,4,"name");
+
+        print(my_tuple) # Output (1, 3, 4, 'name')
+
+3. Dictionaries/ object in Js:
+
+-- store key-value pais.
+
+    eg. 
+    person={
+        "name":"Dilip",
+        "age":26,
+        "address":{
+            "village":"Nimgaon",
+            "zip":422103
+        }
+    }
+
+    print(person) 
+    # Output {'name': 'Dilip', 'age': 26, 'address': {'village': 'Nimgaon', 'zip': 422103}}
+
+
+4. Access and modify:
+
+        print(my_List[0])
+        print(my_tuple[2])
+        person["age"]=27
+        print(person)
+
+        # Output 1
+        #4
+        #{'name': 'Dilip', 'age': 27, 'address': {'village': 'Nimgaon', 'zip': 422103}}
+
+        my_List.append(6)
+        print(my_List) #[1, 2, 3, 4, 5, 6]
+        my_List.remove(5)
+        print(my_List) #[1, 2, 3, 4, 6]
+        my_List.remove(my_List[3]) #[1, 2, 3, 5]
+
+        my_List.sort() #[1,2,3,4,5]
+
+------------------------------------------------------
+
+# Controll Floe
+
+* Conditional Statement
+
+        x=4
+        if x>5:
+            print("X is greater than 5")
+        elif x==5:
+            print("X is equal to 5")
+        else:
+            print("X is less than 5")
+
+* Loops:
+
+(1) For loop:
+
+    numbers=[1,2,3,4,5]
+
+    for num in numbers:
+        print(num)
+
+    # 1
+    # 2
+    # 3
+    # 4
+    # 5
+
+(2) while loop:
+
+        count=0
+        while count<5:
+            print(count)
+            count+=1
+        # 0
+        # 1
+        # 2
+        # 3
+        # 4
+
+* Break and continue(controll statement)
+
+        sum=0
+        for i in range(10):
+            if i%2==0:
+                sum+=i
+            elif i==5:
+                continue
+            elif i==7:
+                break
+        print(sum) # Output 12
+
+----------------------------------
+
+# Defining functions:
+
+1. Defining function:
+def greet(name):
+    print("Hello, "+ name)
+
+greet('Dilip') # Hello, Dilip
+
+
+
+2. Function parameters and return value:
+
+def add(a,b):
+    return a+b
+
+print(add(3,4)) # 7
+
+
+
+3. Default parameters:
+
+def greet(name,greetings="Hello"):
+    print(greetings + ", " +name)
+
+greet("Dilip") # Hello, Dilip
+
+----------------------------------------
+
+# Modules:
+
+1. Importing Modules:
+
+import math
+
+result=math.sqrt(16)
+
+print(result) # 4.0
+
+2. Custom modules: create and import
+
+# customModule.py
+
+def greet(name):
+    print("Hello, "+ name)
+
+# app.py
+import customModule
+
+customModule.greet("Dilip") # Output Hello, Dilip
+
+3. Module Alias
+
+import math as math
+
+result=m.sqrt(9)
+print(result) # 3
+
+-----------------------------------------
+# Sum and Average: Write a Python program that calculates and prints the sum and average of a list of numbers.
+
+    numbers=[1,20,30,40,60,100,3,6]
+
+    sum=sum(numbers)
+    # print(sum) 260
+
+    avg=sum/(len(numbers)) # 32.5
+
+    print(f"Sum:{sum}, Avg:{avg}") #Output Sum:260, Avg:32.5
+
+-------------------------------------------
+
+# Write a Python function that takes a string and returns the string in reverse order.
+
+str="thisisrace"
+
+def reverse(input):
+    revStr=input[::-1]
+    return revStr
+
+result=reverse(str)
+print(result) # ecarsisiht
+
+--------------------------------------------------
+# Write a Python program that counts the number of vowels in a given string.
+
+str="asdfeiddoucbd"
+count=0
+for i in str:
+    if i=="a" or i=="e" or i=="i" or i=="o" or i=="u":
+        count+=1
+print(count)
+
+
+* function
+
+vcount=0
+def count_vowels(input):
+    global vcount # use the global variable vcount
+    vowels=["a","e","i","o","u"]
+    for char in input.lower():
+        if char in vowels:
+            vcount += 1
+count_vowels(str)
+print(f"Number of vowels:{vcount}) # Number of vowels:5
+
+---------------------------------------
+
+# Write a Python function that checks whether a given number is a prime number.
+
+num=13
+
+def checkPrime(number):
+    if number<=1:
+        return False
+    for i in range(2,int(number**0.5)+1):
+        if number%i==0:
+            return  False
+    return True
+
+if checkPrime(num):
+    print(f"{num} is prime")
+else:
+    print(f"{num} is not prime")
+
+
+------------------------------------------------
+
+## Write a Python function that calculates the factorial of a number.
+
+def getFactorial(number):
+    if number < 0:
+        return None
+    elif number == 0:
+        return 1
+    else:
+        sum=1
+        for i in range(1,number+1):
+            sum*=i
+        return sum
+
+result=getFactorial(5)
+print(result) # 120
+
+------------------------------------------------
+
+# Use list comprehension to create a list of the squares of the numbers from 1 to 10.
+
+def genSquares(number):
+    sqares=[]
+
+    for i in range(1,number+1):
+        res=i*i
+        sqares.append(res)
+    return sqares
+
+print(genSquares(10))
+
+--------------------------------------------------
+
+# Explain me  Fibonacci sequence , and Write a Python function that generates the first n numbers in the Fibonacci sequence.
+
+* The Fibonacci sequence"
+    -- It is a series of numbers in which each number is the sum of the two preceding ones, usually starting with 0 and 1. In mathematical terms, it is defined as follows:
+
+    -- The first two numbers in the sequence are 0 and 1.
+    Starting from the third number, each number is the sum of the two preceding ones.
+    -- The sequence begins: 0, 1, 1, 2, 3, 5, 8, 13, 21, and so on.
+    --The Fibonacci sequence has many interesting properties and is commonly found in various natural phenomena, including the growth patterns of plants, the arrangement of leaves on a stem, and even in financial markets.
+
+* Generate first n numbers in the Fibonacci Srquence:
+
+def genFabionacci(n):
+    fibSeq=[]
+    # The first two numbers in the seqience
+    a,b=0,1
+
+    # special case: if n is 1, return [0]
+    if n==1:
+        return [0]
+    
+    # generate
+    for _ in range(n):
+        fibSeq.append(a)
+        a,b=b ,a+b
+    return fibSeq
+
+print(genFabionacci(5)) # [0, 1, 1, 2, 3]

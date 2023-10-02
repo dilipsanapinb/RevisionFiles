@@ -1,0 +1,242 @@
+
+
+* Object Oriented Programming in Python:
+-- Python is an OOPs Language i.e it supports creation and use of objects and classes.
+
+1. Class Defination:
+-- bliueprint for creating objects.
+
+# class defination
+class Person:
+    def __init__(self,name,city):
+        self.name=name
+        self.city=city
+    def profile(self):
+            print(f"{self.name} from {self.city}.")
+
+# create an object
+person=Person("Dilip","Nashik") 
+person.profile() # Dilip from Nashik.
+print(person.name) #Dilip
+print(person.city) #Nashik
+
+2. Inheritance:
+
+class Person2(Person):
+    def sayHello(self):
+        print(f"Hello from {self.name}")
+
+person2=Person2("Ajay","Sinnar")
+person2.sayHello() # Hello from Ajay
+
+------------------------------------------------
+## Explain the Encapsulation, Polymorphism, and Abstraction in Python with examples:
+
+1. Encapsulation:
+-- Encapsulation is the concept of bundling data (attributes) and methods (functions) that operate on the data into a single unit, which is called a class. 
+-- It also includes the idea of restricting direct access to some of an ovjects components.
+-- Encapsulation is achieved by private and protected attributes.
+
+class Student:
+    def __init__(self , name, age):
+        self.__name=name # private attribute
+        self.age=age
+    
+    def get_name(self):
+        print(self.__name)
+    
+    def get_age(self):
+        print(self.age)
+
+    def set_name(self,name):
+        self.__name=name
+student= Student("Dilip",25)
+# print(student.name)
+print(student.age) # 25
+student.get_name() # Dilip
+student.set_name("Sanap")
+student.get_name() # Sanap
+
+2. Polymorphism
+
+class Person:
+    def __init__(self,name, city):
+        self.name=name
+        self.city=city
+    
+    def profile(self):
+        print(f"{self.name} from {self.city}")
+
+person1=Person('Dilip',"Nashik")
+person1.profile()
+
+person2=Person("Ajay","Sinnar")
+person2.profile()
+
+3. Abstraction:
+class Square:
+    def __init__(self,side):
+        self.__side=side
+
+    def area(self):
+        return self.__side**2
+
+a=Square(4)
+# print(a.side) 
+
+print(a.area()) #16
+
+--------------------------------------------
+
+* Exception Handling:
+
+-- Python has a wide range of built-in exception that cover various error scenatios. 
+--Some common exception include "TypeError", "ValueError", "ZeroDivisionError", "indexError", and "FileNotFoundError".
+
+* try and except, and optionally 'finally' block
+
+'try': block contain code that might raise an exception
+'except': block specifies how to handle exception if one occurs.
+
+try:
+    result=10/0
+except ZeroDivisionError as e:
+    print("An error occured",e)
+
+* multiple except blocks
+
+try:
+    num=int("abc")
+except ValueError as e:
+    print("ValueError",e)
+except TypeError as e:
+    print("TypeError",e)
+
+* finally block:
+
+try:
+    file = open("example.txt", "r")
+    data = file.read()
+except FileNotFoundError as e:
+    print("File not found:", e)
+finally:
+    file.close()  # Always close the file, even if there was an exception
+
+
+
+* Custom Exception:
+class MyCustomError(Exception):
+    pass
+
+try:
+    raise MyCustomError("This is a custom exception")
+except MyCustomError as e:
+    print("Custom error") #Custom error
+
+
+-----------------------------------------
+
+* pass in python:
+
+-- pass statement is a placeholder that does nothing.
+-- "its used when a statement is syntactically required" but dont want to execute any code.
+
+1. Empty code blocks:
+
+def my_function():
+    pass
+for i in range(5):
+    pass
+
+2. Stubs for unimplemented code:
+def future_function():
+    pass
+
+3. empty except block:
+
+try:
+
+except ExceptionType:
+    pass
+
+-----------------------------------------
+
+* File handling:
+
+
+1. Read file:
+
+user "open()"
+
+# Openig a file for reading
+
+file=open("example.txt","r")
+
+# Reading data from the file
+
+data=file.read()
+print(data)
+
+# Closing the file 
+file.close()
+
+
+
+# Read line by line
+
+file=open("example.txt","r")
+
+for line in file:
+print(line, end="") # end="" to avoid double spacing(newlines)
+file.close()
+
+2. Write file:
+
+can write data to a file using modes like "w" (write) or "a" (append). Be careful with the "w" mode as it will overwrite the existing content.
+
+file= open("output.txt", "w")
+file.write("This is a sample text.")
+file.close()
+
+# Appending to a file
+file = open("output.txt", "a")
+file.write("\nThis is an appended line.")
+file.close()
+
+-------------------------------------------------
+
+* Python Libraries and Modules:
+
+-- Python's power and versatility come from its extensive libraries and modules.
+
+(1) Standard Library:
+
+--"math": Provide mathematical functions 'sqrt', 'sin', 'cos',etc.
+
+--'datetime': date and time manupulation
+
+-- 'os' : Allows interaction with operating system, such as file and directory operations.
+
+--'json': json data
+
+--'collections': alternative to built-in data types like 'namedtuple' and 'deque'
+
+-- 'random': generate random numbers.
+
+(2) Third party libraries:
+
+Python has a vast ecosystem of third-party libraries created by the community to extend its capabilities. Some popular third-party libraries include:
+
+NumPy: For numerical computing and working with arrays.
+Pandas: For data manipulation and analysis.
+Matplotlib: For data visualization.
+Requests: For making HTTP requests and working with APIs.
+Django and Flask: For web development.
+PyTorch and TensorFlow: For deep learning and machine learning.
+
+
+
+
+
+
+
