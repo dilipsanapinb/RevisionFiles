@@ -34,7 +34,7 @@ person2.sayHello() # Hello from Ajay
 
 1. Encapsulation:
 -- Encapsulation is the concept of bundling data (attributes) and methods (functions) that operate on the data into a single unit, which is called a class. 
--- It also includes the idea of restricting direct access to some of an ovjects components.
+-- It also includes the idea of restricting direct access to some of an ovbects components.
 -- Encapsulation is achieved by private and protected attributes.
 
 class Student:
@@ -90,7 +90,7 @@ print(a.area()) #16
 
 * Exception Handling:
 
--- Python has a wide range of built-in exception that cover various error scenatios. 
+-- Python has a wide range of built-in exception that cover various error exception. 
 --Some common exception include "TypeError", "ValueError", "ZeroDivisionError", "indexError", and "FileNotFoundError".
 
 * try and except, and optionally 'finally' block

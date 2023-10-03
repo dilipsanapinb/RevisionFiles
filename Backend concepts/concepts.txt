@@ -14,13 +14,13 @@
 
 (3) "Single-Threaded": "Node.js runs on a single thread, but it uses an event loop to manage asynchronous operations". This allows it to handle multiple concurrent requests efficiently. While the single-threaded model simplifies development, it's essential to write non-blocking code to take full advantage of Node.js's capabilities.
 
-Vast Ecosystem: Node.js has a rich ecosystem of open-source libraries and packages available through the Node Package Manager (NPM). These packages cover a wide range of functionality, making it easy to add features to your applications.
+(4) "Vast Ecosystem": Node.js has a rich ecosystem of open-source libraries and packages available through the Node Package Manager (NPM). These packages cover a wide range of functionality, making it easy to add features to your applications.
 
-Cross-Platform: Node.js is cross-platform and can run on various operating systems, including "Windows, macOS, and Linux". This allows developers to write code once and run it on different environments without modification.
+(5) "Cross-Platform": Node.js is cross-platform and can run on various operating systems, including "Windows, macOS, and Linux". This allows developers to write code once and run it on different environments without modification.
 
-Use Cases: Node.js is commonly used for" building web applications, RESTful APIs, real-time applications" like chat applications and online gaming, streaming applications, microservices, and more. It's especially popular for building server-side applications that require high concurrency and low-latency responses.
+(6) "Use Cases": Node.js is commonly used for" building web applications, RESTful APIs, real-time applications" like chat applications and online gaming, streaming applications, microservices, and more. It's especially popular for "building server-side applications that require high concurrency and low-latency responses."
 
-Community and Support: Node.js has a large and active community of developers and contributors, which ensures continuous improvement and support. It's backed by the Node.js Foundation (now part of the OpenJS Foundation) and enjoys strong industry support.
+(7) "Community and Support": Node.js has a large and active community of developers and contributors, which ensures continuous improvement and support. It's backed by the Node.js Foundation (now part of the OpenJS Foundation) and enjoys strong industry support.
 
 -----------------------------------------------------
 
@@ -126,6 +126,7 @@ It's important to note that throughput is not the only consideration in evaluati
 ## What is rate limiting?
 
 => Rate limiting is a technique used to control the amount of traffic that is sent or received by a network or application.
+
 => It is a way of limiting the number of requests that can be made over a certain period of time to prevent overload and ensure fair usage of resources.
 
 => In web development, rate limiting is often used to control the amount of traffic sent to a web server by limiting the number of requests that can be made by a client or IP address within a certain period of time.
@@ -279,7 +280,7 @@ It's the way we can tell the JS engine to process a function asynchronously (aft
 
 ## When can process.tick starve your event loop?
 
-The process.nextTick () is a method that adds a callback function to the start of the next event queue. It is used to defer the execution of a function until the next loop iteration.
+"The process.nextTick () is a method that adds a callback function to the start of the next event queue". It is used to defer the execution of a function until the next loop iteration.
 
 The Node.js event loop is what allows Node.js to perform non-blocking I/O operations by offloading operations to the system kernel whenever possible. The event loop has several phases, each with a FIFO queue of callbacks to execute.
 
@@ -411,7 +412,7 @@ console.log(" -->The end<-- ");
       });
 
 
-(3)The function that's passed in to createServer is called once for every HTTP request that's made against that server, so it's called the request handler. In fact, the Server object returned by createServer is an EventEmitter, and what we have here is just shorthand for creating a server object and then adding the listener later.
+(3)"The function that's passed in to createServer is called once for every HTTP request that's made against that server, so it's called the request handler". In fact, the Server object returned by createServer is an EventEmitter, and what we have here is just shorthand for creating a server object and then adding the listener later.
       When an HTTP request hits the server, node calls the request handler function with a few handy objects for dealing with the transaction, request and response.
 
       In order to actually serve requests, the listen method needs to be called on the server object. In most cases, we need to pass to listen is the port number you want the server to listen on. There are some other options too, so consult the API reference.
@@ -438,7 +439,7 @@ const userAgent = headers['user-agent'];
   response.setHeader('Content-Type', 'application/json');
 response.setHeader('X-Powered-By', 'bacon');
 
-  When setting the headers on a response, the case is insensitive on their names. If you set a header repeatedly, the last value you set is the value that gets sent.
+"  When setting the headers on a response, the case is insensitive on their names. If you set a header repeatedly, the last value you set is the value that gets sent."
 
 -- Sending Response Body
 
@@ -531,19 +532,25 @@ HTTP response codes are three-digit status codes that are sent by a web server t
 
 201 Created: This code indicates that the request was successful, and a new resource has been created as a result. It is typically used in conjunction with POST requests.
 
-204 No Content: This code means the request was successful, but there is no data to return in the response (e.g., for a successful DELETE request).
+204 "No Content": This code means the request was successful, but there is no data to return in the response (e.g., for a successful DELETE request).
 
-400 Bad Request: This code is sent when the server cannot process the request due to a client error, such as malformed syntax or invalid parameters.
+301 (Moved Permanently): The requested resource has been moved permanently to a new URL.
 
-401 Unauthorized: This status code indicates that the client must authenticate itself to get the requested response. It is used when the user's credentials are missing or invalid.
+302 (Found/Temporary Redirect): The requested resource can be found at a different URL, but the change may not be permanent.
 
-403 Forbidden: This code means that the client does not have the necessary permissions to access the requested resource.
+304 (Not Modified): The client's cached copy of the resource is still valid, and there's no need to transfer the data again.
 
-404 Not Found: This status code is returned when the server cannot find the requested resource or endpoint.
+400 "Bad Request": This code is sent when the server cannot process the request due to a client error, such as malformed syntax or invalid parameters.
 
-500 Internal Server Error: This code indicates that an unexpected error occurred on the server while processing the request.
+401 "Unauthorized": This status code indicates that the client must authenticate itself to get the requested response. It is used when the user's credentials are missing or invalid.
 
-502 Bad Gateway: This status code is returned when the server acting as a gateway or proxy received an invalid response from the upstream server.
+403 "Forbidden": This code means that the client does not have the necessary permissions to access the requested resource.
+
+404 "Not Found": This status code is returned when the server cannot find the requested resource or endpoint.
+
+500 "Internal Server Error": This code indicates that an unexpected error occurred on the server while processing the request.
+
+502 "Bad Gateway": This status code is returned when the server acting as a gateway or proxy received an invalid response from the upstream server.
 
 503 Service Unavailable: This code indicates that the server is currently unable to handle the request due to maintenance or overload. It is a temporary condition.
 
@@ -633,7 +640,7 @@ If the process crashes, users won't be able to access your application.
 
     -- "Event Queue": This is a queue of events waiting to be processed by the event loop. When an event is triggered, it is added to the end of the event queue.
 
-    -- Event Loop: This is the core component of the event loop, which "continuously checks the event queue for new events to process."
+    -- Event Loop: This is the "core component of the event loop", which "continuously checks the event queue for new events to process."
 
     --" Callback Queue": This is a queue of callback functions waiting to be executed. When an event is processed, its corresponding callback function is added to the callback queue.
 
@@ -744,6 +751,7 @@ Node Version Manager(NVM)
 -> ES Modules are a newer way to modularize JavaScript code.
 -> CommonJS is a module specification for JavaScript used primarily in Node.js environments. It provides a way to define reusable code modules using a require() function to load dependencies and an exports object to expose functionality to other modules.
 -> ES modules are a newer standard for JavaScript modules introduced in ECMAScript 2015 (ES6). ES modules use the import and export statements to load dependencies and expose functionality, respectively. ES modules can be used in both browser and Node.js environments, although some older browsers may not support them.
+
 -> CommonJS (also known as CJS) is a module system used in Node.js and other environments that "supports synchronous loading of modules". It is a standard for structuring JavaScript code into separate files, each containing a module that can be loaded and reused in other parts of an application.
 It is the native module system of modern web browsers and is supported in Node.js since version 13.
 
@@ -808,17 +816,17 @@ It different from es modules :->
 
 ## How does express work?
 
-  => Express is a popular 'web application framework' for Node.js that "simplifies the process of building robust and scalable web applications". It provides a set of features and tools that make it easier to handle routing, middleware, request/response handling, and more.
-
+  => Express is a popular 'web application framework' for Node.js that "simplifies the process of building robust and scalable web applications". It provides a "set of features and tools that make it easier to handle routing, middleware, request/response handling, and more.
+"
   => At its core, "Express is built on top of the Node.js http module", which "provides basic functionality for creating an HTTP server". Express "enhances and extends the capabilities of the http module by providing a higher-level API and adding features like routing, middleware support, template engines, and error handling".
 
   => Here's a high-level overview of how Express works:
 
       (1) "Setting up the application":  
-          To use Express, you first need to install it as a dependency in your Node.js project using npm or yarn. Then, you import the Express module into your application using require('express'). You create an instance of the Express application by invoking express() and store it in a variable.
+          To use Express, you first need to i"nstall it as a dependency" in your Node.js project using npm or yarn. Then, you import the Express module into your application using require('express'). You create an instance of the Express application by invoking express() and store it in a variable.
 
       (2) "Defining routes": 
-          Express allows you to define routes to handle different HTTP methods and URLs. You can use the app.get(), app.post(), app.put(), app.delete(), and other similar methods to define routes and specify the callback function that will be executed when a request matches a particular route. These routes can handle dynamic parameters and query parameters as well.
+          Express allows you to define routes to handle different HTTP methods and URLs. You can use the "app.get(), app.post(), app.put(), app.delete()", and other similar methods to define routes and specify the callback function that will be executed when a request matches a particular route. These routes can handle dynamic parameters and query parameters as well.
 
       (3) "Middleware": 
           Express uses middleware functions to perform various tasks during the request-response cycle. Middleware functions have access to the request and response objects and can modify them, execute additional code, or terminate the request-response cycle. You can use app.use() or specific HTTP method-based middleware functions to add middleware to your application. Express provides a wide range of middleware modules that handle common tasks such as parsing request bodies, handling sessions, authenticating requests, logging, and more. You can also create custom middleware functions as per your application's requirements.
@@ -992,12 +1000,12 @@ It different from es modules :->
  =>In the MVC pattern, the application is divided into three components:
 
     (1) Model:
-      The Model component corresponds to all the data-related logic that the user works with. This can represent either the data that is being transferred between the View and Controller components or any other business logic-related data
+      The Model component corresponds to "all the data-related logic that the user works with". This can represent either the data that is being transferred between the View and Controller components or any other business logic-related data
     (2) View:
       The View component is used for all the UI logic of the application. For example, the Customer view will include all the UI components such as text boxes, dropdowns, etc. that the final user interacts with.
 
     (3) Controller:
-      Controllers act as an interface between Model and View components to 'process all the business logic' and incoming requests, manipulate data using the Model component and interact with the Views to render the final output.
+      Controllers act as an i"nterface between Model and View components" to 'process "all the business logic"' and incoming requests, manipulate data using the Model component and interact with the Views to render the final output.
 
 ----------------------------------------------
 

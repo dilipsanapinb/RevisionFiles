@@ -2666,7 +2666,7 @@ Optional Chaining
 -- both used to access and modify the content of HTML elements.
 
 * innerHTML:
-  -- allow us to get or set the HTML contetn within an element.
+  -- allow us to "get or set the HTML content" within an element.
   -- when we set 'innerHTML' property, it replace the existing content, including HTML tags.
   -- Be cautious when using innerHTML with user-generated or untrusted content, as it can lead to cross-site scripting (XSS) vulnerabilities if not properly sanitized.
 
