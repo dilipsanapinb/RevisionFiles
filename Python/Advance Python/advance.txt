@@ -1,4 +1,11 @@
+* ORM(Object-Relational Mapping)
 
+-- An Object-Relational Mapping (ORM) is a programming technique and framework that allows developers to interact with relational databases using object-oriented programming (OOP) concepts
+--  In the context of Python, ORMs are used to bridge the gap between the object-oriented world of Python and the relational world of databases. 
+-- An ORM abstracts the low-level database operations (e.g., SQL queries) and allows developers to work with databases using Python objects and classes.
+Instead of writing SQL queries directly, you define Python classes to represent database tables and use Python methods to interact with the data
+
+----------------------------------------
 
 * Object Oriented Programming in Python:
 -- Python is an OOPs Language i.e it supports creation and use of objects and classes.
