@@ -2,7 +2,7 @@
 * What is Flask, and how does it differ from other web frameworks?
 
 -- Flask is a "micro web framework" for building web applications in Python. 
--- It is known for its simplicity and minimalism, designed to be lightweight and flexible, allowing developers to build web applications quickly and easily.
+-- It is "known for its simplicity and minimalism", designed to be "lightweight and flexible", allowing developers to build web applications quickly and easily.
 1. Micro Framework:
 Flask is a simple and minimalistic web framework in Python.
 2. Minimalistic Design:
@@ -47,7 +47,7 @@ Comes with a built-in development server for easy testing during development.
 
     @app.route('/')
     def hello_world():
-    return 'Hello, World!'
+        return 'Hello, World!'
 
     if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True)
@@ -103,7 +103,7 @@ def old():
 * What are Flask extensions, and name some commonly used ones
 
 -- Flask extensions are additional libraries or packages that you can integrate with your Flask application to add extra functionality and features.
--- elp extend Flask's core capabilities to include things "like database integration, authentication, form handling"
+-- Help extend Flask's core capabilities to include things "like database integration, authentication, form handling"
 
 1. Flask-SQLAlchemy:
 

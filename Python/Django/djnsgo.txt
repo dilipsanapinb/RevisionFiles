@@ -1,0 +1,35 @@
+* framework:
+-- A framework is a particular set of rules, ideas,or beliefs which you use in order to dealt with problems or to decide what to do.
+-- most of the framework are built for the security purposes and follow the structured way of coding.
+
+----------------------------------------------
+
+* Django:
+-- Django is basically high-level Python web application framework that enable the rapid development of web application.
+-- Open-source Python frameworks.
+-- follows the model-view-template architectural pattern.
+-- Django is Pythons most popular framework.
+
+* features:
+1. Fast and Simple
+2. It's secure
+3. It's suit any web application project
+4. It's well established
+5. MVT support and OOP's 
+6. Built in Authentication and Authorization.
+7. Packaging System
+
+* Companies using the Django:
+1.YouTube
+2.Instagram
+3.Spotify
+4.The Washington Post
+5.Torrent
+
+------------------------------------------------
+
+* midrations:
+
+------------------------------------------------
+
+

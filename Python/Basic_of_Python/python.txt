@@ -1,37 +1,64 @@
 # Python:
 -- Python is a versatile and beginner-friendly programming language known for its simplicity and readability.
+--" compressed code"
+-- Python is an interpreted, object oriented, high level, programming language wiith dynamic semantics.
 -- Python is indentation-sensitive, menaning the proper indentation is crucial. User four spaces(or a tab) to indent you code.
-* indentation-sensative:
-
 -- use "#" symbol for comments.
 
-Python is a popular, high-level, general-purpose programming language known for its simplicity and readability. It was created by Guido van Rossum and first released in 1991. "Python has gained immense popularity in various domains, including web development, data analysis, artificial intelligence, scientific computing, automation, and more. Here are some of its key features:"
 
-"Readable and Expressive Syntax": Python uses a clean and easy-to-read syntax that emphasizes code readability. This reduces the cost of program maintenance and makes it easier to write and understand code.
+Python is a popular, high-level, general-purpose programming language known for its simplicity and readability.
+-- It was created by Guido van Rossum and first released in 1991. 
+-- "Python has gained immense popularity in various domains, including web development, data analysis, artificial intelligence, scientific computing, automation, and more. Here are some of its key features:"
 
-"High-Level Language": Python is a high-level programming language, which m"eans it abstracts low-level details like memory management and provides built-in data structures and libraries that simplify programming tasks".
 
-"Interpreted Language": Python is an interpreted language, meaning "you don't need to compile your code before executing it"." This makes development faster and more interactive."
+* Features of the Python:
 
-"Cross-Platform": Python is available on a wide range of platforms, including Windows, macOS, and various Unix-based systems. Code written in Python is typically portable across different operating systems.
+1. "Readable and Expressive Syntax":
+2. "Cross-Platform": 
+3. Easy to learn and implementation
+4. Open source
 
-"Large Standard Library": Python comes with a comprehensive standard library that provides modules and packages for a wide range of tasks, from working with files and data to network programming and web development.
+3. "High-Level Language": 
+Python is a high-level programming language, which "means it abstracts low-level details like memory management and provides built-in data structures and libraries that simplify programming tasks".
 
-"Dynamically Typed": Python is dynamically typed, meaning "you don't need to declare variable types. The interpreter infers the data type of a variable at runtime". This can lead to more concise code but requires careful attention to variable types.
+3. "Interpreted Language": 
+-- Python is an interpreted language(Python read and compile the code line by line), 
+-- meaning "you don't need to compile your code before executing it"." This makes development faster and more interactive."
 
-"Multi-Paradigm": Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming. This flexibility allows you to choose the approach that best suits your project.
+4. "Large Standard Library": 
+-- Python comes with a comprehensive standard library that provides modules and packages for a wide range of tasks, from working with files and data to network programming and web development.
 
-"Community and Ecosystem": Python has a large and active community of developers who contribute to open-source projects, libraries, and frameworks. This extensive ecosystem simplifies development and allows you to leverage existing code.
+5. "Dynamically Typed": 
+Python is dynamically typed, meaning "you don't need to declare variable types. The interpreter infers the data type of a variable at runtime". This can lead to more concise code but requires careful attention to variable types.
 
-"Integration": Python can easily integrate with other languages like C, C++, and Java, allowing you to use existing libraries and legacy code.
+6. "Multi-Paradigm": 
+-- Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming. This flexibility allows you to choose the approach that best suits your project.
 
-"Third-Party Libraries": Python has a rich ecosystem of third-party libraries and frameworks, including Django, Flask, NumPy, pandas, TensorFlow, and more, which extend its capabilities for specific domains.
+7. "Community and Ecosystem": 
 
-"Extensible": You can write Python modules in C or C++ and import them into your Python code, which allows for performance optimization when needed.
-"
-Open Source": Python is open source and has a community-driven development model. This means you can use, modify, and distribute Python without licensing costs.
+8. "Integration": 
+-- Python can easily integrate with other languages like C, C++, and Java, allowing you to use existing libraries and legacy code.
 
-"Wide Range of Applications": Python is versatile and can be used for various applications, from web development and data analysis to scientific research, game development, and artificial intelligence.
+9. "Third-Party Libraries": 
+Python has a rich ecosystem of third-party libraries and frameworks, including Django, Flask, NumPy, pandas, TensorFlow, and more, which extend its capabilities for specific domains.
+
+
+10. "Wide Range of Applications": 
+Python is versatile and can be used for various applications, from web development and data analysis to scientific research, game development, and artificial intelligence.
+
+11. GUI:
+-- we can use for the desktop appications.
+
+12. Examples:
+    -Instagram
+    -Facebook
+    -Spotify
+    -Uber
+    -DropBox
+    -VLC Player
+    -Quara
+    -Netflix
+    -Torrent
 
 Python's combination of simplicity and power has made it a go-to language for both beginners and experienced programmers, contributing to its widespread use and continued growth in various fields.
 
@@ -143,6 +170,11 @@ Example: z = 3 + 4j
 ------------------------------------------
 
 # Operations on Data types:
+* Arithmatic operators
+1. division: /
+2. Floor Division: //
+    eg. 3//2=1
+
 
 1. Addition:
 
@@ -162,7 +194,114 @@ Example: z = 3 + 4j
 
     print(message) # Output "Hello, Dilip"
 
+* Logical operators:
+
+1. and:  x>5 and x<10
+2. or: x<5 or x<10
+3. not: reverse the result, return False if the result is True
+not(x<5 and x>5)
+
+
+* Membership Operators: 
+
+1. in:
+-- returns True if a sequence with specified value is present in the object
+
+        x in y 
+
+        string="hello"
+        print('e' in string)
+
+        // ans is True
+
+2. not in:
+
+-- Returns True if a sequence with the specified value is not presentin the object.
+
+        x not in y
+
+* Identity Operators:
+1. is 
+-- Returns True if both variable are the same
+-- similar to ==
+    x is y 
+
+    x=10
+    y=10
+
+    print(x is y) //True
+
+2. is not:
+-- Return True is both variables are not the same value.
+
+    x is not y
+
+
+--------------------------------
+
+* Bitwise Operators:
+1. & (and)
+    x & y
+    x=10
+    bin(x) #Get a binary of the number
+    y=8
+    bin(y) #Get a binary of the number
+    # 8
+
+    print(bin(x+y)) #Get a binary of the number
+
+
+2. | (or)
+
+    x | y
+
+3. ^ (XOR)
+
+    a^b
+
+
+1=True 0=False
+
+    A   B   A&B     A|B     A^B 
+    0   0   0       0       0
+    0   1   0       1       1
+    1   0   0       1       1
+    1   1   1       1       0
+
+
 ------------------------------------------------
+
+* input()
+
+a=input("Enter the Value1:- ")
+b=input("Enter the value2:- ")
+# print(a+b) # concatination
+
+
+* int()
+# a=int(input("Enter the Value1:- "))
+# b=int(input("Enter the value2:- "))
+# print(a+b) # addition
+# 1
+# 2
+# 3
+
+* float()
+a=float(input("Enter the Value1:- "))
+b=float(input("Enter the value2:- "))
+print(a+b) # addition
+# 10
+# 20
+# 30.0
+
+* eval()
+a=eval(input("Enter the Value1:- "))
+b=eval(input("Enter the value2:- "))
+print(a+b) # addition
+# 10
+# 20.5
+# 30.5
+-----------------------------------------------
 
 * How do you create and use a namedtuple?
 
@@ -229,7 +368,7 @@ print(alice) #Output: Person(name="Alice",age=31)
 
 3. Dictionaries/ object in Js:
 
--- store key-value pais.
+-- store key-value pairs.
 
     eg. 
     person={
@@ -248,6 +387,11 @@ print(alice) #Output: Person(name="Alice",age=31)
 4. Access and modify:
 
         print(my_List[0])
+        list=[0,1,2,3,4,5]
+
+        list[2]=4
+        print(list) #[0,1,4,3,4]
+
         print(my_tuple[2])
         person["age"]=27
         print(person)
@@ -349,6 +493,45 @@ greet("Dilip") # Hello, Dilip
 
 ----------------------------------------
 
+* String Functions:
+
+1. lower():
+w="Hello, World"
+print(w.lower()) # hello, world
+
+2. upper():
+print(w.upper()) # HELLO, WORLD
+
+string="dilip barku sanap"
+3. title():
+print(string.title()) # Dilip Barku Sanap
+
+4. capitalize():
+print(string.capitalize()) #Dilip barku sanap
+
+5. string()
+string="dilip barku sanap"
+print(string.find('d')) # 0 find first the index of
+print(string.find('bar')) # 6
+
+print(string.find('bar',4)) # 6 # find from 4th index forword
+
+6. index()
+print(string.index('d')) # 0
+
+7. isalpha()
+print(string.isalpha()) #False/True
+
+print(string.isdigit()) #True/False
+
+9.isalnum()
+print(string.isalnum()) # True/False
+
+
+
+
+---------------------------------------
+
 # Modules:
 
 1. Importing Modules:
@@ -384,9 +567,9 @@ print(result) # 3
 
 Purpose of Generators in Python:
 
-Generators are used to create and work with sequences of data, particularly for large or infinite data sets.
+Generators are used to "create and work with sequences of data, particularly for large or infinite data sets".
 They are memory-efficient because they generate data on the fly, one item at a time, rather than storing everything in memory.
-Generators are created using functions with the yield keyword, allowing you to pause and resume their execution, making them suitable for tasks like reading large files, streaming data, or generating numbers on the fly.
+"Generators are created using functions with the yield keyword, allowing you to pause and resume their execution, making them suitable for tasks like reading large files, streaming data, or generating numbers on the fly."
 They are ideal for situations where you don't need to access all the data at once, improving performance and reducing memory usage.
 Generators are used to simplify and optimize code when dealing with data that can be generated lazily rather than being stored in memory upfront.
 In summary, generators in Python are a way to efficiently work with data sequences, especially when dealing with large or infinite data sets, by generating and processing data one item at a time, conserving memory and improving performance.
@@ -463,8 +646,8 @@ reversed_list = list[::-1]  # Result: [5, 4, 3, 2, 1, 0]
 
 Global Interpreter Lock (GIL) in Python:
 
-The GIL is specific to the CPython interpreter, which is the most commonly used implementation of Python.
-It ensures that only one thread executes Python bytecode at a time, essentially making multi-threaded Python programs less efficient when it comes to utilizing multiple CPU cores for CPU-bound tasks.
+The GIL is specific to the CPython interpreter, "which is the most commonly used implementation of Python".
+It ensures that "only one thread executes Python bytecode at a time," essentially making multi-threaded Python programs less efficient when it comes to utilizing multiple CPU cores for CPU-bound tasks.
 The GIL can be a limiting factor for multi-threaded Python programs, particularly those that involve significant CPU processing.
 
 -----------------------------------------
@@ -503,8 +686,8 @@ Python 3: print() function with parentheses.
 
 * What are Python decorators, and how are they used?
 
--- Python decorators are a powerful and flexible feature that allows you to modify or enhance the behavior of functions or methods without changing their source code. 
--- Decorators are often used for tasks like logging, authentication, memoization, and more. They are applied using the "@" symbol followed by the decorator name, placed above the function definition.
+-- Python decorators are a p"owerful and flexible feature that allows you to modify or enhance the behavior of functions or methods without changing their source code. "
+-- Decorators are often used for tasks like logging, authentication, memorization, and more. They are applied using the "@" symbol followed by the decorator name, placed above the function definition.
 
 Here's how decorators work and how to use them:
 
@@ -671,8 +854,7 @@ A higher-order function is a function that either takes one or more functions as
 Python supports higher-order functions due to its first-class function capabilities.
 Here's a simple example to illustrate the concept:
 
-python
-Copy code
+
 # Function as a variable
 def greet(name):
     return "Hello, " + name
@@ -728,8 +910,8 @@ print_args(1, "apple", name="Alice", age=30)
 
 ------------------------------------------
 * What is the purpose of the __init__.py file in a directory?
--- In Python, the __init__.py file serves a specific purpose: it makes a directory a Python package
--- he __init__.py file is executed when the package is imported, allowing you to perform package-level setup, initialization, or define package-level variables and functions.
+-- In Python, the __init__.py file serves a specific purpose: "it makes a directory a Python package"
+-- The __init__.py file is executed when the package is imported, allowing you to perform package-level setup, initialization, or define package-level variables and functions.
 
 my_package/
     __init__.py

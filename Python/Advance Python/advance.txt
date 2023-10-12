@@ -11,7 +11,7 @@ Instead of writing SQL queries directly, you define Python classes to represent 
 -- Python is an OOPs Language i.e it supports creation and use of objects and classes.
 
 1. Class Defination:
--- bliueprint for creating objects.
+-- blueprint for creating objects.
 
 # class defination
 class Person:

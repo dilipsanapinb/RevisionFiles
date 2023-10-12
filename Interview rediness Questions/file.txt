@@ -1,7 +1,7 @@
 STAR method
 Situation
-task
-action
+Task
+Action
 Result
 
 (1) Introduce yourself
