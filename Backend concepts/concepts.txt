@@ -66,10 +66,10 @@ Throughput in a Node.js backend can be influenced by several factors, including 
 
 ## Techniques can used to high throughput:
 
-(1) "Event-driven, non-blocking I/O": Node.js uses an event-driven, non-blocking I/O model, which allows it to handle multiple concurrent connections without blocking the main event loop. This enables high concurrency and efficient handling of incoming requests, leading to higher throughput.
+(1) "Event-driven, non-blocking I/O": Node.js uses an event-driven, non-blocking I/O model, which allows it to handle "multiple concurrent connections without blocking the main event loop". This "enables high concurrency and efficient handling of incoming requests, leading to higher throughput."
     eg. fetching the data using async and await by event 'onclick'.
 
-(2) "Asynchronous programming": Node.js encourages the use of asynchronous programming techniques, such as callbacks, Promises, and async/await, which allow for efficient handling of I/O-bound operations. This prevents the server from blocking while waiting for I/O operations to complete, resulting in higher throughput.
+(2) "Asynchronous programming": Node.js encourages the use of "asynchronous programming techniques, such as callbacks, Promises, and async/await," which allow "for efficient handling of I/O-bound operations". This prevents the server from blocking while waiting for I/O operations to complete, resulting in higher throughput.
 
 (3) "Scalability": Node.js applications can be designed to scale horizontally, meaning they can be distributed across multiple instances or nodes to handle increased load. This can be achieved using techniques such as clustering or load balancing, which allow for better utilization of resources and increased throughput.
 
@@ -125,7 +125,7 @@ It's important to note that throughput is not the only consideration in evaluati
 
 ## What is rate limiting?
 
-=> Rate limiting is a technique used to control the amount of traffic that is sent or received by a network or application.
+=> Rate limiting is a "technique used to control the amount of traffic that is sent or received by a network or application."
 
 => It is a way of limiting the number of requests that can be made over a certain period of time to prevent overload and ensure fair usage of resources.
 
@@ -313,12 +313,24 @@ myEventTarget.dispatchEvent(myEvent);
 
 Example-2
 
-    const event = new CustomEvent("build", { detail: elem.dataset.time });
-    
-    function eventHandler(e) {
-  console.log(`The time is: ${e.detail}`);
-}
+// Assuming you have an HTML element with an id of "myElement" that has a "data-time" attribute
+const elem = document.getElementById("myElement");
 
+if (elem) {
+  const event = new CustomEvent("build", { detail: elem.dataset.time });
+
+  function eventHandler(e) {
+    console.log(`The time is: ${e.detail}`);
+  }
+
+  // Add an event listener to handle the "build" event
+  elem.addEventListener("build", eventHandler);
+
+  // Dispatch the "build" event
+  elem.dispatchEvent(event);
+} else {
+  console.error("Element not found");
+}
 ------------------------------------------------------
 
 ## Creating and dispatching events dynamically:=>
@@ -1537,7 +1549,7 @@ db.orders.aggregate([
 
 ### Q. What is CAP theorem? ***
 
--- CAP theorem is a fundamental concept in distributed database systems.
+-- CAP theorem is a "fundamental concept in distributed database systems".
 -- It is also known as "Brewer's theorem."
 -- CAP stands for Consistency, Availability, and Partition Tolerance.
 
@@ -1576,7 +1588,7 @@ Node.js itself doesn't enforce a specific choice regarding consistency, availabi
 ### Q. What is indexing ?
 
 -- Indexing in a database is the "process of creating a data structure that allows for faster retrieval of data from a table".
---  An "index is a data structure that is created on one or more columns of a table", which enables the database management system to quickly find and retrieve rows that match a specific search condition.
+--  An "index is a data structure that is created on one or more columns of a table", which "enables the database management system to quickly find and retrieve rows that match a specific search condition".
 -- Indexes are special data structures that "store a small portion of the collection's data set in an easy to traverse form". The "index stores the value of a specific field or set of fields", ordered by the value of the field. The ordering of the index entries supports efficient equality matches and range-based query operations.
  In addition, MongoDB can return sorted results by using the ordering in the index.
 
@@ -1781,7 +1793,7 @@ Overall, database replication is an important technique for building scalable an
 
 --------------------------------------------------------------------------
 
-##  Explain why mongoose does not return a promise but has a .then 
+##  Explain why mongoose does not return a promise but has a .then() 
 
   => The Mongoose does not return a promise direcly because it was "designed to support both the call-back base and promise bases API's". Insted of returning a promise, Mongoose provide a ".then()" methode on queries that allows us to chain promise based operations.
     -> Mongoose queries are executed asynchronously and return a query object that implements the Promise API. The `.then()` method on Query object allows you to chain additional asynchronous operations that will be executed when the query is complete. This is similar to how promise work, where you can chain additional operations using `.then()`.
@@ -1917,7 +1929,7 @@ Overall, database replication is an important technique for building scalable an
 ## What are pre and post hooks? 
 
 -> Pre and post also known as" middlewares" are the functions which are passes control during execution of asynchronous functions. 
-->" middleware is specified on the schema level" and is usefull for writin plugins.
+->" middleware is specified on the schema level" and is usefull for writing plugins.
 -> Pre and post are functions that are executed before or after a certain action that we specify.
   -eg. We want run a function everytime before we save a document in the DB, we use pre-hook and if we want something to be executed after that we use post hooks.
 -> These hooks allow us to add custom logic to a Mongoose schema, such as validating data before it saved to database or updating related document when a document is deleted.
@@ -2074,7 +2086,7 @@ Overall, database replication is an important technique for building scalable an
 
 ## What is encryption? 
 
-    => Encryption is the process of c"onverting plain text or data into a coded format that is unintelligible without a key or a password, making it unreadable to unauthorized users."
+    => Encryption is the process of "converting plain text or data into a coded format that is unintelligible without a key or a password, making it unreadable to unauthorized users."
     => It is used to protect the confidentiality, integrity, and authenticity of sensitive data during transmission or storage.
     => Encryption uses mathematical algorithms to scramble the original data into ciphertext that can only be decrypted using a specific key or password.
 
@@ -5746,29 +5758,29 @@ Overall, JWT provides a secure and efficient way to authenticate and authorize u
 
 (52) What are the advantages and disadvantages of referencing in MongoDb relationship? Write three points for each?
 
-Advantages of Referencing in MongoDB Relationships:
+"Advantages" of Referencing in MongoDB Relationships:
 
-Flexibility and Scalability: Referencing allows for flexible and scalable data modeling in MongoDB. You can easily establish relationships between different collections and manage complex data structures.
+"Flexibility and Scalability": Referencing allows for flexible and scalable data modeling in MongoDB. You can easily establish relationships between different collections and manage complex data structures.
 
-Data Consistency: Referencing helps maintain data consistency by avoiding data duplication. Instead of duplicating data across multiple documents, you store references to related documents, ensuring that changes made to a referenced document are reflected across all references.
+"Data Consistency": Referencing helps maintain data consistency by avoiding data duplication. Instead of duplicating data across multiple documents, you store references to related documents, ensuring that changes made to a referenced document are reflected across all references.
 
-Efficient Memory Usage: Referencing consumes less memory compared to embedding large amounts of data within a single document. This can be particularly beneficial when dealing with large collections or frequently accessed documents.
+"Efficient Memory Usage": Referencing "consumes less memory compared to embedding" large amounts of data within a single document. This can be particularly beneficial when dealing with large collections or frequently accessed documents.
 
-Simplified Updates: With referencing, updating related data becomes easier. You only need to update a single document rather than multiple embedded documents, reducing the risk of inconsistencies or errors.
+"Simplified Updates": With referencing, updating related data becomes easier. You only need to update a single document rather than multiple embedded documents, reducing the risk of inconsistencies or errors.
 
-Easier Queries and Indexing: Referencing simplifies querying and indexing in MongoDB. You can use the reference IDs to fetch related data efficiently, allowing for better performance and query optimization.
+"Easier Queries and Indexing": Referencing simplifies querying and indexing in MongoDB. You can use the reference IDs to fetch related data efficiently, allowing for better performance and query optimization.
 
-Disadvantages of Referencing in MongoDB Relationships:
+"Disadvantages" of Referencing in MongoDB Relationships:
 
-Additional Queries: Referencing requires additional queries to retrieve related data. When you need to access related documents, you have to perform separate queries to fetch the referenced data. This can introduce additional overhead, especially in complex relationships or scenarios where data needs to be fetched from multiple collections.
+"Additional Queries": Referencing requires additional queries to retrieve related data. When you need to access related documents, you have to perform separate queries to fetch the referenced data. This can introduce additional overhead, especially in complex relationships or scenarios where data needs to be fetched from multiple collections.
 
-Possible Performance Impact: While referencing can be efficient for retrieving related data individually, it may introduce performance overhead when fetching data from multiple collections in complex queries. Joining or aggregating data across different collections can result in slower query execution times compared to embedding data within a single document.
+"Possible Performance Impact": While referencing can be efficient for retrieving related data individually, it may introduce performance overhead when fetching data from multiple collections in complex queries. Joining or aggregating data across different collections can result in slower query execution times compared to embedding data within a single document.
 
-Data Integrity Constraints: MongoDB does not provide built-in support for enforcing referential integrity constraints. It is the application's responsibility to ensure that referenced documents are valid and exist. Failure to do so can lead to orphaned references or inconsistencies in the data.
+"Data Integrity Constraints": MongoDB does not provide built-in support for enforcing referential integrity constraints. It is the application's responsibility to ensure that referenced documents are valid and exist. Failure to do so can lead to orphaned references or inconsistencies in the data.
 
-Lack of Atomicity: Updates involving multiple collections can become complex and lack atomicity. If you need to update data across multiple documents in a consistent manner, embedding the related data within a single document may provide better atomicity.
-
-Schema Changes: Referencing can make schema changes more challenging. When modifying a referenced document's schema, you may need to update all references to ensure data consistency. This can be cumbersome in large databases or applications with extensive relationships.
+"Lack of Atomicity": Updates involving multiple collections can become complex and lack atomicity. If you need to update data across multiple documents in a consistent manner, embedding the related data within a single document may provide better atomicity.
+"
+Schema Changes": Referencing can make schema changes more challenging. When modifying a referenced document's schema, you may need to update all references to ensure data consistency. This can be cumbersome in large databases or applications with extensive relationships.
 
 It's important to consider your specific application requirements, data access patterns, and performance considerations when deciding whether to use referencing in MongoDB relationships. The choice between referencing and embedding depends on factors such as data size, data consistency requirements, querying patterns, and the complexity of relationships within your application.
 

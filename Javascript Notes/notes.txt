@@ -2038,7 +2038,6 @@ console.log(p1.age)  //undefined
       asyncFunction1(function(result1){
         asyncFunction2(reset1, function(reset2){
           asyncFunction3(result2, function(result3){
-
           });
         });
       });
@@ -2052,7 +2051,6 @@ console.log(p1.age)  //undefined
         if(result.error){
           handleError(result.error);
         }else{
-
         }
       });
 
@@ -2118,6 +2116,7 @@ console.log(p1.age)  //undefined
 
 
 ----------------------------------------------
+
     ## Arrow Functions
 
     => They have a "shorter syntax", which "makes them more concise and easier to read".

@@ -16,7 +16,7 @@
 
 -- MOngo has a 'flexible schema', which means that "diff documents in the same collection can have diffeent fields and data types." 
 
--- This allow us to adopt the database schrma as application requirement evolve, without need of the complex migration.
+-- This allow us to adopt the database schema as application requirement evolve, without need of the complex migration.
 
 3. Query language:
 
@@ -30,7 +30,7 @@
 5. ACID Transactions:
 
 -- Mongo is not strictly ACID compliant.
--- Mongo supports the transactions and ther are typpically used for operations that affects multiplr documents within a single collection.
+-- Mongo supports the transactions and they are typpically used for operations that affects multiple documents within a single collection.
 
 6. Joins:
 
@@ -116,7 +116,7 @@
 -- mongo encorouge the denormaization of data
 
 5. Atomic operations:
--- we can perform atomoc operations of individual document i.e. either the document is fully updated or not performed. This ensure the data consistency for single document operations.
+-- we can perform atomic operations of individual document i.e. either the document is fully updated or not performed. This ensure the data consistency for single document operations.
 
 6. unique id
 7. collectiosn
@@ -134,8 +134,8 @@ In MongoDB, a collection is a 'group of related documents'. It is a fundamental 
 
 ## How do you create a new database in MongoDB?
 
--- Its created automatically whent we insert data into them.
--- Unlike the RDS we dont need to create the databse befre using it.
+-- Its created automatically when we insert data into them.
+-- Unlike the RDS we dont need to create the databse before using it.
 
 -- We can use mongo commamds
 
@@ -150,17 +150,17 @@ In MongoDB, a collection is a 'group of related documents'. It is a fundamental 
 ## Explain the concept of indexing in MongoDB. Why is it important?
 
 -- Its databse optimization technique for speed and efficiency queries.
--- it allows the sppedly ocate the document in MongoDB.
+-- it allows the sppedly locate the document in MongoDB.
 
--- Indexes are data structures that store a small, sorted subset of ata in a collection, along with the reference location of full document in database.
+-- Indexes are data structures that store a small, sorted subset of data in a collection, along with the reference location of full document in database.
 
 1. Purpose:
--- to improve the query persormance.
+-- to improve the query performance.
 -- without indexing MongoDB have to perform full collection scan.
 -- indexing significantly reduce the number of documents it needs to examine.
 
 2. Structure:
--- stores key-value pair form. Key is fiels or combination of fields from the documents in the collection and value is a reference ti the location of the corresponding document.
+-- stores key-value pair form. Key is fiels or combination of fields from the documents in the collection and value is a reference to the location of the corresponding document.
 
 3. Automatic and mannually indexing:
 
@@ -169,7 +169,7 @@ In MongoDB, a collection is a 'group of related documents'. It is a fundamental 
 -- We can create the custom indexes of our choice
       eg. db.users.createIndex({name:1});
 
-4. Single field ans compound indexes:
+4. Single field and compound indexes:
 
     db.users.createIndex({name:1,email:1});
 
@@ -187,7 +187,7 @@ In MongoDB, a collection is a 'group of related documents'. It is a fundamental 
 (3) Aggregation: indexing allows efficient grouping and aggregation operations.
 (4) Better Performance
 (5)Data consistency: by enforcing the unique constrains(e.g unique indexes) or ensuring the specific field present in that document.
-(6)"Covered queries": well designed indexes can make queries 'covered' i.e index contains all the daa needed to satisfy the query, eliminating the need to acces the actual documents. This further improves the performance.
+(6)"Covered queries": well designed indexes can make queries 'covered' i.e index contains all the data needed to satisfy the query, eliminating the need to acces the actual documents. This further improves the performance.
 
 ** We need to use the indexing judiciously, overindexing can lead to increased storage overhead and slower write operations.
 
@@ -220,7 +220,7 @@ In MongoDB documents, the _id field serves as a 'unique identifier for each docu
 
 -- Its powerful and flexible for performing data transformation and analysis of operations on data.
 
--- It allows us to process and manupulate documents in a collction, applying series of operations to filter, transform, group, and project data.
+-- It allows us to process and manupulate documents in a collection, applying series of operations to filter, transform, group, and project data.
 
 -- Its usefull for the complex data analysis tasks go beyond basic querying.
 
@@ -238,7 +238,7 @@ An aggregation pipeline can return results for groups of documents. For example,
 
 * Key concepts:
 (1) "Pipeline":
-        Aggregation operations are organised into a pipeline, which consists of multiple stages, each representong a specific oeration or transformation to be applied to the data.
+        Aggregation operations are organised into a pipeline, which consists of multiple stages, each representong a specific operation or transformation to be applied to the data.
 
 (2) "Stages": 
         Each stage in pipeline performs the specific operation on data.
@@ -292,7 +292,7 @@ Mongoose's aggregation pipelines provide a powerful way to perform complex data 
 
 -- It's a pointer to the result set of a query, and it allow us to retrive and iterate over documents from collection one at a time.
 
--- They are perticularly useful when dealing with large result sets, as they allow you to process data efficiently without loading all the results into meory at once.
+-- They are perticularly useful when dealing with large result sets, as they allow you to process data efficiently without loading all the results into memory at once.
 
 * Create a cursor
 
@@ -337,7 +337,7 @@ Mongoose's aggregation pipelines provide a powerful way to perform complex data 
 
 ## How do you perform a join operation in MongoDB?
 
--- MongoDb doesn't support SQL like join, insted it promotes the denormalised data model where related data is typicallystored within a single document or embeded documents.
+-- MongoDb doesn't support SQL like join, insted it promotes the denormalised data model where related data is typically stored within a single document or embeded documents.
 
 -- This process called 'embeding' to reduce the need of join.
 
@@ -412,7 +412,7 @@ Mongoose's aggregation pipelines provide a powerful way to perform complex data 
 -- All data come in sigle query, no need of complex queries.
 
 2. Reduce latency:
--- it monimizes the need for multiple round-trip databse queries, which significantly reduce latency, it makes app more responsive.
+-- it minimizes the need for multiple round-trip databse queries, which significantly reduce latency, it makes app more responsive.
 
 3. Simplified data retrivel:
 -- we dont need to perdorm the join to combine the data from multiple columns.
@@ -433,7 +433,7 @@ Mongoose's aggregation pipelines provide a powerful way to perform complex data 
 
 ## Explain the concept of sharding in MongoDB.
 
--- It's a 'database scaling' technique used in MongoDB to horizontally partition and distribute data scross multiple servers or nodes.
+-- It's a 'database scaling' technique used in MongoDB to horizontally partition and distribute data across multiple servers or nodes.
 
 -- Primary goal of shrading is to "address the challenges associated with managing large and growing databse", or" to provide improved performance, scalability, and high availability".
 

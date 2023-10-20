@@ -1,12 +1,52 @@
-
-
 (1) Components in React:
 
 -- In React, components are the 'building blocks' of your application's user interface. They encapsulate reusable pieces of UI that can be composed together to create more complex interfaces. "React components can be either functional components or class components".
 
     (a)"Functional components": they are simple JavaScript functions that accept props as arguments and return JSX to describe the component's UI. They are the recommended approach for creating components in React.
 
+    eg.
+      import React from 'react';
+
+      function FunctionComponent(){
+        return(
+          <div>
+          <h1> Hello, World</h1>
+          </div>
+        )
+      }
+
+      export default FunctionComponent;
+
     (b) Class components on the other hand ae ES6 classes that extend the 'React.Component' class. They have additional features such as lifecycle methods and access to the components state. While class components are still supported in React, functional components with hooks are the modern and preffered way of writting components.
+
+    eg.
+        import React, {Component} from 'react';
+        class ClassComponent extends Component{
+          render(){
+            return(
+              <div>
+              <h1>Hello, World</h1>
+              </div>
+            )
+          }
+        }
+
+        export default ClassComponent;
+
+
+* Key Differences:
+
+'Syntax': Class components use ES6 classes and extend React.Component, while function components are just JavaScript functions.
+
+'State': Class components can manage their state using this.state, while function components use hooks like useState for state management.
+
+"Lifecycle Methods": Class components can utilize lifecycle methods like componentDidMount, componentDidUpdate, etc. Function components can use lifecycle hooks with useEffect.
+
+"Readability and Conciseness": Function components are often considered more concise and easier to read, especially for simple components.
+
+"Performance": Function components with hooks are generally more performant than class components, as they have less overhead.
+
+In recent versions of React (React 16.8 and later), function components with hooks have become the preferred way to create components because they offer a more streamlined and readable syntax. However, you may still encounter class components in legacy code or specific use cases where their features are necessary.
 
 -------------------------------------------------------------
 
