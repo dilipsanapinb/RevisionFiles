@@ -284,7 +284,7 @@ It's the way we can tell the JS engine to process a function asynchronously (aft
 
 The Node.js event loop is what allows Node.js to perform non-blocking I/O operations by offloading operations to the system kernel whenever possible. The event loop has several phases, each with a FIFO queue of callbacks to execute.
 
-A tick is a term that refers to one iteration of the event loop, where it executes any callbacks that are in the queue for the current phase. A tick ends when the queue is emptied or the maximum number of callbacks has been reached.
+"A tick is a term that refers to one iteration of the event loop", where it executes any callbacks that are in the queue for the current phase. A tick ends when the queue is emptied or the maximum number of callbacks has been reached.
 
 Therefore, process.nextTick () can starve your event loop if you use it too much or if your callback functions are too long. This is because process.nextTick () callbacks are executed before the event loop moves to the next phase, and they can prevent other I/O operations from being processed in a timely manner. You should use process.nextTick () sparingly and only for cases where you need to run some code before anything else happens in the next tick.
 
@@ -835,7 +835,7 @@ It different from es modules :->
   => Here's a high-level overview of how Express works:
 
       (1) "Setting up the application":  
-          To use Express, you first need to i"nstall it as a dependency" in your Node.js project using npm or yarn. Then, you import the Express module into your application using require('express'). You create an instance of the Express application by invoking express() and store it in a variable.
+          To use Express, you first need to "install it as a dependency" in your Node.js project using npm or yarn. Then, you import the Express module into your application using require('express'). You create an instance of the Express application by invoking express() and store it in a variable.
 
       (2) "Defining routes": 
           Express allows you to define routes to handle different HTTP methods and URLs. You can use the "app.get(), app.post(), app.put(), app.delete()", and other similar methods to define routes and specify the callback function that will be executed when a request matches a particular route. These routes can handle dynamic parameters and query parameters as well.
@@ -1455,7 +1455,7 @@ Both clients and servers can include multiple headers in their respective reques
     -- NoSQL databases typically "have their own query language", which is optimized for the specific data model they use.
     -- NoSQL databases can handle different types of data models, such as 'key-value, document-based, or graph-based', and are often used for distributed systems or cloud-based applications.
     -- NoSQL databses are typically have 'horizontal scalability', which means they "can handle increasing amounts of data by adding more servers to a cluster".
-    -- NoSQL databases are often designed to s"acrifice some level of consistency and reliability for the sake of scalability and performance".
+    -- NoSQL databases are often designed to "sacrifice some level of consistency and reliability for the sake of scalability and performance".
 
   "The choice between SQL and NoSQL databases depends on the specific requirements of the application". SQL databases are best suited for applications that require data consistency and a fixed schema, while NoSQL databases are ideal for applications that require scalability, flexibility, and the ability to handle unstructured data. In some cases, a combination of both SQL and NoSQL databases may be used to take advantage of their respective strengths.
 

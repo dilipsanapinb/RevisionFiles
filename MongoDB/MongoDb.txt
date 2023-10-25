@@ -119,7 +119,7 @@
 -- we can perform atomic operations of individual document i.e. either the document is fully updated or not performed. This ensure the data consistency for single document operations.
 
 6. unique id
-7. collectiosn
+7. collections
 8. rich querying
 
 ---------------------------------------
@@ -150,7 +150,7 @@ In MongoDB, a collection is a 'group of related documents'. It is a fundamental 
 ## Explain the concept of indexing in MongoDB. Why is it important?
 
 -- Its databse optimization technique for speed and efficiency queries.
--- it allows the sppedly locate the document in MongoDB.
+-- it allows the speedly locate the document in MongoDB.
 
 -- Indexes are data structures that store a small, sorted subset of data in a collection, along with the reference location of full document in database.
 
@@ -238,7 +238,7 @@ An aggregation pipeline can return results for groups of documents. For example,
 
 * Key concepts:
 (1) "Pipeline":
-        Aggregation operations are organised into a pipeline, which consists of multiple stages, each representong a specific operation or transformation to be applied to the data.
+        Aggregation operations are organised into a pipeline, which consists of multiple stages, each representing a specific operation or transformation to be applied to the data.
 
 (2) "Stages": 
         Each stage in pipeline performs the specific operation on data.
@@ -258,7 +258,7 @@ An aggregation pipeline can return results for groups of documents. For example,
         quantity: 10, date: ISODate( "2021-03-13T08:14:30Z" ) },
     { _id: 1, name: "Pepperoni", size: "medium", price: 20,
         quantity: 20, date : ISODate( "2021-03-13T09:13:24Z" ) },
-    { _id: 2, name: "Pepperoni", size: "large", price: 21,
+    { _id: 2, name: "Pepperoni", size: "large", price: 21,-
         quantity: 30, date : ISODate( "2021-03-17T09:22:12Z" ) },
         ]);
 
@@ -415,7 +415,7 @@ Mongoose's aggregation pipelines provide a powerful way to perform complex data 
 -- it minimizes the need for multiple round-trip databse queries, which significantly reduce latency, it makes app more responsive.
 
 3. Simplified data retrivel:
--- we dont need to perdorm the join to combine the data from multiple columns.
+-- we dont need to perform the join to combine the data from multiple columns.
 
 4. Atomic updates:
 -- we can update the related data within a single document in a single operation. This ensures the consistency.
