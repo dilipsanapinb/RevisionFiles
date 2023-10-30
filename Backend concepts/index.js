@@ -1,16 +1,9 @@
-const { response } = require('express');
-const http = require('http');
+const myEventTarget = new EventTarget();
 
-const server = http.createServer((request, response) => {
-    if (request.url == "/") {
-        response.end("Welcome, this is a basic route for the app")
-    }
-    else if (request.url == "/user") {
-        response.end("This is a user route")
-    }
+const myEvent = new Event('myEvent');
+
+myEventTarget.addEventListener('myEvent', () => {
+    console.log('Custom Event triggered');
 });
 
-
-server.listen(5000, () => {
-    console.log('Server is running on port:5000');
-})
+myEventTarget.dispatchEvent(myEvent)

@@ -661,7 +661,7 @@ In summary, "Sets are designed for storing unique values, while Maps are designe
 
 -- Parameters are variables listed as a part of the function definition.
 -- Arguments are values passed to the function when it is invoked.
--> function sum( a, b, c ) {}; // a, b, and c are the parameters
+-- function sum( a, b, c ) {}; // a, b, and c are the parameters
 
    sum( 1, 2, 3 ); // 1, 2, and 3 are the arguments
 ------------------------------------
@@ -1360,6 +1360,7 @@ These are just a few of the methods available to call APIs in JavaScript. Each m
     (3) Error handling:
 
     Fetch: Fetch treats network errors (like DNS failures or a server not responding) as resolved promises, so you need to manually check the response's ok property to determine if the request was successful or not.
+    
     Axios: Axios automatically rejects the promise for network errors, allowing you to handle errors in a dedicated .catch() block. It also provides a more detailed error response with status codes, headers, and other information.
     
     (4) Request cancellation:
@@ -1665,7 +1666,7 @@ There are three steps in event loop,
 
     //js looks for more code
     //stack is empty, no more code!
-    //it will go to queue, will start lookign for code to execute
+    //it will go to queue, will start looking for code to execute
     //it will add to stack
 
 
@@ -2171,7 +2172,7 @@ When a function is called as a method of an object, this refers to the object th
 const person = {
   name: "John",
   sayHello: function () {
-    console.log(`Hello, ${this.name}!`);
+  console.log(`Hello, ${this.name}!`);
   },
 };
 
@@ -2639,7 +2640,7 @@ console.log(result);
 
 ------------------------
 
- ## ES6 
+## ES6 
 var let const
 arrow functions
 template literals

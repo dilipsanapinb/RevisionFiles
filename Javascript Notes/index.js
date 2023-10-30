@@ -23,18 +23,23 @@
 //   return head;
 // }
 
-// var arr = [1, 2, 3, 4, 5];
+var arr = [1, 2, 3, 4, 5];
+for (let i = 0; i < arr.length; i++){
+    for (let j = i; j < arr.length; j++){
+        console.log(arr[j])
+    }
+}
 // console.log(linkedList(arr));
 
-function greet(greetings,city) {
-    console.log(`${greetings}, ${this.name} from ${city}`);
-}
-perosn = {
-    name:"Dilip"
-}
+// function greet(greetings,city) {
+//     console.log(`${greetings}, ${this.name} from ${city}`);
+// }
+// perosn = {
+//     name:"Dilip"
+// }
 
-greet.call(perosn, "Hello", "Nashik");
-greet.apply(perosn, ["Hiii..", "Pune"]);
-const greetperson = greet.bind(perosn, "Namaste", "Delhi");
+// greet.call(perosn, "Hello", "Nashik");
+// greet.apply(perosn, ["Hiii..", "Pune"]);
+// const greetperson = greet.bind(perosn, "Namaste", "Delhi");
 
-greetperson()
+// greetperson()

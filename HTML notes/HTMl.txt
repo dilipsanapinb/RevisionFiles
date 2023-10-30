@@ -1,10 +1,10 @@
 # Diffrence beween the DOM and BOM
--- DOM and BOM are the two distince concept in web development
+-- DOM and BOM are the two distinct concept in web development
 -- they play essential role in how web pages are created and interact with web browser
 
 (1) Document Oject Model(DOM):
 -- its programing interface for web document.
--- it "represent the structure of a web page as a hierarchical tree objects", "where each object correspons to a part of the page content".
+-- it "represent the structure of a web page as a hierarchical tree objects", "where each object corresponds to a part of the page content".
 -- This allows developers to "interact with and manipulate the content and structure of a web page dynamically" using the programing languages like JavaScript.
 
 **Key points:
@@ -82,7 +82,7 @@ eg. window.open('https://www.example.com');
 
 ## Purpose of the HTML
 -- its backbone of the World Wide Web
--- structure amd format the content on web pages
+-- structure and format the content on web pages
 -- Purposes-
           (1)"Structuring the content:" using the elements like html,head,title,body,header,nav,main,footer
           (2) "Text formating:" h1,h2,p,em,strong,ul,ol,blockquates

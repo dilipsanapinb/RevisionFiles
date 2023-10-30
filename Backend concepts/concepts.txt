@@ -394,7 +394,7 @@ const fs=require('fs');
 ## readFileSync()
 =>readFileSync() method uses a variable to store the file content and then delivers it. Due to its blocking nature, the program waits till the file is read completely. So that the -->The end<-- message will be printed only after the content is delivered.
 
-  const fs=require('fs');
+const fs=require('fs');
 var contents = fs.readFileSync('test.txt', 'utf-8'); //utf decoding to avoid binary code output.
 console.log(contents);
 console.log(" -->The end<-- ");
@@ -405,7 +405,7 @@ console.log(" -->The end<-- ");
 | fileRead()           | fileReadSync()            |
 | -------------------- | ------------------------- |
 | Non-Blocking process | Blocking process          |
-| Uses callback uses   | variable to store content |
+| Uses callback        | variable to store content |
 | Asynchronous nature  | Synchronous nature        |
 
 ----------------------------------------------------------------
@@ -451,7 +451,7 @@ const userAgent = headers['user-agent'];
   response.setHeader('Content-Type', 'application/json');
 response.setHeader('X-Powered-By', 'bacon');
 
-"  When setting the headers on a response, the case is insensitive on their names. If you set a header repeatedly, the last value you set is the value that gets sent."
+" When setting the headers on a response, the case is insensitive on their names. If you set a header repeatedly, the last value you set is the value that gets sent."
 
 -- Sending Response Body
 
@@ -564,7 +564,7 @@ HTTP response codes are three-digit status codes that are sent by a web server t
 
 502 "Bad Gateway": This status code is returned when the server acting as a gateway or proxy received an invalid response from the upstream server.
 
-503 Service Unavailable: This code indicates that the server is currently unable to handle the request due to maintenance or overload. It is a temporary condition.
+503 'Service Unavailable': This code indicates that the server is currently unable to handle the request due to maintenance or overload. It is a temporary condition.
 
 504 Gateway Timeout: This code is returned when the server acting as a gateway or proxy did not receive a timely response from the upstream server.
 
@@ -680,7 +680,7 @@ The poll phase is responsible for performing I/O operations, such as reading or 
 If there are no I/O events to process, the poll phase will wait for events to occur.
 Once the event loop completes all the phases, it will check if the setImmediate() queue has any pending callbacks to execute. If there are, the event loop will start over again from the first phase, otherwise, it will exit and wait for new events to occur.
 
-#How the event loop perform in Node.js
+# How the event loop perform in Node.js
 
 When Node.js starts, it initializes the event loop, processes the provided input script which may make async API calls, schedule timers, or call process.nextTick(), then begins processing the event loop.
 -- Event loop in Node.js consists of several phases that are executed sequentially in a loop to process incoming events and execute callbacks
